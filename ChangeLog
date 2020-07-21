@@ -1,4 +1,7 @@
 
+2020-07-21 Franz Holzinger <franz@ttproducts.de>
+    * rename: lib/class.tx_chgallery_extraeval.php -> Classes/UserFunc/ExtraEval.php
+
 2020-07-20 Franz Holzinger <franz@ttproducts.de>
     * rename: pi1/class.tx_chgallery_pi1_wizicon.php -> Classes/Controller/Plugin/WizardIcon.php
     * rename: lib/class.tx_chgallery_tca.php -> Classes/UserFunc/GalleryTca.php
