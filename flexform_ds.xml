@@ -47,14 +47,20 @@
 				<config>
 					<type>input</type>
 					<size>30</size>
-					<eval>trim,tx_chgallery_extraeval</eval>
+                    <eval>trim,JambageCom\Chgallery\UserFunc\ExtraEval</eval>
 					<wizards>
 					<_PADDING>2</_PADDING>
 					<link>
 						<type>popup</type>
 						<title>Folder Selector</title>
 						<icon>link_popup.gif</icon>
-						<script>browse_links.php?mode=wizard&amp;act=folder</script>
+                        <module type="array">
+                            <name>wizard_element_browser</name>
+                            <urlParameters type="array">
+                                <mode>wizard</mode>
+                                <act>folder</act>
+                            </urlParameters>
+                        </module>
 						<params type="array">
 							<blindLinkOptions>page,url,mail,spec,file</blindLinkOptions>
 						</params>
@@ -70,7 +76,7 @@
                     <label>LLL:EXT:chgallery/locallang_db.xml:description</label>
                     <config>
                         <type>user</type>
-                        <userFunc>tx_chgallery_tca->user_chgallerydescr</userFunc>
+                        <userFunc>JambageCom\Chgallery\UserFunc\GalleryTca->descr</userFunc>
                     </config>
                 </TCEforms>
             </description>
@@ -274,7 +280,7 @@
 				<label></label>
 					<config>
 						<type>user</type>
-						<userFunc>tx_chgallery_tca->user_chgallerypreview</userFunc>
+                        <userFunc>JambageCom\Chgallery\UserFunc\GalleryTca->preview</userFunc>
 					</config>
 				</TCEforms>
 			</preview>
