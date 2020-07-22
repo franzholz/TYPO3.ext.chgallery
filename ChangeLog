@@ -1,6 +1,11 @@
 
+
+
+2020-07-22 Franz Holzinger <franz@ttproducts.de>
+    * rename: wizard/index.php -> Classes/Controller/WizardController.php
+
 2020-07-21 Franz Holzinger <franz@ttproducts.de>
-    * rename lib/replaceSpaces.php -> Classes/UserFunc/String.php
+    * rename: lib/replaceSpaces.php -> Classes/UserFunc/String.php
     * replace: script browse_links.php inside of flexform. see https://wiki.typo3.org/Exception/CMS/1437750231.
     * rename: lib/class.tx_chgallery_extraeval.php -> Classes/UserFunc/ExtraEval.php
 
