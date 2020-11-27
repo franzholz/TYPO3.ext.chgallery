@@ -5,8 +5,7 @@
 #  * http://www.cyberhouse.at/
 #  ***************************/ 
 
-# userFunction to replace spaces with %20 to avoid breaking lightboxes 
-includeLibs.chgallery = EXT:chgallery/lib/replaceSpaces.php
+plugin.tx_chgallery_pi1 = USER
 
 plugin.tx_chgallery_pi1 {
 	# general settings
@@ -23,11 +22,13 @@ plugin.tx_chgallery_pi1 {
   categoryOrder = path
   categoryOrderAscDesc = asc
   exif = 1
-  ratings = 1
-  ratings {
-    # config of ratings to override default settings of the ext
-  }
 
+  RATINGS = USER_INT
+  RATINGS {
+    extkey = ratings
+    api = Netcreators\Ratings\Api\Api
+    userFunc = Netcreators\Ratings\Controller\RegisterPluginController->main
+  }
 
 	#################
 	#### SINGLE VIEW 
@@ -126,24 +127,6 @@ plugin.tx_chgallery_pi1 {
 			ATagParams.insertData = 1
 		}
 	}
-	
-	cooliris = 
-	cooliris {
-		link {
-			useCacheHash = 1
-			returnLast = url
-			additionalParams = &type=9713
-			prefix = 
-		}
-		showAllGalleriesInCategory = 0
-		logo = 
-		prefixUrl = 1
-	}
-
-
-	
-
-	
 }
 
 ## Set up page/type number:
@@ -173,31 +156,8 @@ export_chgallery {
     renderObj = COA
     renderObj {
       10 < plugin.tx_chgallery_pi1
-      10.userFunc = tx_chgallery_pi1->xmlFunc
+      10.userFunc = JambageCom\Chgallery\UserFunc\Xml->main
     }
   }  
 }
 
-## Set up page/type number:
-chgallerycooliris >
-chgallerycooliris = PAGE
-chgallerycooliris {
-  typeNum=9713
-  config.disableAllHeaderCode = 1
-  config.metaCharset = utf-8
-  config.additionalHeaders = Content-Type:text/xml;charset=utf-8
-  config.xhtml_cleaning = 0
-  config.admPanel = 0
-  config.sendCacheHeaders = 1
-  config.sendNoCacheHeaders = 1
-
-  ## Inserting the USER cObject for XML rendering
-  10 = RECORDS
-  10 {
-  	tables = tt_content
-  	source.data = GP:tx_chgallery_pi1|ceid
-  	
-  	conf.tt_content < plugin.tx_chgallery_pi1
-  	conf.tt_content.userFunc = tx_chgallery_pi1->cooliris
-  }  
-}

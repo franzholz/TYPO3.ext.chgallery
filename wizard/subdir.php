@@ -23,6 +23,8 @@
 ***************************************************************/
 
 
+use JambageCom\Chgallery\Utility\FalUtility;
+
     // DEFAULT initialization of a module [BEGIN]
 $BACK_PATH = '../../../../typo3/';
 define('TYPO3_MOD_PATH', '../typo3conf/ext/chgallery/wizard/');
@@ -42,7 +44,6 @@ $MCONF['name']='xMOD_tx_chgallery_wizard';
 $MCONF['script']='subdir.php';
 
 require_once ($BACK_PATH.'init.php');
-require_once(t3lib_extMgm::extPath('chgallery').'lib/class.tx_chgallery_utility.php');
 $LANG->includeLLFile('EXT:chgallery/wizard/locallang.xml');
 
     // ....(But no access check here...)
@@ -57,7 +58,8 @@ $LANG->includeLLFile('EXT:chgallery/wizard/locallang.xml');
  * @package    TYPO3
  * @subpackage    tx_chgallery
  */
-
+ 
+ 
 class tx_chgallery_wizard extends t3lib_SCbase {
 
     /**
@@ -130,14 +132,14 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 
 				}
 
-				$dir = $this->getFullDir(PATH_site.$path, $sort);
+				$dir = $this->getFullDir(PATH_site . $path, $sort);
 
 				// get all the images from the directory
 				$fileTypes = 'jpg,gif,png';
-				$imageList = t3lib_div::getFilesInDir(PATH_site.$path, $fileTypes,1,1);
+				$imageList = t3lib_div::getFilesInDir(PATH_site . $path, $fileTypes, 1, 1);
 
 					// oputput of the image list
-				$content.= '<h2>'.sprintf($LANG->getLL('path'), count($dir), $path).'</h2>';
+				$content.= '<h2>' . sprintf($LANG->getLL('path'), count($dir), $path) . '</h2>';
 				$content.= '<table cellpadding="1" cellspacing="1" class="bgColor4" width="100%" id="el">';
 
 				$i=0;
@@ -158,19 +160,19 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 					}
 
 				}
-				$content.='</table>';
+				$content .= '</table>';
 
 
 	#			$content.= '<form  name="editform" id="editform">';
 
-				list($rUri) = explode('#',t3lib_div::getIndpEnv('REQUEST_URI'));
+				list($rUri) = explode('#', t3lib_div::getIndpEnv('REQUEST_URI'));
 					// save the image titles, popup will be closes after submit
 				$content = '
-					<form action="" action="'.htmlspecialchars($rUri).'" method="post" name="editform">
-						'.$content.'
+					<form action="" action="' . htmlspecialchars($rUri) . '" method="post" name="editform">
+						' . $content.'
 						<div id="send" style="margin:5px 10px;">
-							<input type="submit" value="'.$LANG->getLL('save2').'" />
-							<br /><br /><a href="javascript:close();" >'.$LANG->getLL('close').'</a>
+							<input type="submit" value="' . $LANG->getLL('save2') . '" />
+							<br /><br /><a href="javascript:close();" >' . $LANG->getLL('close') . '</a>
 						</div>
 					</form>
 				';
@@ -179,7 +181,7 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 
 
 				// return everything
-			$this->content.=$this->doc->section('',$content,0,1);
+			$this->content.=$this->doc->section('', $content, 0, 1);
     }
 
 
@@ -189,12 +191,12 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 		 * @param string	The file
 		 * @return string	The image-tag
 		 */
-		function getThumbNail($file, $size=100) {
+		function getThumbNail($file, $size = 100) {
 			global $BACK_PATH;
 			return t3lib_BEfunc::getThumbNail($BACK_PATH.'thumbs.php', $file, '', $size);
 		}
 
-	function getFullDir($path, $sort='') {
+	function getFullDir($path, $sort = '') {
 		$dir = t3lib_div::get_dirs($path);
 		$newdir = array();
 
@@ -204,9 +206,9 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 		}
 
 		if (is_array($dir)) {
-			foreach ($dir as $key=>$value) {
-					$newdir[$key]['path']= $path.$value.'/';
-					$newdir[$key]['description'] = $this->getDirDescription($path.$value.'/');
+			foreach ($dir as $key => $value) {
+					$newdir[$key]['path']= $path . $value . '/';
+					$newdir[$key]['description'] = $this->getDirDescription($path . $value . '/');
 
 
 			}
@@ -224,17 +226,17 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 		function checkPath($path) {
 			$path = trim($path);
 
-			$path = tx_chgallery_utility::convertFalPath($path);
+			$path = FalUtility::convertFalPath($path);
 
 			if (!t3lib_div::validPathStr($path)) {
 				return '';
 			}
 
-			if (substr($path,-1)!='/') { // check for needed / at the end
-	      $path =  $path.'/';
+			if (substr($path, -1) != '/') { // check for needed / at the end
+	      $path =  $path . '/';
 			}
 
-			if (substr($path, 0, 1) =='/') { // check for / at the beginning
+			if (substr($path, 0, 1) == '/') { // check for / at the beginning
 				$path = substr($path, 1, -1);
 			}
 
@@ -243,7 +245,7 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 
 
 	function getDirDescription($path) {
-		$file = $path.'info'.$this->languagePrefix.'.txt';
+		$file = $path . 'info' . $this->languagePrefix . '.txt';
 		if (is_file($file)) {
 			$text = file_get_contents($file);
 		}
@@ -257,11 +259,11 @@ class tx_chgallery_wizard extends t3lib_SCbase {
      */
     function menuConfig()    {
         global $LANG;
-        $this->MOD_MENU = Array (
-            'function' => array (
+        $this->MOD_MENU = [
+            'function' => [
                 '1' => $LANG->getLL('function1'),
-            )
-        );
+            ]
+        ];
         parent::menuConfig();
     }
 
@@ -351,7 +353,7 @@ class tx_chgallery_wizard extends t3lib_SCbase {
             $this->moduleContent();
 
         }
-        $this->content.=$this->doc->spacer(10);
+        $this->content .= $this->doc->spacer(10);
     }
 
     /**
@@ -360,7 +362,7 @@ class tx_chgallery_wizard extends t3lib_SCbase {
      * @return    [type]        ...
      */
     function printContent()    {
-        $this->content.=$this->doc->endPage();
+        $this->content .= $this->doc->endPage();
         echo $this->content;
     }
 }

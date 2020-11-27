@@ -1,5 +1,8 @@
 
 
+2020-11-27 Franz Holzinger <franz@ttproducts.de>
+    * works under TYPO3 9.5
+    * remove piclens and cooliris
 
 2020-07-22 Franz Holzinger <franz@ttproducts.de>
     * rename: wizard/index.php -> Classes/Controller/WizardController.php

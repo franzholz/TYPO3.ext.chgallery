@@ -11,7 +11,7 @@ plugin.tx_chgallery_pi1.gallery.image {
 				file.maxW = 800
 				file.maxH = 600
 				
-				stdWrap.postUserFunc = user_replaceSpaces
+				stdWrap.postUserFunc = JambageCom\Chgallery\UserFunc\String->replaceSpaces
 			}
 
 			# used lightbox is pmkslimbox

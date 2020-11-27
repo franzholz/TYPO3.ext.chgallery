@@ -1,0 +1,53 @@
+{
+  "name": "jambagecom/chgallery",
+  "type": "typo3-cms-extension",
+  "description": "simple gallery, show all images of a directory",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "gallery",
+    "pagebrowser",
+    "lightbox",
+    "ratings"
+  ],
+  "support": {
+    "issues": "https://jambage.com/kontakt/forum.html"
+  },
+  "homepage": "https://jambage.com",
+  "authors": [
+    {
+        "name": "Georg Ringer",
+        "role": "Developer"
+    },
+    {
+      "name": "Franz Holzinger",
+      "role": "Developer",
+      "homepage": "https://ttproducts.de"
+    }
+  ],
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "require": {
+    "php": ">=5.5.0,<=7.3.99",
+    "typo3/cms-core": ">=9.5.0,<=9.5.99",
+    "jambagecom/div2007": ">=1.10.33"
+  },
+  "autoload": {
+    "psr-4": {
+      "JambageCom\\Chgallery\\": "Classes"
+    },
+    "classmap": [
+      "pi1"
+    ]
+  },
+  "replace": {
+    "jambagecom/chgallery": "self.version",
+    "typo3-ter/chgallery": "self.version"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "chgallery"
+    }
+  }
+}
