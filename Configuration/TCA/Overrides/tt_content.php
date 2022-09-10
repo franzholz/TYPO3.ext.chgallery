@@ -7,7 +7,7 @@ call_user_func(function () {
 
     $listType = CHGALLERY_EXT . '_pi1';
 
-    $GLOBALS['TCA'][$table]['types']['list']['subtypes_excludelist'][$listType]='layout,select_key,pages';
+    $GLOBALS['TCA'][$table]['types']['list']['subtypes_excludelist'][$listType]='layout,pages';
 
     $GLOBALS['TCA'][$table]['types']['list']['subtypes_addlist'][$listType] = 'pi_flexform';    
     
