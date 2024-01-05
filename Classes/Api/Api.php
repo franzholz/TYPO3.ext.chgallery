@@ -647,7 +647,6 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         // create the links for the pagebrowser
         $linkConf = $conf['link.'];
         $linkConf['parameter'] = $this->getLinkParameter();
-        $linkConf['useCacheHash'] = 1;
         $linkConf['additionalParams'] = $linkToDir;
 
         // first
@@ -779,7 +778,6 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
                     $imageConf['stdWrap.']['typolink.']['additionalParams'] .=  '&tx_chgallery_pi1[pointer]=' . $pb;
                 }
                 $imageConf['stdWrap.']['typolink.']['parameter'] = $GLOBALS['TSFE']->id;
-                $imageConf['stdWrap.']['typolink.']['useCacheHash'] = 1;
                 unset($imageConf['imageLinkWrap']);
             }
 

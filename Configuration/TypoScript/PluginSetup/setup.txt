@@ -75,9 +75,8 @@ plugin.tx_chgallery_pi1 {
 		image {
 			file.maxW = 100
 		}
-		
+
 		link {
-			useCacheHash = 1
 		}
 		
 		date {

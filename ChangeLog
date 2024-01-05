@@ -1,3 +1,6 @@
+2023-07-29 Franz Holzinger <franz@ttproducts.de>
+    * remove configuration parameter useCacheHash from all links.
+
 2022-09-10  Franz Holzinger  <franz@ttproducts.de>
     * compatibility TYPO3 8.7: deprecation no 77934: The field `select_key` of the table `tt_content` is not used in the core and has been removed.
 
