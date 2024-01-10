@@ -143,7 +143,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
      * @param string|array &$customMessages Custom messages
      * @return bool Whether everything went smoothly or not
      */
-    public function performUpdate(array &$dbQueries, &$customMessages)
+    public function performUpdate(array &$dbQueries, &$customMessages): bool
     {
         $dbQueries = [];
         $customMessages = [];
