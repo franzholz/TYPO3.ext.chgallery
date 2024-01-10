@@ -16,29 +16,29 @@ namespace JambageCom\Chgallery\Utility;
  */
 
 
-class FalUtility {
-
-	/**
-	 * If the given path is a FAL path and the storage is local, then the basepath is appended to the path
-	 * so it can be used with general file functions in this extension.
-	 *
-	 * @param $path
-	 * @return string
-	 */
-	public static function convertFalPath($path) {
-		if (preg_match('/^file:(\d+):(.*)$/', $path, $matches)) {
-			/** @var $storageRepository \TYPO3\CMS\Core\Resource\StorageRepository */
-			$storageRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\StorageRepository');
-			/** @var $storage \TYPO3\CMS\Core\Resource\ResourceStorage */
-			$storage = $storageRepository->findByUid(intval($matches[1]));
-			$storageRecord = $storage->getStorageRecord();
-			$storageConfiguration = $storage->getConfiguration();
-			if ($storageRecord['driver'] === 'Local') {
-				$basePath = rtrim($storageConfiguration['basePath'], '/') . '/';
-				$path = $basePath . substr($matches[2], 1);
-			}
-		}
-		return $path;
-	}
+class FalUtility
+{
+    /**
+     * If the given path is a FAL path and the storage is local, then the basepath is appended to the path
+     * so it can be used with general file functions in this extension.
+     *
+     * @param $path
+     * @return string
+     */
+    public static function convertFalPath($path)
+    {
+        if (preg_match('/^file:(\d+):(.*)$/', $path, $matches)) {
+            /** @var $storageRepository \TYPO3\CMS\Core\Resource\StorageRepository */
+            $storageRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\StorageRepository');
+            /** @var $storage \TYPO3\CMS\Core\Resource\ResourceStorage */
+            $storage = $storageRepository->findByUid(intval($matches[1]));
+            $storageRecord = $storage->getStorageRecord();
+            $storageConfiguration = $storage->getConfiguration();
+            if ($storageRecord['driver'] === 'Local') {
+                $basePath = rtrim($storageConfiguration['basePath'], '/') . '/';
+                $path = $basePath . substr($matches[2], 1);
+            }
+        }
+        return $path;
+    }
 }
-

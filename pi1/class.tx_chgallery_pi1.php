@@ -22,7 +22,6 @@ use JambageCom\Chgallery\Domain\Composite;
 
 use JambageCom\Chgallery\Utility\FalUtility;
 
-
 /**
 * Plugin 'Simple gallery' for the 'chgallery' extension.
 *
@@ -30,7 +29,8 @@ use JambageCom\Chgallery\Utility\FalUtility;
 * @package	TYPO3
 * @subpackage	tx_chgallery
 */
-class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
+class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
+{
     public $prefixId      = 'tx_chgallery_pi1';		// Same as class name
     public $scriptRelPath = 'pi1/class.tx_chgallery_pi1.php';	// Path to this script relative to the extension dir.
     public $extKey        = CHGALLERY_EXT;	// The extension key.
@@ -44,7 +44,8 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
     * @param	array		$conf: The PlugIn configuration
     * @return	The content that is displayed on the website
     */
-    public function main($content, $conf)	{
+    public function main($content, $conf)
+    {
         $composite = $this->init($content, $conf);
         $config = $composite->getConfig();
 
@@ -60,7 +61,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
         return $this->pi_wrapInBaseClass($content);
     }
 
-    public function init (&$content, $conf)
+    public function init(&$content, $conf)
     {
         $initialization = GeneralUtility::makeInstance(
             \JambageCom\Chgallery\Controller\InitializationController::class
@@ -83,7 +84,8 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
     *
     * @return	single image view
     */
-    public function getSingleView(Composite $composite) {
+    public function getSingleView(Composite $composite)
+    {
         $api = GeneralUtility::makeInstance(Api::class);
         $templateService = GeneralUtility::makeInstance(MarkerBasedTemplateService::class);
         $conf = $composite->getConf();
@@ -106,7 +108,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
             $imgPos = ($config['exclude1stImg'] == 0) ? $singleImage - 1 : $singleImage;
 
             $markerArray = $this->getSingleImageSlice($this->cObj, $tagArray, $imageList, $conf['single.'], $imgPos, $conf['exif'], $conf['RATINGS'], $conf['RATINGS.']);
-        // get the single image from GALLERY view
+            // get the single image from GALLERY view
         } else {
             $imageList = $api->getImagesOfDir($conf['fileTypes'], $config['path']); // get all imgs of the dir
             $markerArray = $this->getSingleImageSlice($this->cObj, $tagArray, $imageList, $conf['single.'], $singleImage - 1, $conf['exif'], $conf['RATINGS'], $conf['RATINGS.']);
@@ -127,9 +129,11 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
             $override['single'] = $singleImage - 1;
 
             // check if previous image is on the previous page
-            if ( $override['single'] / $config['pagebrowser'] <= $this->piVars['pointer']   ) {
+            if ($override['single'] / $config['pagebrowser'] <= $this->piVars['pointer']) {
                 $override['pointer'] = $override['pointer'] - 1;
-                if ($override['pointer'] == 0) $override['pointer'] = ''; // if value 0, set it to '' to avoid showing 0 in the url
+                if ($override['pointer'] == 0) {
+                    $override['pointer'] = '';
+                } // if value 0, set it to '' to avoid showing 0 in the url
             }
 
             // change param array to string
@@ -151,7 +155,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 
             // check if next image is on the next page
             $pointer = ($this->piVars['pointer'] == 0) ? 1 : $this->piVars['pointer'];
-            if (($override['single'] / $config['pagebrowser']) > $pointer ) {
+            if (($override['single'] / $config['pagebrowser']) > $pointer) {
                 $override['pointer'] = $override['pointer'] + 1;
             }
 
@@ -182,14 +186,15 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
     *
     * @return	The list
     */
-    public function getCategoryView(Composite $composite) {
+    public function getCategoryView(Composite $composite)
+    {
         $api = GeneralUtility::makeInstance(Api::class);
         $templateService = GeneralUtility::makeInstance(MarkerBasedTemplateService::class);
         $conf = $composite->getConf();
         $config = $composite->getConfig();
         $languageObj = $api->getLanguageObj();
         $template['total'] = $templateService->getSubpart($composite->getTemplateCode(), '###TEMPLATE_LIST###');
-        $template['item'] = $templateService->getSubpart($template['total'],  '###ITEM###');
+        $template['item'] = $templateService->getSubpart($template['total'], '###ITEM###');
 
         foreach ($config['subfolders'] as $key => $value) {
             // generall markers
@@ -201,7 +206,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 
             // preview image
             $imgageConf = $conf['category.']['image.'];
-            $imgageConf['file'] = $api->getImagesOfDir($conf['fileTypes'],$value['path'], true);
+            $imgageConf['file'] = $api->getImagesOfDir($conf['fileTypes'], $value['path'], true);
             $markerArray['###IMAGE###'] =  $this->cObj->getContentObject('IMAGE')->render($imgageConf);
 
             // create the link to the dir
@@ -216,7 +221,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
             $content_item .= $templateService->substituteMarkerArrayCached($template['item'], $markerArray, $array, $wrappedSubpartArray);
         }
 
-    // put everything into the template
+        // put everything into the template
         $subpartArray['###CONTENT###'] = $content_item;
         $content .= $templateService->substituteMarkerArrayCached($template['total'], $markerArray, $subpartArray);
         return $content;
@@ -228,11 +233,12 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
     *
     * @return	Whole gallery
     */
-    public function getGalleryView(Composite $composite) {
+    public function getGalleryView(Composite $composite)
+    {
         $config = $composite->getConfig();
         $api = GeneralUtility::makeInstance(Api::class);
 
-            // if page browser needs to be used
+        // if page browser needs to be used
         if (!isset($this->piVars['pointer'])) {
             $pb = 0 ;
         } else {
@@ -247,5 +253,3 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
         return $content;
     }
 }
-
-

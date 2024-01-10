@@ -2,15 +2,15 @@
 
 namespace JambageCom\Chgallery\UserFunc;
 
-class ExtraEval {
-
+class ExtraEval
+{
     /**
      * JavaScript code for client side validation/evaluation
      *
      * @return string JavaScript code for client side validation/evaluation
      */
-     public function returnFieldJS()
-     {
+    public function returnFieldJS()
+    {
         return 'if (value.length==0) return value;
                         else {
                             if (value.charAt(0)=="/") value = value.slice(1,value.length);
@@ -27,11 +27,11 @@ class ExtraEval {
      * @param string $is_in The "is_in" value of the field configuration from TCA
      * @param bool $set Boolean defining if the value is written to the database or not.
      * @return string Evaluated field value
-     */    
-     public function evaluateFieldValue($value, $is_in, &$set)
-     {
+     */
+    public function evaluateFieldValue($value, $is_in, &$set)
+    {
         $value = trim($value);
-        
+
         if ($value == '') {
             return $value;
         }
@@ -39,12 +39,11 @@ class ExtraEval {
         if (substr($value, -1, 1) != '/') { // check for needed / at the end
             $value =  $value . '/';
         }
-        
+
         if (substr($value, 0, 1) == '/') { // check for / at the beginning
             $patßh = substr($value, 1, strlen($value));
         }
-        
-        return $value;	
+
+        return $value;
     }
 }
-

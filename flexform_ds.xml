@@ -90,16 +90,16 @@
             <cols>40</cols>
             <rows>5</rows>
 
-						<wizards>
-						<_PADDING>2</_PADDING>
-						<link>
-							<type>popup</type>
-							<title>Subdir Description Wizard</title>
-							<icon>EXT:chgallery/wizard/wizard.gif</icon>
-							<script>EXT:chgallery/wizard/subdir.php</script>
-							<JSopenParams>height=600,width=550,status=1,menubar=1,scrollbars=1</JSopenParams>
-						</link>
-						</wizards>
+                <wizards>
+                <_PADDING>2</_PADDING>
+                <link>
+                    <type>popup</type>
+                    <title>Subdir Description Wizard</title>
+                    <icon>EXT:chgallery/wizard/wizard.gif</icon>
+                    <script>EXT:chgallery/wizard/subdir.php</script>
+                    <JSopenParams>height=600,width=550,status=1,menubar=1,scrollbars=1</JSopenParams>
+                </link>
+                </wizards>
 
           </config>
         </TCEforms>

@@ -1,4 +1,5 @@
 <?php
+
 namespace JambageCom\Chgallery\Updates;
 
 /*
@@ -30,10 +31,6 @@ use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 use TYPO3\CMS\Install\Service\UpgradeWizardsService;
 
-
-
-
-
 /**
  * Migrate Ratings Reference
  *
@@ -49,15 +46,15 @@ use TYPO3\CMS\Install\Service\UpgradeWizardsService;
  * If you do not execute this update script, this has the effect that all your ratings to the images will not work any more.
  *
  */
- 
-class MigrateRatingsReferenceUpdater implements  UpgradeWizardInterface, ConfirmableInterface, ChattyInterface
-{
-    const TABLE_NAMES = '"tx_ratings_data" and "tx_ratings_iplog"';
-    const TABLES = 'tx_ratings_data,tx_ratings_iplog';
 
-     /**
-     * @var OutputInterface
-     */
+class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, ConfirmableInterface, ChattyInterface
+{
+    public const TABLE_NAMES = '"tx_ratings_data" and "tx_ratings_iplog"';
+    public const TABLES = 'tx_ratings_data,tx_ratings_iplog';
+
+    /**
+    * @var OutputInterface
+    */
     protected $output;
 
     /**
@@ -139,7 +136,7 @@ class MigrateRatingsReferenceUpdater implements  UpgradeWizardInterface, Confirm
 
         return $result;
     }
-    
+
     /**
      * Performs the accordant updates.
      *
@@ -147,7 +144,7 @@ class MigrateRatingsReferenceUpdater implements  UpgradeWizardInterface, Confirm
      * @param string|array &$customMessages Custom messages
      * @return bool Whether everything went smoothly or not
      */
-    public function performUpdate (array &$dbQueries, &$customMessages)
+    public function performUpdate(array &$dbQueries, &$customMessages)
     {
         $dbQueries = [];
         $customMessages = [];
@@ -178,8 +175,7 @@ class MigrateRatingsReferenceUpdater implements  UpgradeWizardInterface, Confirm
                     $count++;
                     $file = $resourceFactory->getObjectFromCombinedIdentifier($storageUid . ':' . $fileName);
                     $updateRow['reference'] = CHGALLERY_EXT . '_' . $file->getUid();
-                }
-                catch (\TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException $e) {
+                } catch (\TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException $e) {
                     // Not found
                     if ($k == 0) {
                         $customMessages[] = 'file not found: "' . $fileName . '"';
@@ -217,7 +213,7 @@ class MigrateRatingsReferenceUpdater implements  UpgradeWizardInterface, Confirm
      *
      * @return count of found rows
      */
-    protected function getUpdatableReferencesCount () : int
+    protected function getUpdatableReferencesCount(): int
     {
         $result = 0;
         $tables = explode(',', static::TABLES);
@@ -284,4 +280,3 @@ class MigrateRatingsReferenceUpdater implements  UpgradeWizardInterface, Confirm
         ];
     }
 }
-

@@ -23,8 +23,8 @@ namespace JambageCom\Chgallery\Domain;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-
-class Composite implements \TYPO3\CMS\Core\SingletonInterface {
+class Composite implements \TYPO3\CMS\Core\SingletonInterface
+{
     protected $cObj;       // The backReference to the mother cObj object set at call time
     protected $prefixId;
     protected $conf = [];
@@ -34,64 +34,63 @@ class Composite implements \TYPO3\CMS\Core\SingletonInterface {
     protected $templateCode = '';
 
 
-    public function setCObj ($value)
+    public function setCObj($value)
     {
         $this->cObj = $value;
     }
 
-    public function getCObj ()
+    public function getCObj()
     {
         return $this->cObj;
     }
 
-    public function setPrefixId ($value)
+    public function setPrefixId($value)
     {
         $this->prefixId = $value;
     }
 
-    public function getPrefixId ()
+    public function getPrefixId()
     {
         return $this->prefixId;
     }
 
-    public function setPiVars ($value)
+    public function setPiVars($value)
     {
         $this->piVars = $value;
     }
 
-    public function getPiVars ()
+    public function getPiVars()
     {
         return $this->piVars;
     }
 
-    public function setConf ($value)
+    public function setConf($value)
     {
         $this->conf = $value;
     }
 
-    public function getConf ()
+    public function getConf()
     {
         return $this->conf;
     }
 
-    public function setConfig ($value)
+    public function setConfig($value)
     {
         $this->config = $value;
     }
 
-    public function getConfig ()
+    public function getConfig()
     {
         return $this->config;
     }
 
-    public function setTemplateCode ($value)
+    public function setTemplateCode($value)
     {
         $this->templateCode = $value;
     }
 
-    public function getTemplateCode ()
+    public function getTemplateCode()
     {
         return $this->templateCode;
     }
 }
-

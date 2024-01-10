@@ -40,10 +40,8 @@ use JambageCom\Div2007\Utility\ControlUtility;
 
 use JambageCom\Chgallery\Domain\Composite;
 
-
 class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
 {
-
     /**
     * does the initialization stuff
     *
@@ -52,15 +50,14 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
     * @param		string		  configuration array
     * @return	  boolean  false in error case, true if successfull
     */
-    public function init (
+    public function init(
         &$composite,
         array &$piVars,
         &$content,
         array &$conf,
         ContentObjectRenderer $cObj,
         $prefixId
-    )
-    {    
+    ) {
         if (!ExtensionManagementUtility::isLoaded('div2007')) {
             $content = 'Error in Chgallery Extension(' . CHGALLERY_EXT . '): Extension div2007 has not been loaded.';
             return false;
@@ -73,7 +70,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
         // *** getting configuration values:
         // *************************************
         $composite->setPrefixId($prefixId);
-    
+
         $languageObj = GeneralUtility::makeInstance(\JambageCom\Chgallery\Api\Localization::class);
         $languageObj->init(
             CHGALLERY_EXT,
@@ -93,7 +90,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
             $cObj,
             $conf
         ); // Set default piVars from TS
-        
+
         $cObj->data['pi_flexform'] =
             GeneralUtility::xml2array($cObj->data['pi_flexform']);
 
@@ -101,7 +98,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
         foreach($piVars as $key => $value) {
             $piVars[$key] = intval($value);
         }
-        
+
         // add the flexform values
         $config['show']			= strtoupper($this->getFlexform($cObj, $conf, '', 'show', 'mode'));
         $config['path']		 	= $api->checkPath($this->getFlexform($cObj, $conf, '', 'path', 'path'));
@@ -126,7 +123,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
         $absoluteFileName = $GLOBALS['TSFE']->tmpl->getFileName($template);
         $templateCode = file_get_contents($absoluteFileName);
         $composite->setTemplateCode($templateCode);
-       
+
         if (isset($conf['pathToCSS']) && $conf['pathToCSS'] != '') {
             $pathToCSS = $GLOBALS['TSFE']->tmpl->getFileName($conf['pathToCSS']);
             if ($pathToCSS != '') {
@@ -134,11 +131,11 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
             }
         }
 
-            // Ajax used? Embed js
+        // Ajax used? Embed js
         if ($conf['ajax'] == 1) {
-            $GLOBALS['TSFE']->additionalHeaderData['chgallery'] .= $this->getPath($conf['pathToMootools']) ?  '<script src="' . $GLOBALS['TSFE']->tmpl->getFileName($conf['pathToMootools']) . '" type="text/javascript"></script>' :'';
+            $GLOBALS['TSFE']->additionalHeaderData['chgallery'] .= $this->getPath($conf['pathToMootools']) ? '<script src="' . $GLOBALS['TSFE']->tmpl->getFileName($conf['pathToMootools']) . '" type="text/javascript"></script>' : '';
         }
-        
+
         if ($conf['exif'] == 1 && !extension_loaded('exif')) {
             $conf['exif'] = 0;
         }
@@ -158,7 +155,8 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
     * @param	string		$confOverride: The value of TS for an override
     * @return	string	The value of the locallang.xml
     */
-    public function getFlexform ($cObj, $conf, $sheet, $key, $confOverride = '') {
+    public function getFlexform($cObj, $conf, $sheet, $key, $confOverride = '')
+    {
         // Default sheet is sDEF
         $sheet = ($sheet == '') ? $sheet = 'sDEF' : $sheet;
         $flexform =
@@ -179,7 +177,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
                 $value = $cObj->stdWrap($value, $conf[$confOverride . '.']);
             } elseif (count($tsparts) == 2) { // 1 sub array
                 $value = $flexform ? $flexform : $conf[$tsparts[0] . '.'][$tsparts[1]];
-                $value = $cObj->stdWrap($value,$conf[$tsparts[0] . '.'][$tsparts[1] . '.']);
+                $value = $cObj->stdWrap($value, $conf[$tsparts[0] . '.'][$tsparts[1] . '.']);
             }
 
             return $value;
@@ -193,7 +191,8 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
     * @param	string		$path: Path of the dir
     * @return	array with the images, the dir title/descriptin
     */
-    public function getFullDir($fileTypes, $path, array $config) {
+    public function getFullDir($fileTypes, $path, array $config)
+    {
         $api = GeneralUtility::makeInstance(Api::class);
         $dir = GeneralUtility::get_dirs($path);
         $newdir = array();
@@ -202,7 +201,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
 
         if(is_array($dir) && !empty($dir)) {
 
-    // sort directories in ascending order to assure appropriate category title and description assignment
+            // sort directories in ascending order to assure appropriate category title and description assignment
             array_multisort($dir, SORT_ASC, SORT_STRING);
 
             foreach ($dir as $key => $value) {
@@ -229,8 +228,8 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
 
             // sorting of categories
             $sort_arr = array();
-                foreach($newdir as $uniqid => $row){
-                foreach($row as $key => $value){
+            foreach($newdir as $uniqid => $row) {
+                foreach($row as $key => $value) {
                     $sort_arr[$key][$uniqid] = $value;
                 }
             }
@@ -238,7 +237,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
             $sort = ($config['categoryOrderAscDesc'] == 'asc') ? SORT_ASC : SORT_DESC;
 
             // check for old settings
-            if (array_key_exists($config['categoryOrder'], array('asc' => 1, 'desc' => 1, 'dateasc' =>1, 'datedesc' => 1))) {
+            if (array_key_exists($config['categoryOrder'], array('asc' => 1, 'desc' => 1, 'dateasc' => 1, 'datedesc' => 1))) {
                 $config['categoryOrder'] = 'path';
             }
 
@@ -249,4 +248,3 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
     }
 
 }
-

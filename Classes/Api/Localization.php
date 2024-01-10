@@ -15,9 +15,7 @@ namespace JambageCom\Chgallery\Api;
  * The TYPO3 project - inspiring people to share!
  */
 
- 
-class Localization extends \JambageCom\Div2007\Base\TranslationBase implements \TYPO3\CMS\Core\SingletonInterface {
 
+class Localization extends \JambageCom\Div2007\Base\TranslationBase implements \TYPO3\CMS\Core\SingletonInterface
+{
 }
-
-

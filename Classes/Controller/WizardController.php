@@ -1,4 +1,5 @@
 <?php
+
 namespace JambageCom\Chgallery\Controller;
 
 /*
@@ -32,8 +33,6 @@ use TYPO3\CMS\Lang\LanguageService;
 
 use JambageCom\Chgallery\Utility\FalUtility;
 
-
-
 /**
 * chgallery module tx_chgallery_image_aassawiz0
 *
@@ -43,7 +42,8 @@ use JambageCom\Chgallery\Utility\FalUtility;
 */
 
 
-class WizardController {
+class WizardController
+{
     /**
     * Loaded with the global array $MCONF which holds some module configuration from the conf.php file of backend modules.
     *
@@ -170,7 +170,8 @@ class WizardController {
      */
     public $sectionFlag = 0;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->getLanguageService()->includeLLFile('EXT:' . CHGALLERY_EXT . '/wizard/locallang.xml');
         $this->getBackendUser()->modAccess($GLOBALS['MCONF'], true);
     }
@@ -202,8 +203,8 @@ class WizardController {
     */
     protected function menuConfig()
     {
-        $this->MOD_MENU = array (
-            'function' => array (
+        $this->MOD_MENU = array(
+            'function' => array(
                 '1' => $this->getLanguageService()->getLL('function1'),
             )
         );
@@ -314,133 +315,136 @@ class WizardController {
     *
     * @return  string the wizards content
     */
-    public function moduleContent()    {
-            $vars = GeneralUtility::_GET('P');
+    public function moduleContent()
+    {
+        $vars = GeneralUtility::_GET('P');
 
-            // error checks
-            $error = array();
-            // check if CE has been saved once!
-            if (intval($vars['uid']) == 0) {
-                $error[] = $this->getLanguageService()->getLL('error-neversavesd');
-            } else {
-                $tableName = 'tt_content';
-                $queryBuilder = $this->getQueryBuilder($tableName);
-                $queryBuilder->setRestrictions(GeneralUtility::makeInstance(
-                    \TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class)
-                );
-                    // get the single record
-                $rows = $queryBuilder
-                    ->select('uid', 'sys_language_uid', 'pi_flexform')
-                    ->from($tableName)
-                    ->where(
-                        $queryBuilder->expr()->eq(
-                            'uid',
-                            $queryBuilder->createNamedParameter(
-                                intval($vars['uid']),
-                                \PDO::PARAM_INT
-                            )
+        // error checks
+        $error = array();
+        // check if CE has been saved once!
+        if (intval($vars['uid']) == 0) {
+            $error[] = $this->getLanguageService()->getLL('error-neversavesd');
+        } else {
+            $tableName = 'tt_content';
+            $queryBuilder = $this->getQueryBuilder($tableName);
+            $queryBuilder->setRestrictions(
+                GeneralUtility::makeInstance(
+                    \TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class
+                )
+            );
+            // get the single record
+            $rows = $queryBuilder
+                ->select('uid', 'sys_language_uid', 'pi_flexform')
+                ->from($tableName)
+                ->where(
+                    $queryBuilder->expr()->eq(
+                        'uid',
+                        $queryBuilder->createNamedParameter(
+                            intval($vars['uid']),
+                            \PDO::PARAM_INT
                         )
                     )
-                    ->setMaxResults(1)
-                    ->execute()
-                    ->fetchAll();
+                )
+                ->setMaxResults(1)
+                ->execute()
+                ->fetchAll();
 
-                if (is_array($rows) && !empty($rows)) {
-                    $row = $rows['0'];
-                }
-                
-                // get a lanuage prefix for the description
-                $this->languagePrefix = ($row['sys_language_uid'] > 0) ? '-'.$row['sys_language_uid'] : '';
-
-                // read the flexform settings and transform it to array
-                $flexformArray = GeneralUtility::xml2array($row['pi_flexform']);
-                $flexformArray = $flexformArray['data']['sDEF']['lDEF'];
-
-                    // get all the infos we need
-                $path 					= $this->checkPath(trim($flexformArray['path']['vDEF']));
-                $pagebrowser 			= $flexformArray['pagebrowser']['vDEF'];
-                $show				 	= $flexformArray['show']['vDEF'];
+            if (is_array($rows) && !empty($rows)) {
+                $row = $rows['0'];
             }
-            
-            if ($path == '') {
-                $error[] = $this->getLanguageService()->getLL('error-path');
-            } 
-            
-            // any error occured?
-            if (count($error) > 0) {
-                foreach ($error as $single) {
+
+            // get a lanuage prefix for the description
+            $this->languagePrefix = ($row['sys_language_uid'] > 0) ? '-'.$row['sys_language_uid'] : '';
+
+            // read the flexform settings and transform it to array
+            $flexformArray = GeneralUtility::xml2array($row['pi_flexform']);
+            $flexformArray = $flexformArray['data']['sDEF']['lDEF'];
+
+            // get all the infos we need
+            $path 					= $this->checkPath(trim($flexformArray['path']['vDEF']));
+            $pagebrowser 			= $flexformArray['pagebrowser']['vDEF'];
+            $show				 	= $flexformArray['show']['vDEF'];
+        }
+
+        if ($path == '') {
+            $error[] = $this->getLanguageService()->getLL('error-path');
+        }
+
+        // any error occured?
+        if (count($error) > 0) {
+            foreach ($error as $single) {
                 $errors .= '<li>' . $single . '</li>';
             }
-                $content .= '<h2>' . $this->getLanguageService()->getLL('error-header') . '</h2>
+            $content .= '<h2>' . $this->getLanguageService()->getLL('error-header') . '</h2>
                                         <div style="padding:10px;margin:10px;border:1px solid darkorange;font-style:bold;">
                                             <ul>' . $errors . '</ul>
                                         </div>	
                                         <a href="javascript:close();">' . $this->getLanguageService()->getLL('close') . '</a>
-                '; 
-            } else {
-                // get all the images from the directory
-                $fileTypes = 'jpg,gif,png';
-                                
-#				$imageList = GeneralUtility::getFilesInDir(PATH_site.$path, $fileTypes,1,1);
-                $imageList = GeneralUtility::getAllFilesAndFoldersInPath (array(), PATH_site.$path, $fileTypes, 0, 1);
+                ';
+        } else {
+            // get all the images from the directory
+            $fileTypes = 'jpg,gif,png';
 
-                // correct sorting
-                array_multisort($imageList, SORT_ASC);
+            #				$imageList = GeneralUtility::getFilesInDir(PATH_site.$path, $fileTypes,1,1);
+            $imageList = GeneralUtility::getAllFilesAndFoldersInPath(array(), PATH_site.$path, $fileTypes, 0, 1);
 
-                $content .= '<h2>'.sprintf($this->getLanguageService()->getLL('images'), count($imageList), $path).'</h2>' . $this->getLanguageService()->getLL('description');				
-        /*
-        * save
-        */	       
-                $this->save($imageList);
-                
-                // create the textarea & preview for every image
-                $i = 0;
-                $directoryList = array();	
-                foreach ($imageList as $key => $singleImage) {
-                    $fileName = str_replace(PATH_site, '', $singleImage);
-                    $directory = dirname(str_replace($path, '', $fileName));
-                    $thumbNailName = str_replace('fileadmin', '', $fileName);
-                    $thumb = $this->getThumbNail($thumbNailName, 100);
-                    if ($show != 'LIST') {
-                        $fileName =  basename($singleImage);
-                        $directory = $path;
-                    } 
-                    $desc = $this->getSingleDescription($singleImage);
-                    if ($directory != '.') {
-                        $directoryList[$directory] .= '<tr class="' . ( $i++ % 2==0 ? 'bgColor3' : 'bgColor4').'">
+            // correct sorting
+            array_multisort($imageList, SORT_ASC);
+
+            $content .= '<h2>'.sprintf($this->getLanguageService()->getLL('images'), count($imageList), $path).'</h2>' . $this->getLanguageService()->getLL('description');
+            /*
+            * save
+            */
+            $this->save($imageList);
+
+            // create the textarea & preview for every image
+            $i = 0;
+            $directoryList = array();
+            foreach ($imageList as $key => $singleImage) {
+                $fileName = str_replace(PATH_site, '', $singleImage);
+                $directory = dirname(str_replace($path, '', $fileName));
+                $thumbNailName = str_replace('fileadmin', '', $fileName);
+                $thumb = $this->getThumbNail($thumbNailName, 100);
+                if ($show != 'LIST') {
+                    $fileName =  basename($singleImage);
+                    $directory = $path;
+                }
+                $desc = $this->getSingleDescription($singleImage);
+                if ($directory != '.') {
+                    $directoryList[$directory] .= '<tr class="' . ($i++ % 2 == 0 ? 'bgColor3' : 'bgColor4').'">
                                                     <td align="center">' . $thumb . '</td>
                                                     <td>#' . $i . ': <strong>' . $fileName . '</strong><br /><br />
                                                             <textarea style="width:330px;" rows="2"  name="dir[' . $key . ']">' . $desc . '</textarea></td>
                                                 </tr>';
-                        
-                            // display a cutting line to show where a new page would begin
-                        if ($pagebrowser > 0 && $i%$pagebrowser == 0) {
+
+                    // display a cutting line to show where a new page would begin
+                    if ($pagebrowser > 0 && $i % $pagebrowser == 0) {
                         $directoryList[$directory] .= '<tr>
                                                     <td colspan="2" align="center"><strong>- - - - - - - - - - - - &#9985; - - - - - - - - - - - - - - - - - - - &#9985; - - - - - - - - - - - -</strong></td>
                                                 </tr>';
-                        }
                     }
-    
                 }
-                
-                // ouput every directory including a header to toggle all images of the directory
-                $i = 0;
-                $hide = ($show == 'LIST') ? 'none' : 'block';				
-                foreach ($directoryList as $key => $value) {
-                    $content.= '<div onclick="toggle(\'item'.$i.'\')" style="font:weight:bold;cursor:pointer;background:#ccc;border:1px solid #333;margin-top:10px;padding:2px 5px;">
+
+            }
+
+            // ouput every directory including a header to toggle all images of the directory
+            $i = 0;
+            $hide = ($show == 'LIST') ? 'none' : 'block';
+            foreach ($directoryList as $key => $value) {
+                $content .= '<div onclick="toggle(\'item'.$i.'\')" style="font:weight:bold;cursor:pointer;background:#ccc;border:1px solid #333;margin-top:10px;padding:2px 5px;">
                                                 <span style="margin:0 10px 0 5px;font-weight:bold;" id="icon' . $i . '">+</span>' . $key . '
                                             </div>
                                             <div id="item' . $i . '" style="border:1px solid #ccc;padding:0px;margin:5px;display:' . $hide . ';">
                                             <table cellpadding="1" cellspacing="1" class="bgColor4" width="100%" id="el">
                                             ' . $value . '
-                                            </table></div>';	
-                                            $i++;	
-                }				
+                                            </table></div>';
+                $i++;
+            }
 
-                // wrap the form around				
-                list($rUri) = explode('#',GeneralUtility::getIndpEnv('REQUEST_URI'));				
-                    // save the image titles, popup will be closes after submit
-                $content = '
+            // wrap the form around
+            list($rUri) = explode('#', GeneralUtility::getIndpEnv('REQUEST_URI'));
+            // save the image titles, popup will be closes after submit
+            $content = '
                     <form action="" action="'.htmlspecialchars($rUri) . '" method="post" name="editform">
                         ' . $content . '
                         <div id="send" style="margin:5px 10px;">
@@ -449,95 +453,101 @@ class WizardController {
                         </div>
                     </form>
                 ';
-            }
+        }
 
-            // return everything
-            $this->content .= $this->section('', $content, 0, 1);
+        // return everything
+        $this->content .= $this->section('', $content, 0, 1);
     }
 
-        /**
-        * Save the descriptions to the txt file
-        *
-        * @param string	The file
-        * @return string	The image-tag
-        */
-        public function save($imageList) {
-            $saveVars = GeneralUtility::_POST('dir');   
-            if(isset($saveVars) && is_array($saveVars) && count($saveVars) > 0) {
-                foreach ($imageList as $key => $value) {
-                    GeneralUtility::writeFile($value. $this->languagePrefix . '.txt', $saveVars[$key]);
-                }
+    /**
+    * Save the descriptions to the txt file
+    *
+    * @param string	The file
+    * @return string	The image-tag
+    */
+    public function save($imageList)
+    {
+        $saveVars = GeneralUtility::_POST('dir');
+        if(isset($saveVars) && is_array($saveVars) && count($saveVars) > 0) {
+            foreach ($imageList as $key => $value) {
+                GeneralUtility::writeFile($value. $this->languagePrefix . '.txt', $saveVars[$key]);
             }
         }
+    }
 
 
-        /**
-        * Get the description of a file which is saved in a txt file with the same name.
-        *
-        * @param string	$file The file
-        * @return string	The description
-        */
-        public function getSingleDescription($file) {
-            $file = $file . $this->languagePrefix . '.txt';
-            if (is_file($file)) {
-                $text = file_get_contents($file);
-            }		
-            return $text;
+    /**
+    * Get the description of a file which is saved in a txt file with the same name.
+    *
+    * @param string	$file The file
+    * @return string	The description
+    */
+    public function getSingleDescription($file)
+    {
+        $file = $file . $this->languagePrefix . '.txt';
+        if (is_file($file)) {
+            $text = file_get_contents($file);
+        }
+        return $text;
+    }
+
+    /**
+    * Check the path for a secure and valid one
+    *
+    * @param	string		$path: Path which is checked
+    * @return	string	valid path
+    */
+    public function checkPath($path)
+    {
+        $path = trim($path);
+
+        $path = FalUtility::convertFalPath($path);
+
+        if (!GeneralUtility::validPathStr($path)) {
+            return '';
         }
 
-        /**
-        * Check the path for a secure and valid one
-        *
-        * @param	string		$path: Path which is checked
-        * @return	string	valid path
-        */	
-        public function checkPath($path) {
-            $path = trim($path);
-
-            $path = FalUtility::convertFalPath($path);
-
-            if (!GeneralUtility::validPathStr($path)) {
-                return '';
-            }
-            
-            if (substr($path, -1) != '/') { // check for needed / at the end
-                $path =  $path.'/';
-            }
-            
-            if (substr($path, 0, 1) =='/') { // check for / at the beginning
-                $path = substr($path, 1, -1);
-            }
-    
-            return $path;
+        if (substr($path, -1) != '/') { // check for needed / at the end
+            $path =  $path.'/';
         }
 
-        /**
-        * Returns a Thumbnail with maximum dimension of 100pixels
-        *
-        * @param string	The file
-        * @return string	The image-tag
-        */
-        public function getThumbNail($fileName, $size = 100) {
-
-            $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
-            $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
-            $storage = $resourceFactory->getDefaultStorage();
-            // $fileObject returns a TYPO3\CMS\Core\Resource\File object
-            $fileReferenceObject = $storage->getFile($fileName);
-            $processedImage = $fileReferenceObject->process(
-                ProcessedFile::CONTEXT_IMAGECROPSCALEMASK, [
-                    'width' => $sizeParts[0],
-                    'height' => $sizeParts[1] . 'c',
-                    'crop' => $fileReferenceObject->getProperty('crop')
-                ]);
-            $imageUrl = $processedImage->getPublicUrl(true);
-            $imgTag = '<img src="' . $imageUrl . '" ' .
-                    'width="' . $processedImage->getProperty('width') . '" ' .
-                    'height="' . $processedImage->getProperty('height') . '" ' .
-                    'alt="' . htmlspecialchars($fileReferenceObject->getName()) . '" />';
-    
-            return $imgTag;
+        if (substr($path, 0, 1) == '/') { // check for / at the beginning
+            $path = substr($path, 1, -1);
         }
+
+        return $path;
+    }
+
+    /**
+    * Returns a Thumbnail with maximum dimension of 100pixels
+    *
+    * @param string	The file
+    * @return string	The image-tag
+    */
+    public function getThumbNail($fileName, $size = 100)
+    {
+
+        $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+        $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+        $storage = $resourceFactory->getDefaultStorage();
+        // $fileObject returns a TYPO3\CMS\Core\Resource\File object
+        $fileReferenceObject = $storage->getFile($fileName);
+        $processedImage = $fileReferenceObject->process(
+            ProcessedFile::CONTEXT_IMAGECROPSCALEMASK,
+            [
+                'width' => $sizeParts[0],
+                'height' => $sizeParts[1] . 'c',
+                'crop' => $fileReferenceObject->getProperty('crop')
+            ]
+        );
+        $imageUrl = $processedImage->getPublicUrl(true);
+        $imgTag = '<img src="' . $imageUrl . '" ' .
+                'width="' . $processedImage->getProperty('width') . '" ' .
+                'height="' . $processedImage->getProperty('height') . '" ' .
+                'alt="' . htmlspecialchars($fileReferenceObject->getName()) . '" />';
+
+        return $imgTag;
+    }
 
 
     /**
@@ -696,13 +706,15 @@ class WizardController {
     *
     * @return    [type]        ...
     */
-    public function main()    {;
-            $P = $var = GeneralUtility::_GP('P');
-        
-            // Draw the header.
+    public function main()
+    {
+        ;
+        $P = $var = GeneralUtility::_GP('P');
+
+        // Draw the header.
         $this->doc = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Template\DocumentTemplate::class);
 
-            // JavaScript
+        // JavaScript
         $this->doc->JScode = '
             <script language="javascript" type="text/javascript">
                 script_ended = 0;
@@ -724,8 +736,8 @@ class WizardController {
 
         $this->pageinfo = BackendUtility::readPageAccess($this->id, $this->perms_clause);
         $access = is_array($this->pageinfo) ? 1 : 0;
-        if (($this->id && $access) || ($this->getBackendUser()->user['admin'] && !$this->id) || ($this->getBackendUser()->user["uid"] && !$this->id))    {
-            if ($this->getBackendUser()->user['admin'] && !$this->id)    {
+        if (($this->id && $access) || ($this->getBackendUser()->user['admin'] && !$this->id) || ($this->getBackendUser()->user["uid"] && !$this->id)) {
+            if ($this->getBackendUser()->user['admin'] && !$this->id) {
                 $this->pageinfo = array(
                         'title' => '[root-level]',
                         'uid'   => 0,
@@ -750,7 +762,8 @@ class WizardController {
     *
     * @return    [type]        ...
     */
-    public function printContent()    {
+    public function printContent()
+    {
         $this->content .= $this->doc->endPage();
         echo $this->content;
     }
@@ -759,7 +772,7 @@ class WizardController {
     * @param string $tableName
     * @return QueryBuilder
     */
-    public function getQueryBuilder (string $tableName)
+    public function getQueryBuilder(string $tableName)
     {
         $result = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($tableName);
         return $result;
@@ -792,7 +805,7 @@ call_user_func(function () {
     \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
     \TYPO3\CMS\Core\Core\Bootstrap::loadExtTables();
 
-    
+
     $GLOBALS['MCONF']['name'] =   CHGALLERY_EXT . '_chgalleryM1';
     $GLOBALS['MCONF']['script'] = 'WizardController.php';
 
@@ -803,5 +816,3 @@ call_user_func(function () {
     $GLOBALS['SOBE']->main();
     $GLOBALS['SOBE']->printContent();
 });
-
-

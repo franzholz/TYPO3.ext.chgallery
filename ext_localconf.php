@@ -1,8 +1,9 @@
 <?php
+
 defined('TYPO3') || die('The constant TYPO3_version is undefined in chgallery!');
 
 call_user_func(function ($extensionKey): void {
-    if (!defined ('CHGALLERY_EXT')) {
+    if (!defined('CHGALLERY_EXT')) {
         define('CHGALLERY_EXT', $extensionKey);
     }
 
@@ -22,5 +23,3 @@ call_user_func(function ($extensionKey): void {
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update'][$extensionKey . 'RatingsReference'] =
     \JambageCom\Chgallery\Updates\MigrateRatingsReferenceUpdater::class;
 }, 'chgallery');
-
-

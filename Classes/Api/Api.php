@@ -37,13 +37,13 @@ use JambageCom\Div2007\Utility\BrowserUtility;
 use JambageCom\Chgallery\Domain\Composite;
 use JambageCom\Chgallery\Utility\FalUtility;
 
-
-class Api implements \TYPO3\CMS\Core\SingletonInterface {
+class Api implements \TYPO3\CMS\Core\SingletonInterface
+{
     public $languageObj;
     protected $resourceFactory;
     protected $storageUid;
 
-    public function __construct () 
+    public function __construct()
     {
         $storageUid = 0;
         $this->setStorageUid($storageUid);
@@ -51,32 +51,32 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         $this->setResourceFactory($resourceFactory);
     }
 
-    public function setResourceFactory ($value)
+    public function setResourceFactory($value)
     {
         $this->resourceFactory = $value;
     }
 
-    public function getResourceFactory ()
+    public function getResourceFactory()
     {
         return $this->resourceFactory;
     }
 
-    public function setStorageUid ($value)
+    public function setStorageUid($value)
     {
         $this->storageUid = $value;
     }
 
-    public function getStorageUid ()
+    public function getStorageUid()
     {
         return $this->storageUid;
     }
 
-    public function setLanguageObj ($value)
+    public function setLanguageObj($value)
     {
         $this->languageObj = $value;
     }
 
-    public function getLanguageObj ()
+    public function getLanguageObj()
     {
         return $this->languageObj;
     }
@@ -125,16 +125,16 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         }
 
         // fill the markers
-        $marker['###IMAGE###'] = $cObj->getContentObject('IMAGE')->render($singleImageConf);       
+        $marker['###IMAGE###'] = $cObj->getContentObject('IMAGE')->render($singleImageConf);
         $marker['###DESCRIPTION###'] = $cObj->stdWrap($description, $viewConf['description.']);
-        $marker['###DOWNLOAD###'] = $cObj->filelink($path, $viewConf['download.'] );
+        $marker['###DOWNLOAD###'] = $cObj->filelink($path, $viewConf['download.']);
         $marker['###FILENAME###'] = $cObj->stdWrap(basename($path), $viewConf['file.']);
         $marker['###POSITION###'] = $cObj->stdWrap($pos + 1, $viewConf['position.']);
         $marker['###COUNT###'] = $cObj->stdWrap($count, $viewConf['count.']);
 
         // load information from exif
         if ($exif) {
-            $exif_array = @exif_read_data( $path, true, false ); // Load all EXIF informations from the original Pic in an Array
+            $exif_array = @exif_read_data($path, true, false); // Load all EXIF informations from the original Pic in an Array
             $marker['###EXIF###'] = '1';
             $marker['###EXIF_SIZE###'] =  $cObj->stdWrap($exif_array['FileSize'], $viewConf['exif_size.']);
             $marker['###EXIF_TIME###'] =  $cObj->stdWrap($exif_array['FileDateTime'], $viewConf['exif_time.']);
@@ -147,12 +147,12 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         foreach($tmpValues as $key) {
             $marker['###LL_' . strtoupper($key) . '###'] = $languageObj->getLabel($key);
         }
-        
-// neu FHO Anfang +++
+
+        // neu FHO Anfang +++
         $extKey = '';
         $api = '';
 
-            // check need for ratings
+        // check need for ratings
         if (
             (
                 $tagArray['RATINGS'] || $tagArray['RATINGS_STATIC']
@@ -182,10 +182,10 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
             } else {
                 $ratingsConf = $ratingsConfig;
             }
-            
+
             $fileName = (strlen($path) < 244) ? $path : substr($path, -240);
             $resourceFactory = $this->getResourceFactory();
-            $file = $resourceFactory->getObjectFromCombinedIdentifier($this->getStorageUid() . ':' . $fileName);            
+            $file = $resourceFactory->getObjectFromCombinedIdentifier($this->getStorageUid() . ':' . $fileName);
             $ratingsConf['ref'] = CHGALLERY_EXT . '_' . $file->getUid(); // hier +++ die uid aus der FAL eintragen
             $cObj = GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
             /* @var $cObj \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer */
@@ -248,13 +248,13 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         $view = 'single';
         $marker =
             $this->getImageMarker(
-                $cObj, 
-                $tagArray, 
-                $finalImage[0], 
-                $pos, 
-                $view, 
+                $cObj,
+                $tagArray,
+                $finalImage[0],
+                $pos,
+                $view,
                 $viewConf,
-                count($imageList), 
+                count($imageList),
                 $exif,
                 $ratingsCObjectType,
                 $ratingsConfig
@@ -285,7 +285,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         }
         return $text;
     }
-    
+
     /**
     * Get the correct parameter for the links
     *
@@ -311,17 +311,16 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
     */
     public function getRenderAllLinks(
         ContentObjectRenderer $cObj,
-        array $imageConf, 
+        array $imageConf,
         $imgList
-    )
-    {
+    ) {
         $links = '';
         foreach ($imgList as $key => $singleImage) {
 
             $cObj->data['tx_chgalleryImageLong'] = $singleImage['file'];
             $imageConf['altText'] = str_replace('"', '\'', $this->getDescription($singleImage['file'], 'file'));
             $cObj->data['tx_chgalleryTitle'] = $imageConf['altText'];
-            $links.= $cObj->typolink(' ', $imageConf);
+            $links .= $cObj->typolink(' ', $imageConf);
         }
         return $links;
     }
@@ -359,7 +358,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
                 $pointerName,
                 true,
                 $addQueryString
-            );        
+            );
         $marker['###PAGEBROWSERTEXT###'] =
             BrowserUtility::render(
                 $browseObj,
@@ -378,15 +377,14 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         return $marker;
     }
 
-    public function getBrowserObj (
+    public function getBrowserObj(
         $conf,
         $browserConf,
         $recordCount,
         $piVars,
         $limit,
         $maxPages
-    )
-    {
+    ) {
         $bShowFirstLast = true;
 
         if (
@@ -431,36 +429,37 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
     * @param	array  $length: Length of the sliced array
     * @return the randomized and sliced array
     */
-    public function getSlicedRandomArray ($array, $offset, $length)
+    public function getSlicedRandomArray($array, $offset, $length)
     {
         // shuffle
         $new_arr = [];
         while (count($array) > 0) {
-        $val = array_rand($array);
-        $new_arr[$val] = $array[$val];
-        unset($array[$val]);
+            $val = array_rand($array);
+            $new_arr[$val] = $array[$val];
+            unset($array[$val]);
         }
         $result = $new_arr;
 
         // slice
         $result2 = [];
         $i = 0;
-        if($offset < 0)
+        if($offset < 0) {
             $offset = count($result) + $offset;
-        if($length > 0)
+        }
+        if($length > 0) {
             $endOffset = $offset + $length;
-        else if($length < 0)
+        } elseif($length < 0) {
             $endOffset = count($result) + $length;
-        else
+        } else {
             $endOffset = count($result);
+        }
 
         // collect elements
-        foreach($result as $key => $value)
-        {
+        foreach($result as $key => $value) {
             if($i >= $offset && $i < $endOffset) {
-            $result2['random'][$key] = $value;
+                $result2['random'][$key] = $value;
             } else {
-            $result2['after'][$key] = $value;
+                $result2['after'][$key] = $value;
             }
 
             $i++;
@@ -507,9 +506,9 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
     public function sortByDate(&$dirs, $sort)
     {
         if($sort == 'dateasc') {
-            usort( $dirs, [&$this, 'dateASC'] );
+            usort($dirs, [&$this, 'dateASC']);
         } elseif($sort == 'datedesc') {
-            usort( $dirs, [&$this, 'dateDESC'] );
+            usort($dirs, [&$this, 'dateDESC']);
         }
     }
 
@@ -539,8 +538,8 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         return ($a['date'] > $b['date']) ? -1 : 1;
     }
 
-    
-    public function getExtraVars ($extraAdditionalParams)
+
+    public function getExtraVars($extraAdditionalParams)
     {
         $vars = '';
         // add extra get vars to the links
@@ -551,14 +550,14 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
                     is_array(GeneralUtility::_GET($key)) &&
                     count(GeneralUtility::_GET($key)) > 0
                 ) {
-                    $vars.= GeneralUtility::implodeArrayForUrl($key, GeneralUtility::_GET($key));
+                    $vars .= GeneralUtility::implodeArrayForUrl($key, GeneralUtility::_GET($key));
                 }
             }
         }
         return $vars;
     }
 
-    
+
     /**
     * Get a gallery page
     *
@@ -687,8 +686,8 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
 
         // ajax url
         $actionConf = [];
-#		$actionConf['parameter'] = $GLOBALS['TSFE']->id;
-#		$actionConf['additionalParams'] = $linkToDir.'&type=9712';
+        #		$actionConf['parameter'] = $GLOBALS['TSFE']->id;
+        #		$actionConf['additionalParams'] = $linkToDir.'&type=9712';
         $actionConf['parameter'] = $GLOBALS['TSFE']->id . ',9712';
         $actionConf['returnLast'] = 'url';
         $markerArray['###AJAXURL###'] = $cObj->typolink('', $actionConf);
@@ -718,19 +717,19 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
 
             // if all links should be renderd, all other links are after the existing images and
             // need to be taken from the same function because of the randomizing
-            if ($config['renderAllLinks']==1) {
-                    $markerArray['###LINKSAFTER###'] =
-                        $this->getRenderAllLinks(
-                            $conf['gallery.']['renderAllLinks.'],
-                            $randomImageList['after']
-                        );
+            if ($config['renderAllLinks'] == 1) {
+                $markerArray['###LINKSAFTER###'] =
+                    $this->getRenderAllLinks(
+                        $conf['gallery.']['renderAllLinks.'],
+                        $randomImageList['after']
+                    );
             }
         } else {
             // just get the elements we need
             $newImageList = array_slice($allList, $begin, $config['pagebrowser']);
         }
 
-            // config of the single image & check for usage of link
+        // config of the single image & check for usage of link
         $imageConf = $conf['gallery.']['image.'];
         if ($config['link'] != '') {
             $imageConf['stdWrap.']['typolink.'] = $conf['link.'];
@@ -741,7 +740,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
         // render the link before/after the current page
         // if random ==1, the links are rendered some lines before
         if ($config['renderAllLinks'] == 1 && $config['random'] != 1) {
-        // previous images, from 0 to begin
+            // previous images, from 0 to begin
             $prevImgList = array_slice($allList, 0, $begin);
 
             $markerArray['###LINKSBEFORE###'] .=
@@ -782,19 +781,19 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
             }
 
             $imageConf['file'] = $singleImage['file'];
-            $description = str_replace('"', '\'', $this->getDescription($singleImage['file'],  'file'));
+            $description = str_replace('"', '\'', $this->getDescription($singleImage['file'], 'file'));
             $imageConf['altText'] = $description;
 
             $view = 'gallery';
-            $markerArrayImage = 
+            $markerArrayImage =
                 $this->getImageMarker(
                     $cObj,
                     $tagArray,
                     $singleImage['file'],
                     $key + 1,
-                    $view, 
-                    $conf[$view . '.'], 
-                    $count, 
+                    $view,
+                    $conf[$view . '.'],
+                    $count,
                     $conf['exif'],
                     $conf['RATINGS'],
                     $conf['RATINGS.']
@@ -810,7 +809,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
 
             // get the current image
             $currentImgId = ($piVars['pointer'] * $config['pagebrowser']) + $key + 1 ;
-            if ($currentImgId == $piVars['single'] && $piVars['single'] > 1 ) {
+            if ($currentImgId == $piVars['single'] && $piVars['single'] > 1) {
                 $markerArrayImage['###ACT###'] = ' act';
             } else {
                 $markerArrayImage['###ACT###'] = '';
@@ -824,7 +823,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
                 );
         }
 
-    // put everything into the template
+        // put everything into the template
         $subpartArray['###CONTENT###'] = $content_item;
 
         // Adds hook for processing of extra item markers
@@ -841,9 +840,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface {
                 $markerArray,
                 $subpartArray
             );
-    
+
         return $content;
     }
 }
-
-
