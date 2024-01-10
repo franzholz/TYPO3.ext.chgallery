@@ -164,7 +164,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
 
             #			$content.= '<form  name="editform" id="editform">';
 
-            list($rUri) = explode('#', t3lib_div::getIndpEnv('REQUEST_URI'));
+            [$rUri] = explode('#', t3lib_div::getIndpEnv('REQUEST_URI'));
             // save the image titles, popup will be closes after submit
             $content = '
 					<form action="" action="' . htmlspecialchars($rUri) . '" method="post" name="editform">

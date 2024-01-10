@@ -177,7 +177,7 @@ class WizardController
     public function __construct()
     {
         $this->getLanguageService()->includeLLFile('EXT:' . CHGALLERY_EXT . '/wizard/locallang.xml');
-        $this->getBackendUser()->modAccess($GLOBALS['MCONF'], true);
+        $this->getBackendUser()->modAccess($GLOBALS['MCONF']);
     }
 
     /**
@@ -442,7 +442,7 @@ class WizardController
             }
 
             // wrap the form around
-            list($rUri) = explode('#', GeneralUtility::getIndpEnv('REQUEST_URI'));
+            [$rUri] = explode('#', GeneralUtility::getIndpEnv('REQUEST_URI'));
             // save the image titles, popup will be closes after submit
             $content = '
                     <form action="" action="'.htmlspecialchars($rUri) . '" method="post" name="editform">
