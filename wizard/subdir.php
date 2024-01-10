@@ -21,8 +21,7 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-
-
+use TYPO3\CMS\Core\Core\Environment;
 use JambageCom\Chgallery\Utility\FalUtility;
 
 // DEFAULT initialization of a module [BEGIN]
@@ -115,7 +114,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
 				';
         } else {
 
-            $dir = $this->getFullDir(PATH_site.$path, $sort);
+            $dir = $this->getFullDir(Environment::getPublicPath() . '/'.$path, $sort);
 
             /*
              * save
@@ -131,11 +130,11 @@ class tx_chgallery_wizard extends t3lib_SCbase
 
             }
 
-            $dir = $this->getFullDir(PATH_site . $path, $sort);
+            $dir = $this->getFullDir(Environment::getPublicPath() . '/' . $path, $sort);
 
             // get all the images from the directory
             $fileTypes = 'jpg,gif,png';
-            $imageList = t3lib_div::getFilesInDir(PATH_site . $path, $fileTypes, 1, 1);
+            $imageList = t3lib_div::getFilesInDir(Environment::getPublicPath() . '/' . $path, $fileTypes, 1, 1);
 
             // oputput of the image list
             $content .= '<h2>' . sprintf($LANG->getLL('path'), count($dir), $path) . '</h2>';

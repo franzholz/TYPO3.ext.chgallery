@@ -11,9 +11,7 @@ namespace JambageCom\Chgallery\UserFunc;
  * @author      Chgallery Team
  * @license     http://www.gnu.org/copyleft/gpl.html
  */
-
-
-
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -81,12 +79,12 @@ class GalleryTca
 
             $path = FalUtility::convertFalPath($path);
 
-            if ($path != '' && is_dir(PATH_site . $path)) {
+            if ($path != '' && is_dir(Environment::getPublicPath() . '/' . $path)) {
                 $content .= '<h3>Path: ' . $path . '  <small>Mode: ' . $mode . '</small></h3>';
                 $this->languagePrefix = ($languageid > 0) ? '-' . $languageid : '';
 
                 $level = ($mode == 'LIST') ? 1 : 0;
-                $imageList = GeneralUtility::getAllFilesAndFoldersInPath([], PATH_site.$path, $fileTypes, 0, $level, 1);
+                $imageList = GeneralUtility::getAllFilesAndFoldersInPath([], Environment::getPublicPath() . '/'.$path, $fileTypes, 0, $level, 1);
 
                 // correct sorting
                 array_multisort($imageList, SORT_ASC);
@@ -97,7 +95,7 @@ class GalleryTca
                 foreach ($imageList as $key => $singleImage) {
                     // get the correct path
                     if ($mode == 'LIST') {
-                        $fileName = str_replace(PATH_site, '', $singleImage);
+                        $fileName = str_replace(Environment::getPublicPath() . '/', '', $singleImage);
                         $directory = dirname(str_replace($path, '', $fileName));
                     } else {
                         $fileName =  basename($singleImage);

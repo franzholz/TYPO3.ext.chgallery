@@ -14,6 +14,12 @@ namespace JambageCom\Chgallery\Controller;
 *
 * The TYPO3 project - inspiring people to share!
 */
+use TYPO3\CMS\Frontend\Resource\FilePathSanitizer;
+use TYPO3\CMS\Core\Resource\Exception\InvalidFileNameException;
+use TYPO3\CMS\Core\Resource\Exception\InvalidPathException;
+use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
+use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
+use TYPO3\CMS\Core\TimeTracker\TimeTracker;
 use TYPO3\CMS\Core\SingletonInterface;
 use JambageCom\Chgallery\Api\Localization;
 use JambageCom\Div2007\Utility\FlexformUtility;
@@ -121,12 +127,30 @@ class InitializationController implements SingletonInterface
 
         // Template+  CSS file
         $template = ($this->getFlexform($cObj, $conf, 'more', 'templateFile')) ? 'uploads/tx_chgallery/' . $this->getFlexform($cObj, $conf, 'more', 'templateFile') : $conf['templateFile'];
-        $absoluteFileName = $GLOBALS['TSFE']->tmpl->getFileName($template);
+        try {
+            $absoluteFileName = GeneralUtility::makeInstance(FilePathSanitizer::class)->sanitize((string) $template);
+        } catch (InvalidFileNameException $e) {
+            $absoluteFileName = null;
+        } catch (InvalidPathException|FileDoesNotExistException|InvalidFileException $e) {
+            $absoluteFileName = null;
+            if ($GLOBALS['TSFE']->tmpl->tt_track) {
+                GeneralUtility::makeInstance(TimeTracker::class)->setTSlogMessage($e->getMessage(), 3);
+            }
+        }
         $templateCode = file_get_contents($absoluteFileName);
         $composite->setTemplateCode($templateCode);
 
         if (isset($conf['pathToCSS']) && $conf['pathToCSS'] != '') {
-            $pathToCSS = $GLOBALS['TSFE']->tmpl->getFileName($conf['pathToCSS']);
+            try {
+                $pathToCSS = GeneralUtility::makeInstance(FilePathSanitizer::class)->sanitize((string) $conf['pathToCSS']);
+            } catch (InvalidFileNameException $e) {
+                $pathToCSS = null;
+            } catch (InvalidPathException|FileDoesNotExistException|InvalidFileException $e) {
+                $pathToCSS = null;
+                if ($GLOBALS['TSFE']->tmpl->tt_track) {
+                    GeneralUtility::makeInstance(TimeTracker::class)->setTSlogMessage($e->getMessage(), 3);
+                }
+            }
             if ($pathToCSS != '') {
                 $GLOBALS['TSFE']->additionalHeaderData['chgallery_css'] = '<link rel="stylesheet" href="' . $pathToCSS . '" type="text/css" />';
             }

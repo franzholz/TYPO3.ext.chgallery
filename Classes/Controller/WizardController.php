@@ -14,6 +14,8 @@ namespace JambageCom\Chgallery\Controller;
 *
 * The TYPO3 project - inspiring people to share!
 */
+use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Backend\Template\DocumentTemplate;
@@ -32,7 +34,6 @@ use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Resource\ProcessedFile;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Lang\LanguageService;
 
 
 use JambageCom\Chgallery\Utility\FalUtility;
@@ -281,9 +282,9 @@ class WizardController
     }
 
     /**
-    * Returns the Language Service
-    * @return LanguageService
-    */
+     * Returns the Language Service
+     * @return LanguageService
+     */
     protected function getLanguageService()
     {
         return $GLOBALS['LANG'];
@@ -386,7 +387,7 @@ class WizardController
             $fileTypes = 'jpg,gif,png';
 
             #				$imageList = GeneralUtility::getFilesInDir(PATH_site.$path, $fileTypes,1,1);
-            $imageList = GeneralUtility::getAllFilesAndFoldersInPath([], PATH_site.$path, $fileTypes, 0, 1);
+            $imageList = GeneralUtility::getAllFilesAndFoldersInPath([], Environment::getPublicPath() . '/'.$path, $fileTypes, 0, 1);
 
             // correct sorting
             array_multisort($imageList, SORT_ASC);
@@ -401,7 +402,7 @@ class WizardController
             $i = 0;
             $directoryList = [];
             foreach ($imageList as $key => $singleImage) {
-                $fileName = str_replace(PATH_site, '', $singleImage);
+                $fileName = str_replace(Environment::getPublicPath() . '/', '', $singleImage);
                 $directory = dirname(str_replace($path, '', $fileName));
                 $thumbNailName = str_replace('fileadmin', '', $fileName);
                 $thumb = $this->getThumbNail($thumbNailName, 100);
@@ -672,7 +673,7 @@ class WizardController
     public function sectionEnd()
     {
         if ($this->sectionFlag) {
-            GeneralUtility::logDeprecatedFunction();
+            trigger_error('A useful message', E_USER_DEPRECATED);
             $this->sectionFlag = 0;
             return '
 	</div>

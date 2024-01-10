@@ -23,6 +23,7 @@ namespace JambageCom\Chgallery\Api;
 *
 *
 */
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
@@ -275,7 +276,7 @@ class Api implements SingletonInterface
     */
     public function getDescription($path, $type = '')
     {
-        $multilingual = ($GLOBALS['TSFE']->sys_language_uid > 0) ? '-' . $GLOBALS['TSFE']->sys_language_uid : '';
+        $multilingual = (GeneralUtility::makeInstance(Context::class)->getPropertyFromAspect('language', 'id') > 0) ? '-' . GeneralUtility::makeInstance(Context::class)->getPropertyFromAspect('language', 'id') : '';
 
         if ($type == 'dir') { // description of a directory
             $file = $path . 'info' . $multilingual . '.txt';
