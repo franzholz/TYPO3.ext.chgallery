@@ -71,8 +71,6 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
 
     /**
      * Setter injection for output into upgrade wizards
-     *
-     * @param OutputInterface $output
      */
     public function setOutput(OutputInterface $output): void
     {
@@ -176,7 +174,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
                     $count++;
                     $file = $resourceFactory->getObjectFromCombinedIdentifier($storageUid . ':' . $fileName);
                     $updateRow['reference'] = CHGALLERY_EXT . '_' . $file->getUid();
-                } catch (ResourceDoesNotExistException $e) {
+                } catch (ResourceDoesNotExistException) {
                     // Not found
                     if ($k == 0) {
                         $customMessages[] = 'file not found: "' . $fileName . '"';

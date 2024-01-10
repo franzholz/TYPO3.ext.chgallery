@@ -507,11 +507,11 @@ class WizardController
             return '';
         }
 
-        if (substr($path, -1) != '/') { // check for needed / at the end
+        if (!str_ends_with($path, '/')) { // check for needed / at the end
             $path =  $path.'/';
         }
 
-        if (substr($path, 0, 1) == '/') { // check for / at the beginning
+        if (str_starts_with($path, '/')) { // check for / at the beginning
             $path = substr($path, 1, -1);
         }
 
@@ -765,9 +765,8 @@ class WizardController
     }
 
     /**
-    * @param string $tableName
-    * @return QueryBuilder
-    */
+     * @return QueryBuilder
+     */
     public function getQueryBuilder(string $tableName)
     {
         $result = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($tableName);

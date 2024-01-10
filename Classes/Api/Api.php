@@ -95,7 +95,7 @@ class Api implements SingletonInterface
     * @return	array Every information about this image filled in markers
     */
 
-    public function getImageMarker(ContentObjectRenderer $cObj, array $tagArray, $path, $pos, $view, $viewConf, $count, $exif = true, $ratingsCObjectType, $ratingsConfig)
+    public function getImageMarker(ContentObjectRenderer $cObj, array $tagArray, $path, $pos, $view, $viewConf, $count, $ratingsCObjectType, $ratingsConfig, $exif = true)
     {
         $marker = [];
         $languageObj = $this->getLanguageObj();
@@ -258,9 +258,9 @@ class Api implements SingletonInterface
                 $view,
                 $viewConf,
                 count($imageList),
-                $exif,
                 $ratingsCObjectType,
-                $ratingsConfig
+                $ratingsConfig,
+                $exif
             );
         return $marker;
     }
@@ -487,11 +487,11 @@ class Api implements SingletonInterface
             return '';
         }
 
-        if (substr($path, -1) != '/') { // check for needed / at the end
+        if (!str_ends_with($path, '/')) { // check for needed / at the end
             $path =  $path . '/';
         }
 
-        if (substr($path, 0, 1) == '/') { // check for / at the beginning
+        if (str_starts_with($path, '/')) { // check for / at the beginning
             $path = substr($path, 1, strlen($path));
         }
 
@@ -797,9 +797,9 @@ class Api implements SingletonInterface
                     $view,
                     $conf[$view . '.'],
                     $count,
-                    $conf['exif'],
                     $conf['RATINGS'],
-                    $conf['RATINGS.']
+                    $conf['RATINGS.'],
+                    $conf['exif']
                 );
 
             $markerArrayImage['###IMAGE###'] =

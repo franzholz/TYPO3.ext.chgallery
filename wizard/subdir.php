@@ -234,11 +234,11 @@ class tx_chgallery_wizard extends t3lib_SCbase
             return '';
         }
 
-        if (substr($path, -1) != '/') { // check for needed / at the end
+        if (!str_ends_with($path, '/')) { // check for needed / at the end
             $path =  $path . '/';
         }
 
-        if (substr($path, 0, 1) == '/') { // check for / at the beginning
+        if (str_starts_with($path, '/')) { // check for / at the beginning
             $path = substr($path, 1, -1);
         }
 

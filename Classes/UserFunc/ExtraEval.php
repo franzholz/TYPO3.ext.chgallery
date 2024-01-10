@@ -36,11 +36,11 @@ class ExtraEval
             return $value;
         }
 
-        if (substr($value, -1, 1) != '/') { // check for needed / at the end
+        if (!str_ends_with($value, '/')) { // check for needed / at the end
             $value =  $value . '/';
         }
 
-        if (substr($value, 0, 1) == '/') { // check for / at the beginning
+        if (str_starts_with($value, '/')) { // check for / at the beginning
             $patßh = substr($value, 1, strlen($value));
         }
 
