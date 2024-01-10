@@ -1,3 +1,7 @@
+2024-01-10 Franz Holzinger <franz@ttproducts.de>
+    * Move all language files into Resources/Private/Language and convert them into the XLF format.
+    * conversions for TYPO3 12 and PHP 8.2
+
 2023-07-29 Franz Holzinger <franz@ttproducts.de>
     * remove configuration parameter useCacheHash from all links.
 

@@ -7,30 +7,30 @@
 	<sDEF>
 	<ROOT>
 		<TCEforms>
-			<sheetTitle>LLL:EXT:chgallery/locallang_db.xml:settings</sheetTitle>
-			<cshFile>LLL:EXT:chgallery/locallang_csh.xml</cshFile>
+			<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:settings</sheetTitle>
+			<cshFile>LLL:EXT:chgallery/Resources/Private/Language/Csh/Resources/Private/Language/Csh/locallang_csh.xlf</cshFile>
 		</TCEforms>
 		<type>array</type>
 		<el>
 
 	 		<show>
 				<TCEforms>
-				<label>LLL:EXT:chgallery/locallang_db.xml:show</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show</label>
 					<config>
 						<type>select</type>
 						<items type="array">
 							<numIndex index="1" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:show.gallery</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.gallery</numIndex>
 								<numIndex index="1">GALLERY</numIndex>
 								<numIndex index="2">EXT:chgallery/lib/gfx/flex_pictures.png</numIndex>
 							</numIndex>
 							<numIndex index="2" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:show.list</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.list</numIndex>
 								<numIndex index="1">LIST</numIndex>
 								<numIndex index="2">EXT:chgallery/lib/gfx/flex_folder.png</numIndex>
 							</numIndex>
 							<numIndex index="3" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:show.single</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.single</numIndex>
 								<numIndex index="1">SINGLE</numIndex>
 								<numIndex index="2">EXT:chgallery/lib/gfx/flex_picture.png</numIndex>
 							</numIndex>
@@ -43,7 +43,7 @@
 
 			<path>
 				<TCEforms>
-				<label>LLL:EXT:chgallery/locallang_db.xml:path</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:path</label>
 				<config>
 					<type>input</type>
 					<size>30</size>
@@ -73,7 +73,7 @@
 
             <description>
                 <TCEforms>
-                    <label>LLL:EXT:chgallery/locallang_db.xml:description</label>
+                    <label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:description</label>
                     <config>
                         <type>user</type>
                         <userFunc>JambageCom\Chgallery\UserFunc\GalleryTca->descr</userFunc>
@@ -84,7 +84,7 @@
             <title>
         <TCEforms>
           <displayCond>FIELD:show:IN:LIST</displayCond>
-					<label>LLL:EXT:chgallery/locallang_db.xml:title</label>
+					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:title</label>
           <config>
             <type>text</type>
             <cols>40</cols>
@@ -108,7 +108,7 @@
 	 		<categoryOrder>
 				<TCEforms>
           <displayCond>FIELD:show:IN:LIST</displayCond>
-				<label>LLL:EXT:chgallery/locallang_db.xml:categoryOrder</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder</label>
 					<config>
 						<type>select</type>
 						<items type="array">
@@ -117,19 +117,19 @@
 								<numIndex index="1"></numIndex>
 							</numIndex>
 							<numIndex index="2" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:categoryOrder.title</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder.title</numIndex>
 								<numIndex index="1">title</numIndex>
 							</numIndex>
 							<numIndex index="3" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:categoryOrder.path</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder.path</numIndex>
 								<numIndex index="1">path</numIndex>
 							</numIndex>
 							<numIndex index="4" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:categoryOrder.date</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder.date</numIndex>
 								<numIndex index="1">date</numIndex>
 							</numIndex>
 							<numIndex index="5" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:categoryOrder.size</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder.size</numIndex>
 								<numIndex index="1">size</numIndex>
 							</numIndex>
 
@@ -143,7 +143,7 @@
 			<categoryAscDesc>
 				<TCEforms>
           <displayCond>FIELD:show:IN:LIST</displayCond>
-					<label>LLL:EXT:chgallery/locallang_db.xml:categoryAscDesc</label>
+					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryAscDesc</label>
 					<config>
 						<type>select</type>
 						<items type="array">
@@ -152,11 +152,11 @@
 								<numIndex index="1"></numIndex>
 							</numIndex>
 							<numIndex index="1" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:categoryAscDesc.asc</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryAscDesc.asc</numIndex>
 								<numIndex index="1">asc</numIndex>
 							</numIndex>
 							<numIndex index="2" type="array">
-								<numIndex index="0">LLL:EXT:chgallery/locallang_db.xml:categoryAscDesc.desc</numIndex>
+								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryAscDesc.desc</numIndex>
 								<numIndex index="1">desc</numIndex>
 							</numIndex>
 						</items>
@@ -168,7 +168,7 @@
 
 			<pagebrowser>
 				<TCEforms>
-				<label>LLL:EXT:chgallery/locallang_db.xml:pagebrowser</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:pagebrowser</label>
 				<config>
 					<type>input</type>
 					<size>4</size>
@@ -178,7 +178,7 @@
 
 			<random>
 				<TCEforms>
-				<label>LLL:EXT:chgallery/locallang_db.xml:random</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:random</label>
 				<config>
 					<type>check</type>
 				</config>
@@ -190,7 +190,7 @@
 			<single>
 				<TCEforms>
 				<displayCond>FIELD:show:!IN:SINGLE</displayCond>
-				<label>LLL:EXT:chgallery/locallang_db.xml:single</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:single</label>
 				<config>
 					<type>check</type>
 				</config>
@@ -204,15 +204,15 @@
 	<more>
 		<ROOT>
 			<TCEforms>
-				<sheetTitle>LLL:EXT:chgallery/locallang_db.xml:more</sheetTitle>
-				<cshFile>LLL:EXT:chgallery/locallang_csh.xml</cshFile>
+				<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:more</sheetTitle>
+				<cshFile>LLL:EXT:chgallery/Resources/Private/Language/Csh/locallang_csh.xlf</cshFile>
 			</TCEforms>
 			<type>array</type>
 			<el>
 
 			<renderAllLinks>
 				<TCEforms>
-				<label>LLL:EXT:chgallery/locallang_db.xml:renderAllLinks</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:renderAllLinks</label>
 				<config>
 					<type>check</type>
 				</config>
@@ -221,7 +221,7 @@
 
 			<excludeFirstImage>
 				<TCEforms>
-				<label>LLL:EXT:chgallery/locallang_db.xml:excludeFirstImage</label>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:excludeFirstImage</label>
 				<config>
 					<type>check</type>
 				</config>
@@ -232,7 +232,7 @@
 			<link>
 				<TCEforms>
 				<exclude>1</exclude>
-					<label>LLL:EXT:chgallery/locallang_db.xml:link</label>
+					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:link</label>
 				<config>
 					<type>group</type>
 					<internal_type>db</internal_type>
@@ -247,7 +247,7 @@
 
 			<templateFile>
 				<TCEforms>
-					<label>LLL:EXT:chgallery/locallang_db.xml:templateFile</label>
+					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:templateFile</label>
 					<config>
 						<type>group</type>
 						<internal_type>file</internal_type>
@@ -270,7 +270,7 @@
 	<preview>
 		<ROOT>
 			<TCEforms>
-				<sheetTitle>LLL:EXT:chgallery/locallang_db.xml:preview</sheetTitle>
+				<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:preview</sheetTitle>
 			</TCEforms>
 			<type>array</type>
 			<el>

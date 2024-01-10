@@ -86,7 +86,7 @@ class InitializationController implements SingletonInterface
         );
 
         $languageObj->loadLocalLang(
-            'EXT:' . CHGALLERY_EXT . '/pi1/locallang.xml',
+            'EXT:' . CHGALLERY_EXT . '/Resources/Private/Language/Pi1/locallang.xlf',
             false
         );
         $api = GeneralUtility::makeInstance(Api::class);
@@ -178,7 +178,7 @@ class InitializationController implements SingletonInterface
     * @param	string		$sheet: The sheed of the flexforms
     * @param	string		$key: the name of the flexform field
     * @param	string		$confOverride: The value of TS for an override
-    * @return	string	The value of the locallang.xml
+    * @return	string	The value of the locallang.xlf
     */
     public function getFlexform($cObj, $conf, $sheet, $key, $confOverride = '')
     {

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:29:58Z" product-name="chgallery">
+		<header/>
+		<body>
+			<trans-unit id="tt_content.list_type_pi1" resname="tt_content.list_type_pi1" >
+				<source>Simple gallery - chgallery</source>
+			</trans-unit>
+			<trans-unit id="show" resname="show" >
+				<source>Display</source>
+			</trans-unit>
+			<trans-unit id="show.list" resname="show.list" >
+				<source>CATEGORY view =&gt; Categories (subdirs)</source>
+			</trans-unit>
+			<trans-unit id="show.gallery" resname="show.gallery" >
+				<source>GALLERY view =&gt; Images of a dir</source>
+			</trans-unit>
+			<trans-unit id="show.single" resname="show.single" >
+				<source>SINGLE view =&gt; Single image</source>
+			</trans-unit>
+			<trans-unit id="settings" resname="settings" >
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id="path" resname="path" >
+				<source>Path</source>
+			</trans-unit>
+			<trans-unit id="pagebrowser" resname="pagebrowser" >
+				<source>Images / page</source>
+			</trans-unit>
+			<trans-unit id="description" resname="description" >
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="random" resname="random" >
+				<source>Random Mode</source>
+			</trans-unit>
+			<trans-unit id="link" resname="link" >
+				<source>Link all images to</source>
+			</trans-unit>
+			<trans-unit id="width" resname="width" >
+				<source>Image width</source>
+			</trans-unit>
+			<trans-unit id="height" resname="height" >
+				<source>Image height</source>
+			</trans-unit>
+			<trans-unit id="title" resname="title" >
+				<source>Category title &amp; description</source>
+			</trans-unit>
+			<trans-unit id="descriptionList" resname="descriptionList" >
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="single" resname="single" >
+				<source>Use Single view</source>
+			</trans-unit>
+			<trans-unit id="categoryOrder" resname="categoryOrder" >
+				<source>Sorting of categories</source>
+			</trans-unit>
+			<trans-unit id="categoryOrder.title" resname="categoryOrder.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="categoryOrder.path" resname="categoryOrder.path" >
+				<source>Path</source>
+			</trans-unit>
+			<trans-unit id="categoryOrder.date" resname="categoryOrder.date" >
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="categoryOrder.size" resname="categoryOrder.size" >
+				<source>Count of images</source>
+			</trans-unit>
+			<trans-unit id="categoryAscDesc" resname="categoryAscDesc" >
+				<source>Order By</source>
+			</trans-unit>
+			<trans-unit id="categoryAscDesc.asc" resname="categoryAscDesc.asc" >
+				<source>ascending</source>
+			</trans-unit>
+			<trans-unit id="categoryAscDesc.desc" resname="categoryAscDesc.desc" >
+				<source>descending</source>
+			</trans-unit>
+			<trans-unit id="more" resname="more" >
+				<source>Additional options</source>
+			</trans-unit>
+			<trans-unit id="renderAllLinks" resname="renderAllLinks" >
+				<source>Show all images in Lightbox</source>
+			</trans-unit>
+			<trans-unit id="excludeFirstImage" resname="excludeFirstImage" >
+				<source>Don&#039;t display first image in single view (Category view only)</source>
+			</trans-unit>
+			<trans-unit id="templateFile" resname="templateFile" >
+				<source>Template</source>
+			</trans-unit>
+			<trans-unit id="preview" resname="preview" >
+				<source>Preview</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

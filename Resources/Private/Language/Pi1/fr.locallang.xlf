@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:30:25Z" product-name="chgallery">
+		<header/>
+		<body>
+			<trans-unit id="pi_list_browseresults_displays" resname="pi_list_browseresults_displays"  approved="yes">
+				<source>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</source>
+				<target>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; sur &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</target>
+			</trans-unit>
+			<trans-unit id="pi_list_browseresults_next" resname="pi_list_browseresults_next"  approved="yes">
+				<source>Next Page</source>
+				<target>Page suivante &amp;raquo;</target>
+			</trans-unit>
+			<trans-unit id="pi_list_browseresults_prev" resname="pi_list_browseresults_prev"  approved="yes">
+				<source>Previous Page</source>
+				<target>&amp;laquo; Page précédente</target>
+			</trans-unit>
+			<trans-unit id="pi_list_browseresults_first" resname="pi_list_browseresults_first"  approved="yes">
+				<source>Back to the overview</source>
+				<target>Retour à la vue d&#039;ensemble</target>
+			</trans-unit>
+			<trans-unit id="pi_list_browseresults_last" resname="pi_list_browseresults_last"  approved="yes">
+				<source>Last Page</source>
+				<target>Dernière page</target>
+			</trans-unit>
+			<trans-unit id="dir_back" resname="dir_back"  approved="yes">
+				<source>Back to the gallery list</source>
+				<target>Retour à la liste des galeries</target>
+			</trans-unit>
+			<trans-unit id="size" resname="size"  approved="yes">
+				<source>Number of images</source>
+				<target>Nombre d&#039;images</target>
+			</trans-unit>
+			<trans-unit id="path" resname="path"  approved="yes">
+				<source>Path</source>
+				<target>Chemin</target>
+			</trans-unit>
+			<trans-unit id="name" resname="name"  approved="yes">
+				<source>Directory</source>
+				<target>Répertoire</target>
+			</trans-unit>
+			<trans-unit id="date" resname="date"  approved="yes">
+				<source>Date</source>
+				<target>Date</target>
+			</trans-unit>
+			<trans-unit id="description" resname="description"  approved="yes">
+				<source>Description</source>
+				<target>Description</target>
+			</trans-unit>
+			<trans-unit id="download" resname="download"  approved="yes">
+				<source>Download</source>
+				<target>Télécharger</target>
+			</trans-unit>
+			<trans-unit id="exif_size" resname="exif_size"  approved="yes">
+				<source>Size</source>
+				<target>Taille</target>
+			</trans-unit>
+			<trans-unit id="exif_time" resname="exif_time"  approved="yes">
+				<source>Time</source>
+				<target>Heure</target>
+			</trans-unit>
+			<trans-unit id="filename" resname="filename"  approved="yes">
+				<source>File</source>
+				<target>Fichier</target>
+			</trans-unit>
+			<trans-unit id="previousImage" resname="previousImage"  approved="yes">
+				<source>Previous image</source>
+				<target>image précédente</target>
+			</trans-unit>
+			<trans-unit id="nextImage" resname="nextImage"  approved="yes">
+				<source>Next image</source>
+				<target>image suivante</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

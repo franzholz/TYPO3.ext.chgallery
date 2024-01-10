@@ -42,7 +42,7 @@ class WizardIcon
         $listType = CHGALLERY_EXT . '_pi1';
         $params = '&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=' . $listType;
 
-        $wizardItem = ['title' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/locallang.xml:pi1_title'), 'description' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/locallang.xml:pi1_plus_wiz_description'), 'params' => $params];
+        $wizardItem = ['title' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/Resources/Private/Language/locallang.xlf:pi1_title'), 'description' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/Resources/Private/Language/locallang.xlf:pi1_plus_wiz_description'), 'params' => $params];
 
         $iconIdentifier = 'extensions-' . CHGALLERY_EXT . '-wizard';
         /** @var IconRegistry $iconRegistry */

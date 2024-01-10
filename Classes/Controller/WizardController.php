@@ -177,7 +177,7 @@ class WizardController
 
     public function __construct()
     {
-        $this->getLanguageService()->includeLLFile('EXT:' . CHGALLERY_EXT . '/wizard/locallang.xml');
+        $this->getLanguageService()->includeLLFile('EXT:' . CHGALLERY_EXT . '/Resources/Private/Language/Wizard/locallang.xlf');
         $this->getBackendUser()->modAccess($GLOBALS['MCONF']);
     }
 
@@ -741,7 +741,7 @@ class WizardController
             }
 
             $headerSection = $this->getHeader('pages', $this->pageinfo, $this->pageinfo['_thePath']) . '<br />'
-                    . $this->getLanguageService()->sL('LLL:EXT:lang/locallang_core.xml:labels.path') . ': '  .GeneralUtility::fixed_lgd_cs($this->pageinfo['_thePath'], 50);
+                    . $this->getLanguageService()->sL('LLL:EXT:lang/locallang_core.xlf:labels.path') . ': '  .GeneralUtility::fixed_lgd_cs($this->pageinfo['_thePath'], 50);
 
             $this->content .= $this->doc->startPage($this->getLanguageService()->getLL('title'));
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:30:30Z" product-name="chgallery">
+		<header/>
+		<body>
+			<trans-unit id="images" resname="images"  approved="yes">
+				<source>%s Images of the directory &quot;%s&quot;</source>
+				<target>%s images du répertoire &quot;%s&quot;</target>
+			</trans-unit>
+			<trans-unit id="save" resname="save"  approved="yes">
+				<source>Save &amp; Close</source>
+				<target>Enregistrer &amp; Fermer</target>
+			</trans-unit>
+			<trans-unit id="save2" resname="save2"  approved="yes">
+				<source>Save</source>
+				<target>Enregistrer</target>
+			</trans-unit>
+			<trans-unit id="close" resname="close"  approved="yes">
+				<source>Close window</source>
+				<target>Fermer la fenêtre</target>
+			</trans-unit>
+			<trans-unit id="error-header" resname="error-header"  approved="yes">
+				<source>An error occurred</source>
+				<target>Une erreur est survenue !</target>
+			</trans-unit>
+			<trans-unit id="error-neversavesd" resname="error-neversavesd"  approved="yes">
+				<source>Please save the plugin once and also a path!</source>
+				<target>Veuillez enregistrer le plugin au moins 1x avec un chemin valide</target>
+			</trans-unit>
+			<trans-unit id="error-path" resname="error-path"  approved="yes">
+				<source>No path is defined!</source>
+				<target>Aucun chemin n&#039;a été défini !</target>
+			</trans-unit>
+			<trans-unit id="error-pathwrong" resname="error-pathwrong"  approved="yes">
+				<source>The path is not valid!</source>
+				<target>Le chemin n&#039;est pas valide !</target>
+			</trans-unit>
+			<trans-unit id="path" resname="path"  approved="yes">
+				<source>Wizard for %s galleries, subfolders of %s </source>
+				<target>Assistant pour %s galeries, sous-répertoires de %s</target>
+			</trans-unit>
+			<trans-unit id="title" resname="title"  approved="yes">
+				<source>Titel</source>
+				<target>Titre</target>
+			</trans-unit>
+			<trans-unit id="description" resname="description"  approved="yes">
+				<source>Click at the title of the subdirectory to open the images of this directory. Fill out the descriptions you need and press close!</source>
+				<target>Cliquez sur le titre d&#039;un sous-répertoire pour ouvrir les images de ce répertoire. Remplissez les descriptions et terminez en cliquant sur &#039;Enregistrer&#039;.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

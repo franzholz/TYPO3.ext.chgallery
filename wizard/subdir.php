@@ -43,7 +43,7 @@ $MCONF['name'] = 'xMOD_tx_chgallery_wizard';
 $MCONF['script'] = 'subdir.php';
 
 require_once($BACK_PATH.'init.php');
-$LANG->includeLLFile('EXT:chgallery/wizard/locallang.xml');
+$LANG->includeLLFile('EXT:chgallery/Resources/Private/Language/Wizard/locallang.xml');
 
 // ....(But no access check here...)
 // DEFAULT initialization of a module [END]
@@ -343,7 +343,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
             }
 
             $headerSection = $this->doc->getHeader('pages', $this->pageinfo, $this->pageinfo['_thePath']).'<br />'
-                    .$LANG->sL('LLL:EXT:lang/locallang_core.xml:labels.path').': '.t3lib_div::fixed_lgd_cs($this->pageinfo['_thePath'], -50);
+                    .$LANG->sL('LLL:EXT:lang/locallang_core.xlf:labels.path').': '.t3lib_div::fixed_lgd_cs($this->pageinfo['_thePath'], -50);
 
             $this->content .= $this->doc->startPage($LANG->getLL('title'));
 

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:29:58Z" product-name="chgallery">
+		<header/>
+		<body>
+			<trans-unit id="tt_content.list_type_pi1" resname="tt_content.list_type_pi1"  approved="yes">
+				<source>Simple gallery - chgallery</source>
+				<target>Einfache Galerie - chgallery</target>
+			</trans-unit>
+			<trans-unit id="show" resname="show"  approved="yes">
+				<source>Display</source>
+				<target>Anzeige</target>
+			</trans-unit>
+			<trans-unit id="show.list" resname="show.list"  approved="yes">
+				<source>CATEGORY view =&gt; Categories (subdirs)</source>
+				<target>KATEGORY-Ansicht =&gt; Kategorien mit Unterverzeichnissen</target>
+			</trans-unit>
+			<trans-unit id="show.gallery" resname="show.gallery"  approved="yes">
+				<source>GALLERY view =&gt; Images of a dir</source>
+				<target>GALERIE-Ansicht =&gt; Bilder aus Verzeichnissen</target>
+			</trans-unit>
+			<trans-unit id="show.single" resname="show.single"  approved="yes">
+				<source>SINGLE view =&gt; Single image</source>
+				<target>DETAIL-Ansicht =&gt; Einzelanzeige</target>
+			</trans-unit>
+			<trans-unit id="settings" resname="settings"  approved="yes">
+				<source>Settings</source>
+				<target>Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="path" resname="path"  approved="yes">
+				<source>Path</source>
+				<target>Pfad der Bilder</target>
+			</trans-unit>
+			<trans-unit id="pagebrowser" resname="pagebrowser"  approved="yes">
+				<source>Images / page</source>
+				<target>Bilder / Seite</target>
+			</trans-unit>
+			<trans-unit id="description" resname="description"  approved="yes">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="random" resname="random"  approved="yes">
+				<source>Random Mode</source>
+				<target>Zufallsmodus</target>
+			</trans-unit>
+			<trans-unit id="link" resname="link"  approved="yes">
+				<source>Link all images to</source>
+				<target>Alle Bilder verlinken</target>
+			</trans-unit>
+			<trans-unit id="width" resname="width"  approved="yes">
+				<source>Image width</source>
+				<target>Bildbreite</target>
+			</trans-unit>
+			<trans-unit id="height" resname="height"  approved="yes">
+				<source>Image height</source>
+				<target>Bildhöhe</target>
+			</trans-unit>
+			<trans-unit id="title" resname="title"  approved="yes">
+				<source>Category title &amp; description</source>
+				<target>Kategorietitel &amp; -beschreibung</target>
+			</trans-unit>
+			<trans-unit id="descriptionList" resname="descriptionList"  approved="yes">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="single" resname="single"  approved="yes">
+				<source>Use Single view</source>
+				<target>Benutze Detail-Ansicht</target>
+			</trans-unit>
+			<trans-unit id="categoryOrder" resname="categoryOrder"  approved="yes">
+				<source>Sorting of categories</source>
+				<target>Sortierung der Kategorien</target>
+			</trans-unit>
+			<trans-unit id="categoryOrder.title" resname="categoryOrder.title"  approved="yes">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="categoryOrder.path" resname="categoryOrder.path"  approved="yes">
+				<source>Path</source>
+				<target>Pfad</target>
+			</trans-unit>
+			<trans-unit id="categoryOrder.date" resname="categoryOrder.date"  approved="yes">
+				<source>Date</source>
+				<target>Datum</target>
+			</trans-unit>
+			<trans-unit id="categoryOrder.size" resname="categoryOrder.size"  approved="yes">
+				<source>Count of images</source>
+				<target>Anzahl Bilder</target>
+			</trans-unit>
+			<trans-unit id="categoryAscDesc" resname="categoryAscDesc"  approved="yes">
+				<source>Order By</source>
+				<target>Sortiert nach</target>
+			</trans-unit>
+			<trans-unit id="categoryAscDesc.asc" resname="categoryAscDesc.asc"  approved="yes">
+				<source>ascending</source>
+				<target>aufsteigend</target>
+			</trans-unit>
+			<trans-unit id="categoryAscDesc.desc" resname="categoryAscDesc.desc"  approved="yes">
+				<source>descending</source>
+				<target>absteigend</target>
+			</trans-unit>
+			<trans-unit id="more" resname="more"  approved="yes">
+				<source>Additional options</source>
+				<target>Zusätzliche Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="renderAllLinks" resname="renderAllLinks"  approved="yes">
+				<source>Show all images in Lightbox</source>
+				<target>Zeige alle Bilder in der Lightbox</target>
+			</trans-unit>
+			<trans-unit id="excludeFirstImage" resname="excludeFirstImage"  approved="yes">
+				<source>Don&#039;t display first image in single view (Category view only)</source>
+				<target>Erstes Bild bei Kategorie-Modus nicht anzeigen</target>
+			</trans-unit>
+			<trans-unit id="templateFile" resname="templateFile"  approved="yes">
+				<source>Template</source>
+				<target>Template</target>
+			</trans-unit>
+			<trans-unit id="preview" resname="preview"  approved="yes">
+				<source>Preview</source>
+				<target>Vorschau</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

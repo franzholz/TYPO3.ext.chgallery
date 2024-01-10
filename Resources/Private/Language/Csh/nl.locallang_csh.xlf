@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="nl" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:29:42Z" product-name="chgallery">
+		<header/>
+		<body>
+			<trans-unit id="show.description" resname="show.description"  approved="yes">
+				<source>Defines the mode of the gallery.</source>
+				<target>Bepaalt de modus van de gallery</target>
+			</trans-unit>
+			<trans-unit id="show.details" resname="show.details" xml:space="preserve" approved="yes">
+				<source> Possible views are:
+						&lt;ul&gt;
+							&lt;li&gt;- &lt;strong&gt;Gallery view:&lt;/strong&gt; Show all images from the given path.&lt;/li&gt; 
+							&lt;li&gt;- &lt;strong&gt;Category view:&lt;/strong&gt; Show all subdirectories from the given path. Each directory represents a category.&lt;/li&gt;
+							&lt;li&gt;- &lt;strong&gt;Single view:&lt;/strong&gt; Show a single image, best use in combination with another view.&lt;/li&gt;
+						&lt;/ul&gt;
+						 </source>
+				<target> Mogelijke weergaven zijn:
+						&lt;ul&gt;
+							&lt;li&gt;- &lt;strong&gt;Gallery weergave:&lt;/strong&gt; Toon alle foto&#039;s uit de folder &lt;/li&gt; 
+							&lt;li&gt;- &lt;strong&gt;Categorie weergave:&lt;/strong&gt; Toon alle subfolder van de gekozen folder. Elke folder representeerd een categorie.&lt;/li&gt;
+							&lt;li&gt;- &lt;strong&gt;Enkel weergave:&lt;/strong&gt; Toon een enkele foto, het beste te gebruiken in combinatie met een andere weergave optie.&lt;/li&gt;
+						&lt;/ul&gt;
+						 </target>
+			</trans-unit>
+			<trans-unit id="path.description" resname="path.description"  approved="yes">
+				<source>The path to the directory with the images.</source>
+				<target>Het pad naar de folder met de foto&#039;s.</target>
+			</trans-unit>
+			<trans-unit id="path.details" resname="path.details"  approved="yes">
+				<source> Define the path where the images/directories are saved. A valid path looks like &quot;&lt;i&gt;fileadmin/photos/xmas/&lt;/i&gt;&quot;. Install the extension &quot;&lt;strong&gt;rgfolderselector&lt;/strong&gt;&quot; to get a wizard for the path and avoid errors while adding the path. </source>
+				<target> Geef het pad aan waar de foto&#039;s en folders zijn opgeslagen. Een correct pad ziet eruit als &quot;&lt;i&gt;fileadmin/photos/xmas/&lt;/i&gt;&quot;. Installeer de extensie &quot;&lt;strong&gt;rgfolderselector&lt;/strong&gt;&quot; om een wizard te krijgen en fouten te voorkomen. </target>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description"  approved="yes">
+				<source>Add a description to every image by using the wizard. To open the wizard click on the icon.</source>
+				<target>Voeg een omschrijving toe d.m.v. de wizard. Klik op het icoontje om de wizard te starten.</target>
+			</trans-unit>
+			<trans-unit id="description.details" resname="description.details"  approved="yes">
+				<source>Each description is saved in a seperate text file with the same filename as the image in the same directory. </source>
+				<target>Elke omschrijving wordt opgeslagen als een apart tekst bestand met dezelfde naam als de foto in dezelfde folder. </target>
+			</trans-unit>
+			<trans-unit id="title.description" resname="title.description"  approved="yes">
+				<source>Add a title to each category by adding it to the textarea. Each line in the textarea represents one category. To add a description to the category please use the wizard.</source>
+				<target>Voeg een titel aan de categorie toe door deze in het tekstvak in te vullen. Elke regel in het tekstvak representeerd een titel. Om een omschrijving toe te voegen kunt u de wizard gebruiken.</target>
+			</trans-unit>
+			<trans-unit id="categoryOrder.description" resname="categoryOrder.description"  approved="yes">
+				<source>Use the selection field to sort the categories either ascending or descending (by its name).</source>
+				<target>Gebruik het selectieveld om de categorien oplopend of aflopend op naam weer te geven.</target>
+			</trans-unit>
+			<trans-unit id="pagebrowser.description" resname="pagebrowser.description"  approved="yes">
+				<source>Set how many images should be displayed on each page.</source>
+				<target>Geef aan hoeveel foto&#039;s per pagina geplaatst moeten worden.</target>
+			</trans-unit>
+			<trans-unit id="random.description" resname="random.description" xml:space="preserve" approved="yes">
+				<source>Enable a random view. Important: 
+			&lt;ul&gt;&lt;li&gt;- Additionally must be set in TS: &lt;i&gt;plugin.tx_chgallery_pi1 = USER_INT&lt;/i&gt;&lt;/li&gt;
+																					&lt;li&gt;- The pagebrowser will get hidden&lt;/li&gt;&lt;/ul&gt; </source>
+				<target>Maak een willekeurige weergave mogelijk. Belangrijk: 
+			&lt;ul&gt;&lt;li&gt;- Het volgende moet worden toegevoegd in TS: &lt;i&gt;plugin.tx_chgallery_pi1 = USER_INT&lt;/i&gt;&lt;/li&gt;
+																					&lt;li&gt;-De paginabrowser zal verborgen worden&lt;/li&gt;&lt;/ul&gt; </target>
+			</trans-unit>
+			<trans-unit id="link.description" resname="link.description"  approved="yes">
+				<source>Link every image to a specific page.</source>
+				<target>Link elke foto naar een specifieke pagina.</target>
+			</trans-unit>
+			<trans-unit id="single.description" resname="single.description"  approved="yes">
+				<source>Enable the single view in the plugin which is set to GALLERY or CATEGORY view. Insert then the plugin on the same page again and set the view to SINGLE.</source>
+				<target>Maak de enkele weergave mogelijk in de plugin als deze op GALLERY of CATEGORY weergave staat. Voeg de plugin nogmaals toe op dezelfde pagina met de weergave SINGLE.</target>
+			</trans-unit>
+			<trans-unit id="renderAllLinks.description" resname="renderAllLinks.description"  approved="yes">
+				<source>Enable this checkbox to be able to show all images inside the lightbox even if there is more then one page in the pagebrowser. Without enabling it the lightbox will just show the images of the current page.</source>
+				<target>Selecteer deze optie om alle foto&#039;s te laten tonen in een lightbox voor het geval er meerdere pagina&#039;s zijn. Zijn er meerdere pagina&#039;s en deze optie staat niet aan, zullen alleen de foto&#039;s van de huidige pagina in een lightbox verschijnen.</target>
+			</trans-unit>
+			<trans-unit id="excludeFirstImage.description" resname="excludeFirstImage.description"  approved="yes">
+				<source>If this checkbox is enabled and the category view is used, the first image will be used as preview image only and will not be visible inside the gallery.</source>
+				<target>Wanneer deze optie is geselecteerd en de categorie weergave is ingebruik, wordt de eerste foto gebruikt als voorvertoning en zal deze niet meer in het album zichtbaar zijn.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
