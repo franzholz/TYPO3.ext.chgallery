@@ -185,7 +185,7 @@ class WizardController
     *
     * @see menuConfig()
     */
-    public function init()
+    public function init(): void
     {
         // Name might be set from outside
         if (!$this->MCONF['name']) {
@@ -315,7 +315,7 @@ class WizardController
     *
     * @return  string the wizards content
     */
-    public function moduleContent()
+    public function moduleContent(): void
     {
         $vars = GeneralUtility::_GET('P');
 
@@ -465,7 +465,7 @@ class WizardController
     * @param string	The file
     * @return string	The image-tag
     */
-    public function save($imageList)
+    public function save($imageList): void
     {
         $saveVars = GeneralUtility::_POST('dir');
         if(isset($saveVars) && is_array($saveVars) && count($saveVars) > 0) {
@@ -706,7 +706,7 @@ class WizardController
     *
     * @return    [type]        ...
     */
-    public function main()
+    public function main(): void
     {
         ;
         $P = $var = GeneralUtility::_GP('P');
@@ -758,7 +758,7 @@ class WizardController
     *
     * @return    [type]        ...
     */
-    public function printContent()
+    public function printContent(): void
     {
         $this->content .= $this->doc->endPage();
         echo $this->content;
@@ -778,7 +778,7 @@ class WizardController
 // \TYPO3\CMS\Core\Core\Bootstrap::baseSetup();
 
 // Set up the application for the backend
-call_user_func(function () {
+call_user_func(function (): void {
 
     $BACK_PATH = '../../../..';
     $entryPointLevel = 4;

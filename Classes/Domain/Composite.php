@@ -33,7 +33,7 @@ class Composite implements SingletonInterface
     protected $templateCode = '';
 
 
-    public function setCObj($value)
+    public function setCObj($value): void
     {
         $this->cObj = $value;
     }
@@ -43,7 +43,7 @@ class Composite implements SingletonInterface
         return $this->cObj;
     }
 
-    public function setPrefixId($value)
+    public function setPrefixId($value): void
     {
         $this->prefixId = $value;
     }
@@ -53,7 +53,7 @@ class Composite implements SingletonInterface
         return $this->prefixId;
     }
 
-    public function setPiVars($value)
+    public function setPiVars($value): void
     {
         $this->piVars = $value;
     }
@@ -63,7 +63,7 @@ class Composite implements SingletonInterface
         return $this->piVars;
     }
 
-    public function setConf($value)
+    public function setConf($value): void
     {
         $this->conf = $value;
     }
@@ -73,7 +73,7 @@ class Composite implements SingletonInterface
         return $this->conf;
     }
 
-    public function setConfig($value)
+    public function setConfig($value): void
     {
         $this->config = $value;
     }
@@ -83,7 +83,7 @@ class Composite implements SingletonInterface
         return $this->config;
     }
 
-    public function setTemplateCode($value)
+    public function setTemplateCode($value): void
     {
         $this->templateCode = $value;
     }

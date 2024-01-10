@@ -67,7 +67,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
      *
      * @return  string the wizards content
      */
-    public function moduleContent()
+    public function moduleContent(): void
     {
         global $LANG;
         $vars = t3lib_div::_GET('P');
@@ -260,7 +260,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
      *
      * @return    [type]        ...
      */
-    public function menuConfig()
+    public function menuConfig(): void
     {
         global $LANG;
         $this->MOD_MENU = [
@@ -276,7 +276,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
      *
      * @return    [type]        ...
      */
-    public function main()
+    public function main(): void
     {
         global $BE_USER,$LANG,$BACK_PATH,$TCA_DESCR,$TCA,$CLIENT,$TYPO3_CONF_VARS;
         $P = $var = t3lib_div::_GP('P');
@@ -362,7 +362,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
      *
      * @return    [type]        ...
      */
-    public function printContent()
+    public function printContent(): void
     {
         $this->content .= $this->doc->endPage();
         echo $this->content;

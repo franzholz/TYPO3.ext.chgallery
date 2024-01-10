@@ -54,7 +54,7 @@ class Api implements SingletonInterface
         $this->setResourceFactory($resourceFactory);
     }
 
-    public function setResourceFactory($value)
+    public function setResourceFactory($value): void
     {
         $this->resourceFactory = $value;
     }
@@ -64,7 +64,7 @@ class Api implements SingletonInterface
         return $this->resourceFactory;
     }
 
-    public function setStorageUid($value)
+    public function setStorageUid($value): void
     {
         $this->storageUid = $value;
     }
@@ -74,7 +74,7 @@ class Api implements SingletonInterface
         return $this->storageUid;
     }
 
-    public function setLanguageObj($value)
+    public function setLanguageObj($value): void
     {
         $this->languageObj = $value;
     }
@@ -506,7 +506,7 @@ class Api implements SingletonInterface
     * @param	string		$sort: sorting direction
     * @return	correct sorting
     */
-    public function sortByDate(&$dirs, $sort)
+    public function sortByDate(&$dirs, $sort): void
     {
         if($sort == 'dateasc') {
             usort($dirs, $this->dateASC(...));
