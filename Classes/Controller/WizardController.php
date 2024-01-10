@@ -361,7 +361,7 @@ class WizardController
             $flexformArray = $flexformArray['data']['sDEF']['lDEF'];
 
             // get all the infos we need
-            $path 					= $this->checkPath(trim($flexformArray['path']['vDEF']));
+            $path 					= $this->checkPath(trim((string) $flexformArray['path']['vDEF']));
             $pagebrowser 			= $flexformArray['pagebrowser']['vDEF'];
             $show				 	= $flexformArray['show']['vDEF'];
         }
@@ -544,7 +544,7 @@ class WizardController
         $imgTag = '<img src="' . $imageUrl . '" ' .
                 'width="' . $processedImage->getProperty('width') . '" ' .
                 'height="' . $processedImage->getProperty('height') . '" ' .
-                'alt="' . htmlspecialchars($fileReferenceObject->getName()) . '" />';
+                'alt="' . htmlspecialchars((string) $fileReferenceObject->getName()) . '" />';
 
         return $imgTag;
     }
@@ -571,7 +571,7 @@ class WizardController
 
         if (is_array($row) && $row['uid']) {
             $iconImgTag = '<span title="' . htmlspecialchars($path) . '">' . $iconFactory->getIconForRecord($table, $row, Icon::SIZE_SMALL)->render() . '</span>';
-            $title = strip_tags(BackendUtility::getRecordTitle($table, $row));
+            $title = strip_tags((string) BackendUtility::getRecordTitle($table, $row));
             $viewPage = $noViewPageIcon ? '' : $this->doc->viewPageIcon($row['uid']);
         } else {
             $iconImgTag = '<span title="' . htmlspecialchars($path) . '">' . $iconFactory->getIcon('apps-pagetree-page-domain', Icon::SIZE_SMALL)->render() . '</span>';
@@ -782,7 +782,7 @@ call_user_func(function () {
 
     $BACK_PATH = '../../../..';
     $entryPointLevel = 4;
-    if (strpos($_SERVER['PHP_SELF'], 'typo3conf')) {
+    if (strpos((string) $_SERVER['PHP_SELF'], 'typo3conf')) {
         $BACK_PATH .= '/..';
         $entryPointLevel++;
         define('TYPO3_MOD_PATH', '../typo3conf/ext/chgallery/wizard/');

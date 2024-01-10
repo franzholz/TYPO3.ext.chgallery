@@ -197,7 +197,7 @@ class InitializationController implements SingletonInterface
         $api = GeneralUtility::makeInstance(Api::class);
         $dir = GeneralUtility::get_dirs($path);
         $newdir = [];
-        $titleList = explode(chr(10), $config['listTitle']);
+        $titleList = explode(chr(10), (string) $config['listTitle']);
         $i = 0;
 
         if(is_array($dir) && !empty($dir)) {

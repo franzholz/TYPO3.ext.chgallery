@@ -31,7 +31,7 @@ define('TYPO3_MOD_PATH', '../typo3conf/ext/chgallery/wizard/');
 
 
 // by RICC
-if (!preg_match('#typo3conf#m', $_SERVER['PHP_SELF'])) {
+if (!preg_match('#typo3conf#m', (string) $_SERVER['PHP_SELF'])) {
     $BACK_PATH = '../../../';
     define('TYPO3_MOD_PATH', 'ext/chgallery/wizard/');
 } else {
@@ -90,9 +90,9 @@ class tx_chgallery_wizard extends t3lib_SCbase
             $flexformArray = $flexformArray['data']['sDEF']['lDEF'];
 
             // get all the infos we need
-            $path  = $this->checkPath(trim($flexformArray['path']['vDEF']));
-            $sort  = trim($flexformArray['categoryOrder']['vDEF']);
-            $title = explode(chr(10), trim($flexformArray['title']['vDEF']));
+            $path  = $this->checkPath(trim((string) $flexformArray['path']['vDEF']));
+            $sort  = trim((string) $flexformArray['categoryOrder']['vDEF']);
+            $title = explode(chr(10), trim((string) $flexformArray['title']['vDEF']));
         }
 
         if ($path == '') {
@@ -164,7 +164,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
 
             #			$content.= '<form  name="editform" id="editform">';
 
-            [$rUri] = explode('#', t3lib_div::getIndpEnv('REQUEST_URI'));
+            [$rUri] = explode('#', (string) t3lib_div::getIndpEnv('REQUEST_URI'));
             // save the image titles, popup will be closes after submit
             $content = '
 					<form action="" action="' . htmlspecialchars($rUri) . '" method="post" name="editform">

@@ -27,7 +27,7 @@ class FalUtility
      */
     public static function convertFalPath($path)
     {
-        if (preg_match('/^file:(\d+):(.*)$/', $path, $matches)) {
+        if (preg_match('/^file:(\d+):(.*)$/', (string) $path, $matches)) {
             /** @var $storageRepository \TYPO3\CMS\Core\Resource\StorageRepository */
             $storageRepository = GeneralUtility::makeInstance(StorageRepository::class);
             /** @var $storage \TYPO3\CMS\Core\Resource\ResourceStorage */
@@ -35,7 +35,7 @@ class FalUtility
             $storageRecord = $storage->getStorageRecord();
             $storageConfiguration = $storage->getConfiguration();
             if ($storageRecord['driver'] === 'Local') {
-                $basePath = rtrim($storageConfiguration['basePath'], '/') . '/';
+                $basePath = rtrim((string) $storageConfiguration['basePath'], '/') . '/';
                 $path = $basePath . substr($matches[2], 1);
             }
         }

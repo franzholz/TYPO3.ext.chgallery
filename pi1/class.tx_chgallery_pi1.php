@@ -218,7 +218,7 @@ class tx_chgallery_pi1 extends AbstractPlugin
 
             $linkConf['additionalParams'] = $api->getExtraVars($conf['extraAdditionalParams']) . '&tx_chgallery_pi1[dir]=' . ($key + 1);
             $linkConf['title'] = $value['title'];
-            $wrappedSubpartArray['###LINK_ITEM###'] = explode('|', $this->cObj->typolink('|', $linkConf));
+            $wrappedSubpartArray['###LINK_ITEM###'] = explode('|', (string) $this->cObj->typolink('|', $linkConf));
 
             $content_item .= $templateService->substituteMarkerArrayCached($template['item'], $markerArray, $array, $wrappedSubpartArray);
         }

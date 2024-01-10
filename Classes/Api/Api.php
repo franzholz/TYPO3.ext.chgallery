@@ -509,9 +509,9 @@ class Api implements SingletonInterface
     public function sortByDate(&$dirs, $sort)
     {
         if($sort == 'dateasc') {
-            usort($dirs, [&$this, 'dateASC']);
+            usort($dirs, $this->dateASC(...));
         } elseif($sort == 'datedesc') {
-            usort($dirs, [&$this, 'dateDESC']);
+            usort($dirs, $this->dateDESC(...));
         }
     }
 
@@ -595,8 +595,8 @@ class Api implements SingletonInterface
             $path = $subDir['path'];
 
             foreach ($subDir as $key => $value) {
-                $markerArray['###DIR_' . strtoupper($key) . '###'] = $cObj->stdWrap($subDir[$key], $conf['gallery.']['dir_' . $key . '.']);
-                $markerArray['###LL_' . strtoupper($key) . '###']  = $languageObj->getLabel($key);
+                $markerArray['###DIR_' . strtoupper((string) $key) . '###'] = $cObj->stdWrap($subDir[$key], $conf['gallery.']['dir_' . $key . '.']);
+                $markerArray['###LL_' . strtoupper((string) $key) . '###']  = $languageObj->getLabel($key);
             }
 
             $backLink = [];

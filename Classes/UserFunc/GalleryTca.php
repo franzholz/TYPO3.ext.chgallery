@@ -74,9 +74,9 @@ class GalleryTca
             $flexformArray = $PA['row']['pi_flexform']['data']['sDEF']['lDEF'];
 
             // get all the infos we need
-            $path = trim($flexformArray['path']['vDEF']);
-            $mode = trim($flexformArray['show']['vDEF']);
-            $sort  = trim($flexformArray['categoryOrder']['vDEF']);
+            $path = trim((string) $flexformArray['path']['vDEF']);
+            $mode = trim((string) $flexformArray['show']['vDEF']);
+            $sort  = trim((string) $flexformArray['categoryOrder']['vDEF']);
             $languageid = $PA['row']['sys_language_uid'];
 
             $path = FalUtility::convertFalPath($path);

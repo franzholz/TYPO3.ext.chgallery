@@ -50,8 +50,8 @@ use TYPO3\CMS\Install\Service\UpgradeWizardsService;
 
 class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, ConfirmableInterface, ChattyInterface
 {
-    public const TABLE_NAMES = '"tx_ratings_data" and "tx_ratings_iplog"';
-    public const TABLES = 'tx_ratings_data,tx_ratings_iplog';
+    final public const TABLE_NAMES = '"tx_ratings_data" and "tx_ratings_iplog"';
+    final public const TABLES = 'tx_ratings_data,tx_ratings_iplog';
 
     /**
     * @var OutputInterface
@@ -149,7 +149,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
         $customMessages = [];
         $storageUid = 0;
         $resourceFactory = ResourceFactory::getInstance();
-        $tables = explode(',', static::TABLES);
+        $tables = explode(',', (string) static::TABLES);
 
         foreach ($tables as $k => $table) {
             $count = 0;
@@ -168,7 +168,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
                 ->execute();
 
             while (($row = $statement->fetch()) && $count >= 0) { // use a $count limitation for development purposes
-                $fileName = substr($row['reference'], strlen(CHGALLERY_EXT));
+                $fileName = substr((string) $row['reference'], strlen((string) CHGALLERY_EXT));
                 $updateRow = [];
                 try {
                     $count++;
@@ -215,7 +215,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
     protected function getUpdatableReferencesCount(): int
     {
         $result = 0;
-        $tables = explode(',', static::TABLES);
+        $tables = explode(',', (string) static::TABLES);
 
         foreach ($tables as $table) {
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
