@@ -31,7 +31,7 @@ define('TYPO3_MOD_PATH', '../typo3conf/ext/chgallery/wizard/');
 
 
 // by RICC
-if (!ereg('typo3conf', $_SERVER['PHP_SELF'])) {
+if (!preg_match('#typo3conf#m', $_SERVER['PHP_SELF'])) {
     $BACK_PATH = '../../../';
     define('TYPO3_MOD_PATH', 'ext/chgallery/wizard/');
 } else {
