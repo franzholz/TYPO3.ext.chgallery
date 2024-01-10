@@ -345,9 +345,7 @@ class WizardController
                             \PDO::PARAM_INT
                         )
                     )
-                )
-                ->setMaxResults(1)
-                ->execute()
+                )->setMaxResults(1)->executeQuery()
                 ->fetchAll();
 
             if (is_array($rows) && !empty($rows)) {

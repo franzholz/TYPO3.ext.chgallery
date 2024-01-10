@@ -158,14 +158,10 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
             $queryBuilder->getRestrictions()->removeAll();
             $statement = $queryBuilder
                 ->select('*')
-                ->from($table)
-                ->where(
-                    $queryBuilder->expr()->like(
-                        'reference',
-                        $queryBuilder->createNamedParameter(CHGALLERY_EXT . 'fileadmin%')
-                    )
-                )
-                ->execute();
+                ->from($table)->where($queryBuilder->expr()->like(
+                'reference',
+                $queryBuilder->createNamedParameter(CHGALLERY_EXT . 'fileadmin%')
+            ))->executeQuery();
 
             while (($row = $statement->fetch()) && $count >= 0) { // use a $count limitation for development purposes
                 $fileName = substr((string) $row['reference'], strlen((string) CHGALLERY_EXT));
