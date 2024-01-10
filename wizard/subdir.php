@@ -368,11 +368,6 @@ class tx_chgallery_wizard extends t3lib_SCbase {
 }
 
 
-
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/chgallery/wizard/subdir.php'])    {
-    include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/chgallery/wizard/subdir.php']);
-}
-
 // Make instance:
 $SOBE = t3lib_div::makeInstance('tx_chgallery_wizard');
 $SOBE->init();
