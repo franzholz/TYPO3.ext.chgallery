@@ -14,9 +14,8 @@ namespace JambageCom\Chgallery\Controller\Plugin;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-
-
+use TYPO3\CMS\Core\Imaging\IconRegistry;
+use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
@@ -43,21 +42,15 @@ class WizardIcon
         $listType = CHGALLERY_EXT . '_pi1';
         $params = '&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=' . $listType;
 
-        $wizardItem = array(
-            'title' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/locallang.xml:pi1_title'),
-            'description' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/locallang.xml:pi1_plus_wiz_description'),
-            'params' => $params
-        );
+        $wizardItem = ['title' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/locallang.xml:pi1_title'), 'description' => $GLOBALS['LANG']->sL('LLL:EXT:' . CHGALLERY_EXT . '/locallang.xml:pi1_plus_wiz_description'), 'params' => $params];
 
         $iconIdentifier = 'extensions-' . CHGALLERY_EXT . '-wizard';
-        /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-        $iconRegistry = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
+        /** @var IconRegistry $iconRegistry */
+        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
         $iconRegistry->registerIcon(
             $iconIdentifier,
-            'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
-            array(
-                'source' => 'EXT:' . CHGALLERY_EXT . '/' . $wizardIcon,
-            )
+            BitmapIconProvider::class,
+            ['source' => 'EXT:' . CHGALLERY_EXT . '/' . $wizardIcon]
         );
         $wizardItem['iconIdentifier'] = $iconIdentifier;
         $wizardItems['plugins_' . $listType] = $wizardItem;

@@ -11,7 +11,9 @@
 *
 * The TYPO3 project - inspiring people to share!
 */
-
+use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
+use JambageCom\Chgallery\Controller\InitializationController;
+use JambageCom\Div2007\Utility\MarkerUtility;
 use TYPO3\CMS\Core\Service\MarkerBasedTemplateService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -29,7 +31,7 @@ use JambageCom\Chgallery\Utility\FalUtility;
 * @package	TYPO3
 * @subpackage	tx_chgallery
 */
-class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
+class tx_chgallery_pi1 extends AbstractPlugin
 {
     public $prefixId      = 'tx_chgallery_pi1';		// Same as class name
     public $scriptRelPath = 'pi1/class.tx_chgallery_pi1.php';	// Path to this script relative to the extension dir.
@@ -64,7 +66,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
     public function init(&$content, $conf)
     {
         $initialization = GeneralUtility::makeInstance(
-            \JambageCom\Chgallery\Controller\InitializationController::class
+            InitializationController::class
         );
         $composite = null;
         $initialization->init(
@@ -91,7 +93,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
         $conf = $composite->getConf();
         $config = $composite->getConfig();
         $template['total'] = $templateService->getSubpart($composite->getTemplateCode(), '###TEMPLATE_SINGLE###');
-        $tagArray = \JambageCom\Div2007\Utility\MarkerUtility::getTags($template['total']);
+        $tagArray = MarkerUtility::getTags($template['total']);
         $dir = $this->piVars['dir'];
         $singleImage = $this->piVars['single'];
 
@@ -120,7 +122,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
         }
 
         // pagebrowser: PREV image
-        $linkConf = array();
+        $linkConf = [];
         $linkConf['parameter'] = $api->getLinkParameter();
         $linkConf['useCacheHash'] = 1;
 
@@ -198,7 +200,7 @@ class tx_chgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
 
         foreach ($config['subfolders'] as $key => $value) {
             // generall markers
-            $markerList = array('size', 'description', 'path', 'title', 'name', 'date');
+            $markerList = ['size', 'description', 'path', 'title', 'name', 'date'];
             foreach($markerList as $mKey) {
                 $markerArray['###LL_' . strtoupper($mKey) . '###'] 	= $languageObj->getLabel($mKey);
             }

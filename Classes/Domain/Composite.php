@@ -14,16 +14,15 @@ namespace JambageCom\Chgallery\Domain;
 *
 * The TYPO3 project - inspiring people to share!
 */
-
 /**
  *
  * variable storage
  *
  */
-
+use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class Composite implements \TYPO3\CMS\Core\SingletonInterface
+class Composite implements SingletonInterface
 {
     protected $cObj;       // The backReference to the mother cObj object set at call time
     protected $prefixId;

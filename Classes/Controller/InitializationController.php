@@ -14,8 +14,9 @@ namespace JambageCom\Chgallery\Controller;
 *
 * The TYPO3 project - inspiring people to share!
 */
-
-
+use TYPO3\CMS\Core\SingletonInterface;
+use JambageCom\Chgallery\Api\Localization;
+use JambageCom\Div2007\Utility\FlexformUtility;
 use JambageCom\Chgallery\Api\Api;
 
 
@@ -40,7 +41,7 @@ use JambageCom\Div2007\Utility\ControlUtility;
 
 use JambageCom\Chgallery\Domain\Composite;
 
-class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
+class InitializationController implements SingletonInterface
 {
     /**
     * does the initialization stuff
@@ -71,7 +72,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
         // *************************************
         $composite->setPrefixId($prefixId);
 
-        $languageObj = GeneralUtility::makeInstance(\JambageCom\Chgallery\Api\Localization::class);
+        $languageObj = GeneralUtility::makeInstance(Localization::class);
         $languageObj->init(
             CHGALLERY_EXT,
             $conf['_LOCAL_LANG.'],
@@ -160,7 +161,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
         // Default sheet is sDEF
         $sheet = ($sheet == '') ? $sheet = 'sDEF' : $sheet;
         $flexform =
-            \JambageCom\Div2007\Utility\FlexformUtility::get(
+            FlexformUtility::get(
                 $cObj->data['pi_flexform'],
                 $key,
                 $sheet
@@ -173,10 +174,10 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
             // hack to work with multiple TS arrays
             $tsparts = explode('.', $confOverride);
             if (count($tsparts) == 1) { // default with no .
-                $value = $flexform ? $flexform : $conf[$confOverride];
+                $value = $flexform ?: $conf[$confOverride];
                 $value = $cObj->stdWrap($value, $conf[$confOverride . '.']);
             } elseif (count($tsparts) == 2) { // 1 sub array
-                $value = $flexform ? $flexform : $conf[$tsparts[0] . '.'][$tsparts[1]];
+                $value = $flexform ?: $conf[$tsparts[0] . '.'][$tsparts[1]];
                 $value = $cObj->stdWrap($value, $conf[$tsparts[0] . '.'][$tsparts[1] . '.']);
             }
 
@@ -195,7 +196,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
     {
         $api = GeneralUtility::makeInstance(Api::class);
         $dir = GeneralUtility::get_dirs($path);
-        $newdir = array();
+        $newdir = [];
         $titleList = explode(chr(10), $config['listTitle']);
         $i = 0;
 
@@ -227,7 +228,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
             }
 
             // sorting of categories
-            $sort_arr = array();
+            $sort_arr = [];
             foreach($newdir as $uniqid => $row) {
                 foreach($row as $key => $value) {
                     $sort_arr[$key][$uniqid] = $value;
@@ -237,7 +238,7 @@ class InitializationController implements \TYPO3\CMS\Core\SingletonInterface
             $sort = ($config['categoryOrderAscDesc'] == 'asc') ? SORT_ASC : SORT_DESC;
 
             // check for old settings
-            if (array_key_exists($config['categoryOrder'], array('asc' => 1, 'desc' => 1, 'dateasc' => 1, 'datedesc' => 1))) {
+            if (array_key_exists($config['categoryOrder'], ['asc' => 1, 'desc' => 1, 'dateasc' => 1, 'datedesc' => 1])) {
                 $config['categoryOrder'] = 'path';
             }
 

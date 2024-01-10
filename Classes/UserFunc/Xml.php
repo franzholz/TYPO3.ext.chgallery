@@ -2,7 +2,9 @@
 
 namespace JambageCom\Chgallery\UserFunc;
 
-class Xml extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
+use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
+use JambageCom\Chgallery\Controller\InitializationController;
+class Xml extends AbstractPlugin
 {
     public $prefixId      = 'tx_chgallery_pi1';		// Same as class name
     public $scriptRelPath = 'pi1/class.tx_chgallery_pi1.php';	// Path to this script relative to the extension dir.
@@ -42,7 +44,7 @@ class Xml extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
     public function init(&$content, $conf)
     {
         $initialization = GeneralUtility::makeInstance(
-            \JambageCom\Chgallery\Controller\InitializationController::class
+            InitializationController::class
         );
         $composite = null;
         $initialization->init(

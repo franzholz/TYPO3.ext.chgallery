@@ -73,7 +73,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
         $vars = t3lib_div::_GET('P');
 
         // error checks
-        $error = array();
+        $error = [];
         // check if CE has been saved once!
         if (intval($vars['uid']) == 0) {
             $error[] = $LANG->getLL('error-neversavesd');
@@ -199,7 +199,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
     public function getFullDir($path, $sort = '')
     {
         $dir = t3lib_div::get_dirs($path);
-        $newdir = array();
+        $newdir = [];
 
         if(is_array($dir) && !empty($dir)) {
             $sort = ($sort != 'desc') ? SORT_ASC : SORT_DESC;
@@ -340,11 +340,7 @@ class tx_chgallery_wizard extends t3lib_SCbase
         $access = is_array($this->pageinfo) ? 1 : 0;
         if (($this->id && $access) || ($BE_USER->user['admin'] && !$this->id) || ($BE_USER->user["uid"] && !$this->id)) {
             if ($BE_USER->user['admin'] && !$this->id) {
-                $this->pageinfo = array(
-                        'title' => '[root-level]',
-                        'uid'   => 0,
-                        'pid'   => 0
-                );
+                $this->pageinfo = ['title' => '[root-level]', 'uid'   => 0, 'pid'   => 0];
             }
 
             $headerSection = $this->doc->getHeader('pages', $this->pageinfo, $this->pageinfo['_thePath']).'<br />'

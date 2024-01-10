@@ -14,7 +14,8 @@ namespace JambageCom\Chgallery\Updates;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use TYPO3\CMS\Core\Database\Connection;
@@ -149,7 +150,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
         $dbQueries = [];
         $customMessages = [];
         $storageUid = 0;
-        $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+        $resourceFactory = ResourceFactory::getInstance();
         $tables = explode(',', static::TABLES);
 
         foreach ($tables as $k => $table) {
@@ -175,7 +176,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
                     $count++;
                     $file = $resourceFactory->getObjectFromCombinedIdentifier($storageUid . ':' . $fileName);
                     $updateRow['reference'] = CHGALLERY_EXT . '_' . $file->getUid();
-                } catch (\TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException $e) {
+                } catch (ResourceDoesNotExistException $e) {
                     // Not found
                     if ($k == 0) {
                         $customMessages[] = 'file not found: "' . $fileName . '"';

@@ -14,7 +14,11 @@ namespace JambageCom\Chgallery\Controller;
 *
 * The TYPO3 project - inspiring people to share!
 */
-
+use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Backend\Template\DocumentTemplate;
+use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
+use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\Connection;
@@ -203,11 +207,7 @@ class WizardController
     */
     protected function menuConfig()
     {
-        $this->MOD_MENU = array(
-            'function' => array(
-                '1' => $this->getLanguageService()->getLL('function1'),
-            )
-        );
+        $this->MOD_MENU = ['function' => ['1' => $this->getLanguageService()->getLL('function1')]];
 
         // Page/be_user TSconfig settings and blinding of menu-items
         $this->modTSconfig = BackendUtility::getModTSconfig($this->id, 'mod.' . $this->MCONF['name']);
@@ -320,7 +320,7 @@ class WizardController
         $vars = GeneralUtility::_GET('P');
 
         // error checks
-        $error = array();
+        $error = [];
         // check if CE has been saved once!
         if (intval($vars['uid']) == 0) {
             $error[] = $this->getLanguageService()->getLL('error-neversavesd');
@@ -329,7 +329,7 @@ class WizardController
             $queryBuilder = $this->getQueryBuilder($tableName);
             $queryBuilder->setRestrictions(
                 GeneralUtility::makeInstance(
-                    \TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class
+                    FrontendRestrictionContainer::class
                 )
             );
             // get the single record
@@ -386,7 +386,7 @@ class WizardController
             $fileTypes = 'jpg,gif,png';
 
             #				$imageList = GeneralUtility::getFilesInDir(PATH_site.$path, $fileTypes,1,1);
-            $imageList = GeneralUtility::getAllFilesAndFoldersInPath(array(), PATH_site.$path, $fileTypes, 0, 1);
+            $imageList = GeneralUtility::getAllFilesAndFoldersInPath([], PATH_site.$path, $fileTypes, 0, 1);
 
             // correct sorting
             array_multisort($imageList, SORT_ASC);
@@ -399,7 +399,7 @@ class WizardController
 
             // create the textarea & preview for every image
             $i = 0;
-            $directoryList = array();
+            $directoryList = [];
             foreach ($imageList as $key => $singleImage) {
                 $fileName = str_replace(PATH_site, '', $singleImage);
                 $directory = dirname(str_replace($path, '', $fileName));
@@ -528,7 +528,7 @@ class WizardController
     {
 
         $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
-        $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+        $resourceFactory = ResourceFactory::getInstance();
         $storage = $resourceFactory->getDefaultStorage();
         // $fileObject returns a TYPO3\CMS\Core\Resource\File object
         $fileReferenceObject = $storage->getFile($fileName);
@@ -712,7 +712,7 @@ class WizardController
         $P = $var = GeneralUtility::_GP('P');
 
         // Draw the header.
-        $this->doc = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Template\DocumentTemplate::class);
+        $this->doc = GeneralUtility::makeInstance(DocumentTemplate::class);
 
         // JavaScript
         $this->doc->JScode = '
@@ -738,11 +738,7 @@ class WizardController
         $access = is_array($this->pageinfo) ? 1 : 0;
         if (($this->id && $access) || ($this->getBackendUser()->user['admin'] && !$this->id) || ($this->getBackendUser()->user["uid"] && !$this->id)) {
             if ($this->getBackendUser()->user['admin'] && !$this->id) {
-                $this->pageinfo = array(
-                        'title' => '[root-level]',
-                        'uid'   => 0,
-                        'pid'   => 0
-                );
+                $this->pageinfo = ['title' => '[root-level]', 'uid'   => 0, 'pid'   => 0];
             }
 
             $headerSection = $this->getHeader('pages', $this->pageinfo, $this->pageinfo['_thePath']) . '<br />'
@@ -796,14 +792,14 @@ call_user_func(function () {
     }
 
     $classLoader = require $BACK_PATH . '/vendor/autoload.php';
-    \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::run(
+    SystemEnvironmentBuilder::run(
         $entryPointLevel,
-        \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_BE
+        SystemEnvironmentBuilder::REQUESTTYPE_BE
     );
-    \TYPO3\CMS\Core\Core\Bootstrap::init($classLoader);
-    \TYPO3\CMS\Core\Core\Bootstrap::initializeLanguageObject();
-    \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
-    \TYPO3\CMS\Core\Core\Bootstrap::loadExtTables();
+    Bootstrap::init($classLoader);
+    Bootstrap::initializeLanguageObject();
+    Bootstrap::initializeBackendUser();
+    Bootstrap::loadExtTables();
 
 
     $GLOBALS['MCONF']['name'] =   CHGALLERY_EXT . '_chgalleryM1';

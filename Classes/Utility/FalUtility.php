@@ -2,6 +2,8 @@
 
 namespace JambageCom\Chgallery\Utility;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Resource\StorageRepository;
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -14,8 +16,6 @@ namespace JambageCom\Chgallery\Utility;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-
 class FalUtility
 {
     /**
@@ -29,7 +29,7 @@ class FalUtility
     {
         if (preg_match('/^file:(\d+):(.*)$/', $path, $matches)) {
             /** @var $storageRepository \TYPO3\CMS\Core\Resource\StorageRepository */
-            $storageRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\StorageRepository');
+            $storageRepository = GeneralUtility::makeInstance(StorageRepository::class);
             /** @var $storage \TYPO3\CMS\Core\Resource\ResourceStorage */
             $storage = $storageRepository->findByUid(intval($matches[1]));
             $storageRecord = $storage->getStorageRecord();

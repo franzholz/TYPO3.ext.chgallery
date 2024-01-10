@@ -86,13 +86,13 @@ class GalleryTca
                 $this->languagePrefix = ($languageid > 0) ? '-' . $languageid : '';
 
                 $level = ($mode == 'LIST') ? 1 : 0;
-                $imageList = GeneralUtility::getAllFilesAndFoldersInPath(array(), PATH_site.$path, $fileTypes, 0, $level, 1);
+                $imageList = GeneralUtility::getAllFilesAndFoldersInPath([], PATH_site.$path, $fileTypes, 0, $level, 1);
 
                 // correct sorting
                 array_multisort($imageList, SORT_ASC);
 
 
-                $directoryList = array();
+                $directoryList = [];
                 // get each dir in an array
                 foreach ($imageList as $key => $singleImage) {
                     // get the correct path

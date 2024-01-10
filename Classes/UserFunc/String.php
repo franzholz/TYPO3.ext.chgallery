@@ -15,8 +15,8 @@ class String
     */
     public function replaceSpaces($file, $conf)
     {
-        $search = array(' ');
-        $replace = array('%20');
+        $search = [' '];
+        $replace = ['%20'];
         $file = str_replace($search, $replace, $file);
         return $file;
     }

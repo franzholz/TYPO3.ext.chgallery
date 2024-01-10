@@ -14,7 +14,6 @@ namespace JambageCom\Chgallery\Api;
 *
 * The TYPO3 project - inspiring people to share!
 */
-
 /**
 *
 * API object
@@ -24,7 +23,11 @@ namespace JambageCom\Chgallery\Api;
 *
 *
 */
-
+use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+use JambageCom\Div2007\Base\BrowserBase;
+use JambageCom\Div2007\Utility\MarkerUtility;
 use TYPO3\CMS\Core\Service\MarkerBasedTemplateService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -37,7 +40,7 @@ use JambageCom\Div2007\Utility\BrowserUtility;
 use JambageCom\Chgallery\Domain\Composite;
 use JambageCom\Chgallery\Utility\FalUtility;
 
-class Api implements \TYPO3\CMS\Core\SingletonInterface
+class Api implements SingletonInterface
 {
     public $languageObj;
     protected $resourceFactory;
@@ -47,7 +50,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface
     {
         $storageUid = 0;
         $this->setStorageUid($storageUid);
-        $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+        $resourceFactory = ResourceFactory::getInstance();
         $this->setResourceFactory($resourceFactory);
     }
 
@@ -174,7 +177,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface
                 $ratingsConf = $apiObj->getDefaultConfig();
                 if (isset($ratingsConf) && is_array($ratingsConf)) {
                     $tmpConf = $ratingsConfig;
-                    \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($tmpConf, $ratingsConf);
+                    ArrayUtility::mergeRecursiveWithOverrule($tmpConf, $ratingsConf);
                     $ratingsConf = $tmpConf;
                 } else {
                     $ratingsConf = $ratingsConfig;
@@ -187,14 +190,14 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface
             $resourceFactory = $this->getResourceFactory();
             $file = $resourceFactory->getObjectFromCombinedIdentifier($this->getStorageUid() . ':' . $fileName);
             $ratingsConf['ref'] = CHGALLERY_EXT . '_' . $file->getUid(); // hier +++ die uid aus der FAL eintragen
-            $cObj = GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
+            $cObj = GeneralUtility::makeInstance(ContentObjectRenderer::class);
             /* @var $cObj \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer */
-            $cObj->start(array());
+            $cObj->start([]);
 
             $marker['###RATINGS###'] = $cObj->cObjGetSingle($ratingsCObjectType, $ratingsConf);
-            $cObj = GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
+            $cObj = GeneralUtility::makeInstance(ContentObjectRenderer::class);
             /* @var $cObj \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer */
-            $cObj->start(array());
+            $cObj->start([]);
             $ratingsConf['mode'] = 'static';
             $marker['###RATINGS_STATIC###'] =
                 $cObj->cObjGetSingle(
@@ -399,7 +402,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface
         $showFirstLast = 0;
         $imageArray = [];
         $imageActiveArray = [];
-        $browseObj = GeneralUtility::makeInstance(\JambageCom\Div2007\Base\BrowserBase::class);
+        $browseObj = GeneralUtility::makeInstance(BrowserBase::class);
         $browseObj->init(
             $conf,
             $piVars,
@@ -579,7 +582,7 @@ class Api implements \TYPO3\CMS\Core\SingletonInterface
         $languageObj = $this->getLanguageObj();
         $template['total'] = $templateService->getSubpart($composite->getTemplateCode(), '###TEMPLATE' . $ajaxTemplateSuffix . '###');
         $template['item'] = $templateService->getSubpart($template['total'], '###ITEM###');
-        $tagArray = \JambageCom\Div2007\Utility\MarkerUtility::getTags($template['item']);
+        $tagArray = MarkerUtility::getTags($template['item']);
         $markerArray = [];
 
         // get all infos we need
