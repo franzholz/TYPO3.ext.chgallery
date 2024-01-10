@@ -529,7 +529,7 @@ class WizardController
     {
 
         $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
-        $resourceFactory = ResourceFactory::getInstance();
+        $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
         $storage = $resourceFactory->getDefaultStorage();
         // $fileObject returns a TYPO3\CMS\Core\Resource\File object
         $fileReferenceObject = $storage->getFile($fileName);

@@ -51,7 +51,7 @@ class Api implements SingletonInterface
     {
         $storageUid = 0;
         $this->setStorageUid($storageUid);
-        $resourceFactory = ResourceFactory::getInstance();
+        $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
         $this->setResourceFactory($resourceFactory);
     }
 

@@ -148,7 +148,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
         $dbQueries = [];
         $customMessages = [];
         $storageUid = 0;
-        $resourceFactory = ResourceFactory::getInstance();
+        $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
         $tables = explode(',', (string) static::TABLES);
 
         foreach ($tables as $k => $table) {
