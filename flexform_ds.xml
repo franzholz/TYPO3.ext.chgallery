@@ -6,15 +6,11 @@
 <sheets>
 	<sDEF>
 	<ROOT>
-		<TCEforms>
-			<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:settings</sheetTitle>
-			<cshFile>LLL:EXT:chgallery/Resources/Private/Language/Csh/Resources/Private/Language/Csh/locallang_csh.xlf</cshFile>
-		</TCEforms>
+		<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:settings</sheetTitle>
+		<cshFile>LLL:EXT:chgallery/Resources/Private/Language/Csh/Resources/Private/Language/Csh/locallang_csh.xlf</cshFile>
 		<type>array</type>
 		<el>
-
 	 		<show>
-				<TCEforms>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show</label>
 					<config>
 						<type>select</type>
@@ -38,11 +34,9 @@
 						<maxitems>1</maxitems>
 						<size>1</size>
 					</config>
-				</TCEforms>
 			</show>
 
 			<path>
-				<TCEforms>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:path</label>
 				<config>
 					<type>input</type>
@@ -68,21 +62,17 @@
 					</link>
 					</wizards>
 				</config>
-				</TCEforms>
 			</path>
 
             <description>
-                <TCEforms>
-                    <label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:description</label>
-                    <config>
-                        <type>user</type>
-                        <userFunc>JambageCom\Chgallery\UserFunc\GalleryTca->descr</userFunc>
-                    </config>
-                </TCEforms>
+				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:description</label>
+				<config>
+					<type>user</type>
+					<userFunc>JambageCom\Chgallery\UserFunc\GalleryTca->descr</userFunc>
+				</config>
             </description>
 
-            <title>
-        <TCEforms>
+	 	<title>
           <displayCond>FIELD:show:IN:LIST</displayCond>
 					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:title</label>
           <config>
@@ -102,11 +92,9 @@
                 </wizards>
 
           </config>
-        </TCEforms>
-      </title>
+		</title>
 
-	 		<categoryOrder>
-				<TCEforms>
+		<categoryOrder>
           <displayCond>FIELD:show:IN:LIST</displayCond>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder</label>
 					<config>
@@ -137,11 +125,9 @@
 						<maxitems>1</maxitems>
 						<size>1</size>
 					</config>
-				</TCEforms>
-			</categoryOrder>
+		</categoryOrder>
 
-			<categoryAscDesc>
-				<TCEforms>
+		<categoryAscDesc>
           <displayCond>FIELD:show:IN:LIST</displayCond>
 					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryAscDesc</label>
 					<config>
@@ -163,38 +149,31 @@
 						<maxitems>1</maxitems>
 						<size>1</size>
 					</config>
-				</TCEforms>
 			</categoryAscDesc>
 
 			<pagebrowser>
-				<TCEforms>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:pagebrowser</label>
 				<config>
 					<type>input</type>
 					<size>4</size>
 				</config>
-				</TCEforms>
 			</pagebrowser>
 
 			<random>
-				<TCEforms>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:random</label>
 				<config>
 					<type>check</type>
 				</config>
-				</TCEforms>
 			</random>
 
 
 
 			<single>
-				<TCEforms>
 				<displayCond>FIELD:show:!IN:SINGLE</displayCond>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:single</label>
 				<config>
 					<type>check</type>
 				</config>
-				</TCEforms>
 			</single>
 
 		</el>
@@ -203,34 +182,27 @@
 
 	<more>
 		<ROOT>
-			<TCEforms>
-				<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:more</sheetTitle>
-				<cshFile>LLL:EXT:chgallery/Resources/Private/Language/Csh/locallang_csh.xlf</cshFile>
-			</TCEforms>
+			<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:more</sheetTitle>
+			<cshFile>LLL:EXT:chgallery/Resources/Private/Language/Csh/locallang_csh.xlf</cshFile>
 			<type>array</type>
 			<el>
 
 			<renderAllLinks>
-				<TCEforms>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:renderAllLinks</label>
 				<config>
 					<type>check</type>
 				</config>
-				</TCEforms>
 			</renderAllLinks>
 
 			<excludeFirstImage>
-				<TCEforms>
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:excludeFirstImage</label>
 				<config>
 					<type>check</type>
 				</config>
-				</TCEforms>
 			</excludeFirstImage>
 
 
 			<link>
-				<TCEforms>
 				<exclude>1</exclude>
 					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:link</label>
 				<config>
@@ -242,11 +214,9 @@
 					<minitems>0</minitems>
 					<show_thumbs>1</show_thumbs>
 				</config>
-				</TCEforms>
 			</link>
 
 			<templateFile>
-				<TCEforms>
 					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:templateFile</label>
 					<config>
 						<type>group</type>
@@ -259,7 +229,6 @@
 						<show_thumbs>1</show_thumbs>
 						<selectedListStyle>width:150px</selectedListStyle>
 					</config>
-				</TCEforms>
 			</templateFile>
 
 
@@ -269,20 +238,16 @@
 
 	<preview>
 		<ROOT>
-			<TCEforms>
 				<sheetTitle>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:preview</sheetTitle>
-			</TCEforms>
 			<type>array</type>
 			<el>
 
       <preview>
-				<TCEforms>
 				<label></label>
 					<config>
 						<type>user</type>
                         <userFunc>JambageCom\Chgallery\UserFunc\GalleryTca->preview</userFunc>
 					</config>
-				</TCEforms>
 			</preview>
 
 			</el>
