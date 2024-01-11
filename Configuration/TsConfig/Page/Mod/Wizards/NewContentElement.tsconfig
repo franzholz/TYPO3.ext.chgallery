@@ -2,17 +2,26 @@ mod.wizards {
     newContentElement.wizardItems {
         plugins {
             elements {
-                jfmulticontent {
-                    iconIdentifier = jfmulticontent-plugin
-                    title = LLL:EXT:jfmulticontent/Resources/Private/Language/locallang_be.xlf:pi1_title
-                    description = LLL:EXT:jfmulticontent/Resources/Private/Language/locallang_be.xlf:pi1_plus_wiz_description
+                tt_board_tree {
+                    iconIdentifier = tt-board-tree
+                    title = LLL:EXT:tt_board/Resources/Private/Language/locallang_be.xlf:plugins_tree_title
+                    description = LLL:EXT:tt_board/Resources/Private/Language/locallang_be.xlf:plugins_list_description
                     tt_content_defValues {
                         CType = list
-                        list_type = jfmulticontent_pi1
+                        list_type = 2
+                    }
+                }
+                tt_board_list {
+                    iconIdentifier = tt-board-list
+                    title = LLL:EXT:tt_board/Resources/Private/Language/locallang_be.xlf:plugins_list_title
+                    description = LLL:EXT:tt_board/Resources/Private/Language/locallang_be.xlf:plugins_tree_description
+                    tt_content_defValues {
+                        CType = list
+                        list_type = 4
                     }
                 }
             }
-            show := addToList(jfmulticontent)
+            show := addToList(tt_board_tree, tt_board_list)
         }
     }
 }
