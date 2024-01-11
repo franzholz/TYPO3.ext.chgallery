@@ -14,6 +14,7 @@
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show</label>
 					<config>
 						<type>select</type>
+						<renderType>selectSingle</renderType>
 						<items type="array">
 							<numIndex index="1" type="array">
 								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.gallery</numIndex>
@@ -99,6 +100,7 @@
 				<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryOrder</label>
 					<config>
 						<type>select</type>
+						<renderType>selectSingle</renderType>
 						<items type="array">
 							<numIndex index="1" type="array">
 								<numIndex index="0"></numIndex>
@@ -132,6 +134,7 @@
 					<label>LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:categoryAscDesc</label>
 					<config>
 						<type>select</type>
+						<renderType>selectSingle</renderType>
 						<items type="array">
 						<numIndex index="0" type="array">
 								<numIndex index="0"></numIndex>
