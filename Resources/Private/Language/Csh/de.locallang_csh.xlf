@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:29:42Z" product-name="chgallery">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Csh/locallang.xlf" date="2024-01-10T16:29:42Z" product-name="chgallery">
 		<header/>
 		<body>
 			<trans-unit id="show.description" resname="show.description"  approved="yes">
