@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang.xlf" date="2024-01-10T16:29:35Z" product-name="chgallery">
+	<file source-language="en" target-language="nl" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang_be.xlf" date="2024-01-10T16:29:35Z" product-name="chgallery">
 		<header/>
 		<body>
 			<trans-unit id="pi1_title" resname="pi1_title"  approved="yes">
 				<source>Simple gallery</source>
-				<target>Einfache Galerie</target>
+				<target>Eenvoudige gallery</target>
 			</trans-unit>
 			<trans-unit id="pi1_plus_wiz_description" resname="pi1_plus_wiz_description"  approved="yes">
 				<source>Another simple gallery with images from a directory &amp; pagination.</source>
-				<target>Galerie mit Bildern aus einem Verzeichnis inkl. Seitenumbruch.</target>
+				<target>Een simpele gallery met foto&#039;s uit folders &amp; een paginabrowser.</target>
 			</trans-unit>
 		</body>
 	</file>
