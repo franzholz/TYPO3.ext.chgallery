@@ -118,13 +118,13 @@
 .tx-chgallery-pi1 .single .img {
 	width:165px;
 	height:154px;
-	background:url(film.gif) no-repeat;
+	background:url(../../../Icons/AlternativeDesign/Film/film.gif) no-repeat;
 	line-height:126px;
 	text-align:center;
 }
 
 .tx-chgallery-pi1 .act .img {
-/*	background:url(gfx/bgact.gif) no-repeat*/
+/*	background:url(../../../Icons/Gfx/bgact.gif) no-repeat*/
 }
 
 .tx-chgallery-pi1 .single .img .align {

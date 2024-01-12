@@ -1,7 +1,7 @@
 #TS code
 plugin.tx_chgallery_pi1 {
 1	# Load a different template which is needed	
-	templateFile = EXT:chgallery/res/ajax.html 
+	templateFile = EXT:chgallery/Resources/Private/Templates/ajax.html 
 	# Activiate ajax
 	ajax = 1 
 }

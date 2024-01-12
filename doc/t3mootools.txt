@@ -1,0 +1,2 @@
+script=Resources/Public/Javascript/ajax.js,Resources/Public/Javascript/Accordion//accordion.js
+components=Window.DomReady

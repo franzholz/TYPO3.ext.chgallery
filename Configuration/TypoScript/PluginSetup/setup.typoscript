@@ -12,10 +12,10 @@ plugin.tx_chgallery_pi1 {
 	_DEFAULT_PI_VARS.single = 1
 	
 	fileTypes = jpg,gif,png
-	templateFile = EXT:chgallery/res/template.html
+	templateFile = EXT:chgallery/Resources/Private/Templates//template.html
 	pathToCSS =  EXT:chgallery/res/gallery.css
-	ajaxScript = EXT:chgallery/res/js/ajax.js
-	pathToMootools = EXT:chgallery/res/js/mootools.js
+	ajaxScript = EXT:chgallery/Resources/Public/Javascript/ajax.js
+	pathToMootools = EXT:chgallery/Resources/Public/Javascript/mootools.js
 	pagebrowser = 9
 	ajax = 0
   useAnchor = 1

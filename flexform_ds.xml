@@ -48,7 +48,7 @@
 					<link>
 						<type>popup</type>
 						<title>Folder Selector</title>
-						<icon>link_popup.gif</icon>
+						<icon>EXT:chgallery/Resources/Public/Icons/Gfx/link_popup.gif</icon>
                         <module type="array">
                             <name>wizard_element_browser</name>
                             <urlParameters type="array">
@@ -86,7 +86,7 @@
                 <link>
                     <type>popup</type>
                     <title>Subdir Description Wizard</title>
-                    <icon>EXT:chgallery/wizard/wizard.gif</icon>
+                    <icon>EXT:chgallery/Resources/Public/Icons/Wizard.gif</icon>
                     <script>EXT:chgallery/wizard/subdir.php</script>
                     <JSopenParams>height=600,width=550,status=1,menubar=1,scrollbars=1</JSopenParams>
                 </link>
@@ -245,7 +245,7 @@
 			<type>array</type>
 			<el>
 
-      <preview>
+			<preview>
 				<label></label>
 					<config>
 						<type>user</type>

@@ -1,2 +1,0 @@
-script=res/ajax.js,res/accordion/accordion.js
-components=Window.DomReady

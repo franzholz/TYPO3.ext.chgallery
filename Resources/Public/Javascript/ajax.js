@@ -73,7 +73,4 @@ function modPB(pb) {
 	} else {
 		for(var i=0;i<prev.length;i++) { prev[i].removeClass('hide');	}
 	}
-
-	
-	
 }
