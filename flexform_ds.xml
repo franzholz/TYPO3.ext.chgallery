@@ -19,17 +19,17 @@
 							<numIndex index="1" type="array">
 								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.gallery</numIndex>
 								<numIndex index="1">GALLERY</numIndex>
-								<numIndex index="2">EXT:chgallery/lib/gfx/flex_pictures.png</numIndex>
+								<numIndex index="2">EXT:chgallery/Resources/Public/Icons/Gfx/flex_pictures.png</numIndex>
 							</numIndex>
 							<numIndex index="2" type="array">
 								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.list</numIndex>
 								<numIndex index="1">LIST</numIndex>
-								<numIndex index="2">EXT:chgallery/lib/gfx/flex_folder.png</numIndex>
+								<numIndex index="2">EXT:chgallery/Resources/Public/Icons/Gfx/flex_folder.png</numIndex>
 							</numIndex>
 							<numIndex index="3" type="array">
 								<numIndex index="0">LLL:EXT:chgallery/Resources/Private/Language/locallang_db.xlf:show.single</numIndex>
 								<numIndex index="1">SINGLE</numIndex>
-								<numIndex index="2">EXT:chgallery/lib/gfx/flex_picture.png</numIndex>
+								<numIndex index="2">EXT:chgallery/Resources/Public/Icons/Gfx/flex_picture.png</numIndex>
 							</numIndex>
 						</items>
 						<maxitems>1</maxitems>
