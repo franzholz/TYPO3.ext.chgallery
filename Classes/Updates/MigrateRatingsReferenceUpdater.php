@@ -216,7 +216,7 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
 
         foreach ($tables as $table) {
             if (    // check if the table exists
-                !$connection>getConnectionForTable($table)
+                !$connection->getConnectionForTable($table)
                     ->getSchemaManager()
                     ->tablesExist([$table])
                 ) {
