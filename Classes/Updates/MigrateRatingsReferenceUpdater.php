@@ -211,11 +211,20 @@ class MigrateRatingsReferenceUpdater implements UpgradeWizardInterface, Confirma
     protected function getUpdatableReferencesCount(): int
     {
         $result = 0;
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
         $tables = explode(',', (string) static::TABLES);
 
         foreach ($tables as $table) {
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable($table);
+            if (    // check if the table exists
+                !$connection>getConnectionForTable($table)
+                    ->getSchemaManager()
+                    ->tablesExist([$table])
+                ) {
+                continue;
+            }
+            
+            $queryBuilder = 
+                $connection->getQueryBuilderForTable($table);
             $queryBuilder->getRestrictions()->removeAll();
             $query = $queryBuilder
                 ->count('*')
