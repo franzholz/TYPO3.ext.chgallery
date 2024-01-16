@@ -35,7 +35,7 @@ use TYPO3\CMS\Install\Service\UpgradeWizardsService;
 /**
  * Migrate Ratings Reference
  *
- * Before version 3.0.0 chgallery use the path name in the reference field of the database tables tx_ratings_data and tx_ratings_iplog:
+ * Before version 3.0.0 chgallery used the path name in the reference field of the database tables tx_ratings_data and tx_ratings_iplog:
  *
  *  chgalleryfileadmin/path/filename.jpg.
  *
