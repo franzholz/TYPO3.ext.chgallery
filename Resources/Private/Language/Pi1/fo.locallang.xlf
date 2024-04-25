@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="fo" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Pi1/locallang.xlf" date="2024-01-10T16:30:25Z" product-name="chgallery">
-		<header/>
-		<body>
-			<trans-unit id="pi_list_browseresults_displays" resname="pi_list_browseresults_displays"  approved="yes">
-				<source>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</source>
-				<target>Síða &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; av &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_next" resname="pi_list_browseresults_next"  approved="yes">
-				<source>Next Page</source>
-				<target>Næsta síða</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_prev" resname="pi_list_browseresults_prev"  approved="yes">
-				<source>Previous Page</source>
-				<target>Undanfarna síða</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_first" resname="pi_list_browseresults_first"  approved="yes">
-				<source>Back to the overview</source>
-				<target>Aftur til yvirlit</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_last" resname="pi_list_browseresults_last"  approved="yes">
-				<source>Last Page</source>
-				<target>Síðsta síða</target>
-			</trans-unit>
-			<trans-unit id="dir_back" resname="dir_back"  approved="yes">
-				<source>Back to the gallery list</source>
-				<target>Aftur til yvirlit</target>
-			</trans-unit>
-			<trans-unit id="size" resname="size"  approved="yes">
-				<source>Number of images</source>
-				<target>Tal av myndum</target>
-			</trans-unit>
-			<trans-unit id="path" resname="path"  approved="yes">
-				<source>Path</source>
-				<target>Sló</target>
-			</trans-unit>
-			<trans-unit id="name" resname="name"  approved="yes">
-				<source>Directory</source>
-				<target>Mappa</target>
-			</trans-unit>
-			<trans-unit id="date" resname="date"  approved="yes">
-				<source>Date</source>
-				<target>Dato</target>
-			</trans-unit>
-			<trans-unit id="description" resname="description"  approved="yes">
-				<source>Description</source>
-				<target>Frágreiing</target>
-			</trans-unit>
-			<trans-unit id="download" resname="download"  approved="yes">
-				<source>Download</source>
-				<target>Download</target>
-			</trans-unit>
-			<trans-unit id="exif_size" resname="exif_size"  approved="yes">
-				<source>Size</source>
-				<target>Stødd</target>
-			</trans-unit>
-			<trans-unit id="exif_time" resname="exif_time"  approved="yes">
-				<source>Time</source>
-				<target>Tíðspunkt</target>
-			</trans-unit>
-			<trans-unit id="filename" resname="filename"  approved="yes">
-				<source>File</source>
-				<target>Fíl</target>
-			</trans-unit>
-			<trans-unit id="previousImage" resname="previousImage"  approved="yes">
-				<source>Previous image</source>
-				<target>Undanfarna mynd</target>
-			</trans-unit>
-			<trans-unit id="nextImage" resname="nextImage"  approved="yes">
-				<source>Next image</source>
-				<target>Næsta mynd</target>
-			</trans-unit>
-		</body>
-	</file>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Pi1/locallang.xlf" date="2024-01-10T16:30:25Z" product-name="chgallery" target-language="fo">
+    <header/>
+    <body>
+      <trans-unit id="pi_list_browseresults_displays" resname="pi_list_browseresults_displays">
+        <source>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</source>
+        <target state="translated">Síða &lt;span class="chgcurrent"&gt;###CURRENT_PAGE###&lt;/span&gt; av &lt;span class="chgtotal"&gt;###TOTAL_PAGES###&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_next" resname="pi_list_browseresults_next">
+        <source>Next Page</source>
+        <target state="translated">Næsta síða</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_prev" resname="pi_list_browseresults_prev">
+        <source>Previous Page</source>
+        <target state="translated">Undanfarna síða</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_first" resname="pi_list_browseresults_first">
+        <source>Back to the overview</source>
+        <target state="translated">Aftur til yvirlit</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_last" resname="pi_list_browseresults_last">
+        <source>Last Page</source>
+        <target state="translated">Síðsta síða</target>
+      </trans-unit>
+      <trans-unit id="dir_back" resname="dir_back">
+        <source>Back to the gallery list</source>
+        <target state="translated">Aftur til yvirlit</target>
+      </trans-unit>
+      <trans-unit id="size" resname="size">
+        <source>Number of images</source>
+        <target state="translated">Tal av myndum</target>
+      </trans-unit>
+      <trans-unit id="path" resname="path">
+        <source>Path</source>
+        <target state="translated">Sló</target>
+      </trans-unit>
+      <trans-unit id="name" resname="name">
+        <source>Directory</source>
+        <target state="translated">Mappa</target>
+      </trans-unit>
+      <trans-unit id="date" resname="date">
+        <source>Date</source>
+        <target state="translated">Dato</target>
+      </trans-unit>
+      <trans-unit id="description" resname="description">
+        <source>Description</source>
+        <target state="translated">Frágreiing</target>
+      </trans-unit>
+      <trans-unit id="download" resname="download">
+        <source>Download</source>
+        <target state="needs-translation">Download</target>
+      </trans-unit>
+      <trans-unit id="exif_size" resname="exif_size">
+        <source>Size</source>
+        <target state="translated">Stødd</target>
+      </trans-unit>
+      <trans-unit id="exif_time" resname="exif_time">
+        <source>Time</source>
+        <target state="translated">Tíðspunkt</target>
+      </trans-unit>
+      <trans-unit id="filename" resname="filename">
+        <source>File</source>
+        <target state="translated">Fíl</target>
+      </trans-unit>
+      <trans-unit id="previousImage" resname="previousImage">
+        <source>Previous image</source>
+        <target state="translated">Undanfarna mynd</target>
+      </trans-unit>
+      <trans-unit id="nextImage" resname="nextImage">
+        <source>Next image</source>
+        <target state="translated">Næsta mynd</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
