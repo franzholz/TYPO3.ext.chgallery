@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang_db.xlf" date="2024-01-10T16:29:58Z" product-name="chgallery" target-language="nl">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang_db.xlf" date="2024-01-10T16:29:58Z" product-name="chgallery" target-language="vi">
     <header/>
     <body>
-      <trans-unit id="tt_content.list_type_pi1" resname="tt_content.list_type_pi1" approved="yes">
+      <trans-unit id="tt_content.list_type_pi1" resname="tt_content.list_type_pi1">
         <source>Simple gallery - chgallery</source>
-        <target state="final">Eenvoudige gallery - chgallery</target>
+        <target state="needs-translation">Simple gallery - chgallery</target>
       </trans-unit>
-      <trans-unit id="show" resname="show" approved="yes">
+      <trans-unit id="show" resname="show">
         <source>Display</source>
-        <target state="final">Toon</target>
+        <target state="needs-translation">Display</target>
       </trans-unit>
-      <trans-unit id="show.list" resname="show.list" approved="yes">
+      <trans-unit id="show.list" resname="show.list">
         <source>CATEGORY view =&gt; Categories (subdirs)</source>
-        <target state="final">CATEGORY aanzicht =&gt; Categorien (subfolders)</target>
+        <target state="needs-translation">CATEGORY view =&gt; Categories (subdirs)</target>
       </trans-unit>
-      <trans-unit id="show.gallery" resname="show.gallery" approved="yes">
+      <trans-unit id="show.gallery" resname="show.gallery">
         <source>GALLERY view =&gt; Images of a dir</source>
-        <target state="final">GALLERY aanzicht =&gt; Foto's uit een folder</target>
+        <target state="needs-translation">GALLERY view =&gt; Images of a dir</target>
       </trans-unit>
-      <trans-unit id="show.single" resname="show.single" approved="yes">
+      <trans-unit id="show.single" resname="show.single">
         <source>SINGLE view =&gt; Single image</source>
-        <target state="final">ENKEL aanzicht =&gt; Enkele foto</target>
+        <target state="needs-translation">SINGLE view =&gt; Single image</target>
       </trans-unit>
-      <trans-unit id="settings" resname="settings" approved="yes">
+      <trans-unit id="settings" resname="settings">
         <source>Settings</source>
-        <target state="final">Instellingen</target>
+        <target state="needs-translation">Settings</target>
       </trans-unit>
-      <trans-unit id="path" resname="path" approved="yes">
+      <trans-unit id="path" resname="path">
         <source>Path</source>
-        <target state="final">Pad</target>
+        <target state="needs-translation">Path</target>
       </trans-unit>
-      <trans-unit id="pagebrowser" resname="pagebrowser" approved="yes">
+      <trans-unit id="pagebrowser" resname="pagebrowser">
         <source>Images / page</source>
-        <target state="final">Foto's / pagina</target>
+        <target state="needs-translation">Images / page</target>
       </trans-unit>
-      <trans-unit id="description" resname="description" approved="yes">
+      <trans-unit id="description" resname="description">
         <source>Description</source>
-        <target state="final">Omschrijving</target>
+        <target state="needs-translation">Description</target>
       </trans-unit>
-      <trans-unit id="random" resname="random" approved="yes">
+      <trans-unit id="random" resname="random">
         <source>Random Mode</source>
-        <target state="final">Random Modus</target>
+        <target state="needs-translation">Random Mode</target>
       </trans-unit>
-      <trans-unit id="link" resname="link" approved="yes">
+      <trans-unit id="link" resname="link">
         <source>Link all images to</source>
-        <target state="final">Link alle foto's naar</target>
+        <target state="needs-translation">Link all images to</target>
       </trans-unit>
-      <trans-unit id="width" resname="width" approved="yes">
+      <trans-unit id="width" resname="width">
         <source>Image width</source>
-        <target state="final">Foto breedte</target>
+        <target state="needs-translation">Image width</target>
       </trans-unit>
-      <trans-unit id="height" resname="height" approved="yes">
+      <trans-unit id="height" resname="height">
         <source>Image height</source>
-        <target state="final">Foto hoogte</target>
+        <target state="needs-translation">Image height</target>
       </trans-unit>
-      <trans-unit id="title" resname="title" approved="yes">
+      <trans-unit id="title" resname="title">
         <source>Category title &amp; description</source>
-        <target state="final">Category titel &amp; omschrijving</target>
+        <target state="needs-translation">Category title &amp; description</target>
       </trans-unit>
-      <trans-unit id="descriptionList" resname="descriptionList" approved="yes">
+      <trans-unit id="descriptionList" resname="descriptionList">
         <source>Description</source>
-        <target state="final">Omschrijving</target>
+        <target state="needs-translation">Description</target>
       </trans-unit>
-      <trans-unit id="single" resname="single" approved="yes">
+      <trans-unit id="single" resname="single">
         <source>Use Single view</source>
-        <target state="final">Gebruik Enkel aanzicht</target>
+        <target state="needs-translation">Use Single view</target>
       </trans-unit>
-      <trans-unit id="categoryOrder" resname="categoryOrder" approved="yes">
+      <trans-unit id="categoryOrder" resname="categoryOrder">
         <source>Sorting of categories</source>
-        <target state="final">Categorie volgorde</target>
+        <target state="needs-translation">Sorting of categories</target>
       </trans-unit>
       <trans-unit id="categoryOrder.title" resname="categoryOrder.title">
         <source>Title</source>
@@ -99,17 +99,17 @@
         <source>descending</source>
         <target state="needs-translation">descending</target>
       </trans-unit>
-      <trans-unit id="more" resname="more" approved="yes">
+      <trans-unit id="more" resname="more">
         <source>Additional options</source>
-        <target state="final">Optionele instellingen</target>
+        <target state="needs-translation">Additional options</target>
       </trans-unit>
-      <trans-unit id="renderAllLinks" resname="renderAllLinks" approved="yes">
+      <trans-unit id="renderAllLinks" resname="renderAllLinks">
         <source>Show all images in Lightbox</source>
-        <target state="final">Toon alle foto's in een Lightbox</target>
+        <target state="needs-translation">Show all images in Lightbox</target>
       </trans-unit>
-      <trans-unit id="excludeFirstImage" resname="excludeFirstImage" approved="yes">
+      <trans-unit id="excludeFirstImage" resname="excludeFirstImage">
         <source>Don't display first image in single view (Category view only)</source>
-        <target state="final">De eerste foto niet tonen bij gebruik van de Categorie weergave</target>
+        <target state="needs-translation">Don't display first image in single view (Category view only)</target>
       </trans-unit>
       <trans-unit id="templateFile" resname="templateFile">
         <source>Template</source>
