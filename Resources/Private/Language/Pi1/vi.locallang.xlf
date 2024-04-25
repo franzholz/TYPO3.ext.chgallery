@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Pi1/locallang.xlf" date="2024-01-10T16:30:25Z" product-name="chgallery" target-language="vi">
+    <header/>
+    <body>
+      <trans-unit id="pi_list_browseresults_displays" resname="pi_list_browseresults_displays">
+        <source>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</source>
+        <target state="needs-translation">Page &lt;span class="chgcurrent"&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class="chgtotal"&gt;###TOTAL_PAGES###&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_next" resname="pi_list_browseresults_next">
+        <source>Next Page</source>
+        <target state="needs-translation">Next Page</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_prev" resname="pi_list_browseresults_prev">
+        <source>Previous Page</source>
+        <target state="needs-translation">Previous Page</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_first" resname="pi_list_browseresults_first">
+        <source>Back to the overview</source>
+        <target state="needs-translation">Back to the overview</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_last" resname="pi_list_browseresults_last">
+        <source>Last Page</source>
+        <target state="needs-translation">Last Page</target>
+      </trans-unit>
+      <trans-unit id="dir_back" resname="dir_back">
+        <source>Back to the gallery list</source>
+        <target state="needs-translation">Back to the gallery list</target>
+      </trans-unit>
+      <trans-unit id="size" resname="size">
+        <source>Number of images</source>
+        <target state="needs-translation">Number of images</target>
+      </trans-unit>
+      <trans-unit id="path" resname="path">
+        <source>Path</source>
+        <target state="needs-translation">Path</target>
+      </trans-unit>
+      <trans-unit id="name" resname="name">
+        <source>Directory</source>
+        <target state="needs-translation">Directory</target>
+      </trans-unit>
+      <trans-unit id="date" resname="date">
+        <source>Date</source>
+        <target state="needs-translation">Date</target>
+      </trans-unit>
+      <trans-unit id="description" resname="description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="download" resname="download">
+        <source>Download</source>
+        <target state="needs-translation">Download</target>
+      </trans-unit>
+      <trans-unit id="exif_size" resname="exif_size">
+        <source>Size</source>
+        <target state="needs-translation">Size</target>
+      </trans-unit>
+      <trans-unit id="exif_time" resname="exif_time">
+        <source>Time</source>
+        <target state="needs-translation">Time</target>
+      </trans-unit>
+      <trans-unit id="filename" resname="filename">
+        <source>File</source>
+        <target state="needs-translation">File</target>
+      </trans-unit>
+      <trans-unit id="previousImage" resname="previousImage">
+        <source>Previous image</source>
+        <target state="needs-translation">Previous image</target>
+      </trans-unit>
+      <trans-unit id="nextImage" resname="nextImage">
+        <source>Next image</source>
+        <target state="needs-translation">Next image</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
