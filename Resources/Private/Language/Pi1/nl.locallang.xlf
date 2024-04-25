@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="nl" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Pi1/locallang.xlf" date="2024-01-10T16:30:25Z" product-name="chgallery">
-		<header/>
-		<body>
-			<trans-unit id="pi_list_browseresults_displays" resname="pi_list_browseresults_displays"  approved="yes">
-				<source>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</source>
-				<target>Pagina &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; van &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_next" resname="pi_list_browseresults_next"  approved="yes">
-				<source>Next Page</source>
-				<target>Volgende pagina</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_prev" resname="pi_list_browseresults_prev"  approved="yes">
-				<source>Previous Page</source>
-				<target>Vorigepagina</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_first" resname="pi_list_browseresults_first"  approved="yes">
-				<source>Back to the overview</source>
-				<target>Terug naar het overzicht</target>
-			</trans-unit>
-			<trans-unit id="pi_list_browseresults_last" resname="pi_list_browseresults_last"  approved="yes">
-				<source>Last Page</source>
-				<target>Laatste pagina</target>
-			</trans-unit>
-			<trans-unit id="dir_back" resname="dir_back"  approved="yes">
-				<source>Back to the gallery list</source>
-				<target>Terug naar de album lijst</target>
-			</trans-unit>
-			<trans-unit id="size" resname="size"  approved="yes">
-				<source>Number of images</source>
-				<target>Totaal aantal foto&#039;s</target>
-			</trans-unit>
-			<trans-unit id="path" resname="path"  approved="yes">
-				<source>Path</source>
-				<target>Pad</target>
-			</trans-unit>
-			<trans-unit id="name" resname="name"  approved="yes">
-				<source>Directory</source>
-				<target>Folder</target>
-			</trans-unit>
-			<trans-unit id="date" resname="date"  approved="yes">
-				<source>Date</source>
-				<target>Datum</target>
-			</trans-unit>
-			<trans-unit id="description" resname="description"  approved="yes">
-				<source>Description</source>
-				<target>Omschrijving</target>
-			</trans-unit>
-			<trans-unit id="download" resname="download"  approved="yes">
-				<source>Download</source>
-				<target>Download</target>
-			</trans-unit>
-			<trans-unit id="exif_size" resname="exif_size"  approved="yes">
-				<source>Size</source>
-				<target>Grootte</target>
-			</trans-unit>
-			<trans-unit id="exif_time" resname="exif_time"  approved="yes">
-				<source>Time</source>
-				<target>Tijd</target>
-			</trans-unit>
-			<trans-unit id="filename" resname="filename"  approved="yes">
-				<source>File</source>
-				<target>Bestand</target>
-			</trans-unit>
-			<trans-unit id="previousImage" resname="previousImage"  approved="yes">
-				<source>Previous image</source>
-				<target>Vorige foto</target>
-			</trans-unit>
-			<trans-unit id="nextImage" resname="nextImage"  approved="yes">
-				<source>Next image</source>
-				<target>Volgende foto</target>
-			</trans-unit>
-		</body>
-	</file>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Pi1/locallang.xlf" date="2024-01-10T16:30:25Z" product-name="chgallery" target-language="nl">
+    <header/>
+    <body>
+      <trans-unit id="pi_list_browseresults_displays" resname="pi_list_browseresults_displays" approved="yes">
+        <source>Page &lt;span class=&quot;chgcurrent&quot;&gt;###CURRENT_PAGE###&lt;/span&gt; of &lt;span class=&quot;chgtotal&quot;&gt;###TOTAL_PAGES###&lt;/span&gt;</source>
+        <target state="final">Pagina &lt;span class="chgcurrent"&gt;###CURRENT_PAGE###&lt;/span&gt; van &lt;span class="chgtotal"&gt;###TOTAL_PAGES###&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_next" resname="pi_list_browseresults_next" approved="yes">
+        <source>Next Page</source>
+        <target state="final">Volgende pagina</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_prev" resname="pi_list_browseresults_prev" approved="yes">
+        <source>Previous Page</source>
+        <target state="final">Vorigepagina</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_first" resname="pi_list_browseresults_first" approved="yes">
+        <source>Back to the overview</source>
+        <target state="final">Terug naar het overzicht</target>
+      </trans-unit>
+      <trans-unit id="pi_list_browseresults_last" resname="pi_list_browseresults_last" approved="yes">
+        <source>Last Page</source>
+        <target state="final">Laatste pagina</target>
+      </trans-unit>
+      <trans-unit id="dir_back" resname="dir_back" approved="yes">
+        <source>Back to the gallery list</source>
+        <target state="final">Terug naar de album lijst</target>
+      </trans-unit>
+      <trans-unit id="size" resname="size" approved="yes">
+        <source>Number of images</source>
+        <target state="final">Totaal aantal foto's</target>
+      </trans-unit>
+      <trans-unit id="path" resname="path" approved="yes">
+        <source>Path</source>
+        <target state="final">Pad</target>
+      </trans-unit>
+      <trans-unit id="name" resname="name" approved="yes">
+        <source>Directory</source>
+        <target state="final">Folder</target>
+      </trans-unit>
+      <trans-unit id="date" resname="date" approved="yes">
+        <source>Date</source>
+        <target state="final">Datum</target>
+      </trans-unit>
+      <trans-unit id="description" resname="description" approved="yes">
+        <source>Description</source>
+        <target state="final">Omschrijving</target>
+      </trans-unit>
+      <trans-unit id="download" resname="download">
+        <source>Download</source>
+        <target state="needs-translation">Download</target>
+      </trans-unit>
+      <trans-unit id="exif_size" resname="exif_size" approved="yes">
+        <source>Size</source>
+        <target state="final">Grootte</target>
+      </trans-unit>
+      <trans-unit id="exif_time" resname="exif_time" approved="yes">
+        <source>Time</source>
+        <target state="final">Tijd</target>
+      </trans-unit>
+      <trans-unit id="filename" resname="filename" approved="yes">
+        <source>File</source>
+        <target state="final">Bestand</target>
+      </trans-unit>
+      <trans-unit id="previousImage" resname="previousImage" approved="yes">
+        <source>Previous image</source>
+        <target state="final">Vorige foto</target>
+      </trans-unit>
+      <trans-unit id="nextImage" resname="nextImage" approved="yes">
+        <source>Next image</source>
+        <target state="final">Volgende foto</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
