@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/locallang_db.xlf" date="2024-01-10T16:29:58Z" product-name="chgallery" target-language="tr">
+    <header/>
+    <body>
+      <trans-unit id="tt_content.list_type_pi1" resname="tt_content.list_type_pi1">
+        <source>Simple gallery - chgallery</source>
+        <target state="needs-translation">Simple gallery - chgallery</target>
+      </trans-unit>
+      <trans-unit id="show" resname="show">
+        <source>Display</source>
+        <target state="needs-translation">Display</target>
+      </trans-unit>
+      <trans-unit id="show.list" resname="show.list">
+        <source>CATEGORY view =&gt; Categories (subdirs)</source>
+        <target state="needs-translation">CATEGORY view =&gt; Categories (subdirs)</target>
+      </trans-unit>
+      <trans-unit id="show.gallery" resname="show.gallery">
+        <source>GALLERY view =&gt; Images of a dir</source>
+        <target state="needs-translation">GALLERY view =&gt; Images of a dir</target>
+      </trans-unit>
+      <trans-unit id="show.single" resname="show.single">
+        <source>SINGLE view =&gt; Single image</source>
+        <target state="needs-translation">SINGLE view =&gt; Single image</target>
+      </trans-unit>
+      <trans-unit id="settings" resname="settings">
+        <source>Settings</source>
+        <target state="needs-translation">Settings</target>
+      </trans-unit>
+      <trans-unit id="path" resname="path">
+        <source>Path</source>
+        <target state="needs-translation">Path</target>
+      </trans-unit>
+      <trans-unit id="pagebrowser" resname="pagebrowser">
+        <source>Images / page</source>
+        <target state="needs-translation">Images / page</target>
+      </trans-unit>
+      <trans-unit id="description" resname="description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="random" resname="random">
+        <source>Random Mode</source>
+        <target state="needs-translation">Random Mode</target>
+      </trans-unit>
+      <trans-unit id="link" resname="link">
+        <source>Link all images to</source>
+        <target state="needs-translation">Link all images to</target>
+      </trans-unit>
+      <trans-unit id="width" resname="width">
+        <source>Image width</source>
+        <target state="needs-translation">Image width</target>
+      </trans-unit>
+      <trans-unit id="height" resname="height">
+        <source>Image height</source>
+        <target state="needs-translation">Image height</target>
+      </trans-unit>
+      <trans-unit id="title" resname="title">
+        <source>Category title &amp; description</source>
+        <target state="needs-translation">Category title &amp; description</target>
+      </trans-unit>
+      <trans-unit id="descriptionList" resname="descriptionList">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="single" resname="single">
+        <source>Use Single view</source>
+        <target state="needs-translation">Use Single view</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder" resname="categoryOrder">
+        <source>Sorting of categories</source>
+        <target state="needs-translation">Sorting of categories</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder.title" resname="categoryOrder.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder.path" resname="categoryOrder.path">
+        <source>Path</source>
+        <target state="needs-translation">Path</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder.date" resname="categoryOrder.date">
+        <source>Date</source>
+        <target state="needs-translation">Date</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder.size" resname="categoryOrder.size">
+        <source>Count of images</source>
+        <target state="needs-translation">Count of images</target>
+      </trans-unit>
+      <trans-unit id="categoryAscDesc" resname="categoryAscDesc">
+        <source>Order By</source>
+        <target state="needs-translation">Order By</target>
+      </trans-unit>
+      <trans-unit id="categoryAscDesc.asc" resname="categoryAscDesc.asc">
+        <source>ascending</source>
+        <target state="needs-translation">ascending</target>
+      </trans-unit>
+      <trans-unit id="categoryAscDesc.desc" resname="categoryAscDesc.desc">
+        <source>descending</source>
+        <target state="needs-translation">descending</target>
+      </trans-unit>
+      <trans-unit id="more" resname="more">
+        <source>Additional options</source>
+        <target state="needs-translation">Additional options</target>
+      </trans-unit>
+      <trans-unit id="renderAllLinks" resname="renderAllLinks">
+        <source>Show all images in Lightbox</source>
+        <target state="needs-translation">Show all images in Lightbox</target>
+      </trans-unit>
+      <trans-unit id="excludeFirstImage" resname="excludeFirstImage">
+        <source>Don't display first image in single view (Category view only)</source>
+        <target state="needs-translation">Don't display first image in single view (Category view only)</target>
+      </trans-unit>
+      <trans-unit id="templateFile" resname="templateFile">
+        <source>Template</source>
+        <target state="needs-translation">Template</target>
+      </trans-unit>
+      <trans-unit id="preview" resname="preview">
+        <source>Preview</source>
+        <target state="needs-translation">Preview</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
