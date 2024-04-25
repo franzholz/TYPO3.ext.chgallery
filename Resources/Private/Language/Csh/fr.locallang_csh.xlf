@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="fr" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Csh/locallang_csh.xlf" date="2024-01-10T16:29:42Z" product-name="chgallery">
-		<header/>
-		<body>
-			<trans-unit id="show.description" resname="show.description"  approved="yes">
-				<source>Defines the mode of the gallery.</source>
-				<target>Définit le mode de fonctionnement de la galerie.</target>
-			</trans-unit>
-			<trans-unit id="show.details" resname="show.details" xml:space="preserve" approved="yes">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Csh/locallang_csh.xlf" date="2024-01-10T16:29:42Z" product-name="chgallery" target-language="fr">
+    <header/>
+    <body>
+      <trans-unit id="show.description" resname="show.description" approved="yes">
+        <source>Defines the mode of the gallery.</source>
+        <target state="final">Définit le mode de fonctionnement de la galerie.</target>
+      </trans-unit>
+      <trans-unit id="show.details" resname="show.details" xml:space="preserve" approved="yes">
 				<source> Possible views are:
 						&lt;ul&gt;
 							&lt;li&gt;- &lt;strong&gt;Gallery view:&lt;/strong&gt; Show all images from the given path.&lt;/li&gt; 
@@ -15,66 +15,64 @@
 							&lt;li&gt;- &lt;strong&gt;Single view:&lt;/strong&gt; Show a single image, best use in combination with another view.&lt;/li&gt;
 						&lt;/ul&gt;
 						 </source>
-				<target> Les vues possibles sont :
+			<target state="final"> Les vues possibles sont :
 						&lt;ul&gt;
 							&lt;li&gt;- &lt;strong&gt;Vue Galerie :&lt;/strong&gt; Affiche toutes les images du répertoire spécifié.&lt;/li&gt; 
 							&lt;li&gt;- &lt;strong&gt;Vue Catégorie :&lt;/strong&gt; Affiche tous les sous-répertoires du répertoire spécifié. Chaque répertoire représente une catégorie.&lt;/li&gt;
 							&lt;li&gt;- &lt;strong&gt;Vue Détail :&lt;/strong&gt; Affiche une image unique, particulièrement utile en combinaison avec une autre vue.&lt;/li&gt;
 						&lt;/ul&gt;
-						 </target>
-			</trans-unit>
-			<trans-unit id="path.description" resname="path.description"  approved="yes">
-				<source>The path to the directory with the images.</source>
-				<target>Le chemin d&#039;accès au répertoire contenant les images.</target>
-			</trans-unit>
-			<trans-unit id="path.details" resname="path.details"  approved="yes">
-				<source> Define the path where the images/directories are saved. A valid path looks like &quot;&lt;i&gt;fileadmin/photos/xmas/&lt;/i&gt;&quot;. Install the extension &quot;&lt;strong&gt;rgfolderselector&lt;/strong&gt;&quot; to get a wizard for the path and avoid errors while adding the path. </source>
-				<target> Définit le répertoire où sont stockés les images/répertoires. Un chemin valide est de la forme &quot;&lt;i&gt;fileadmin/photos/noel/&lt;/i&gt;&quot;. Installez l&#039;extension &quot;&lt;strong&gt;rgfolderselector&lt;/strong&gt;&quot; pour utiliser un navigateur de répertoire et ainsi éviter les erreurs de saisie. </target>
-			</trans-unit>
-			<trans-unit id="description.description" resname="description.description"  approved="yes">
-				<source>Add a description to every image by using the wizard. To open the wizard click on the icon.</source>
-				<target>Ajoutez une description à chaque image en utilisant l&#039;assistant. Pour ouvrir l&#039;assistant, cliquez sur l&#039;icône.</target>
-			</trans-unit>
-			<trans-unit id="description.details" resname="description.details"  approved="yes">
-				<source>Each description is saved in a seperate text file with the same filename as the image in the same directory. </source>
-				<target>Chaque description est enregistrée dans un fichier texte distinct portant le nom de l&#039;image dans le même répertoire.</target>
-			</trans-unit>
-			<trans-unit id="title.description" resname="title.description"  approved="yes">
-				<source>Add a title to each category by adding it to the textarea. Each line in the textarea represents one category. To add a description to the category please use the wizard.</source>
-				<target>Ajoutez un titre à chaque catégorie en l&#039;ajoutant à la zone de texte. Chaque ligne de la zone de texte représente une catégorie. Pour ajouter une description à la catégorie, veuillez utiliser l&#039;assistant.</target>
-			</trans-unit>
-			<trans-unit id="categoryOrder.description" resname="categoryOrder.description"  approved="yes">
-				<source>Use the selection field to sort the categories either ascending or descending (by its name).</source>
-				<target>Utilisez le champ de sélection pour trier les catégories de manière croissante ou décroissante (selon son nom).</target>
-			</trans-unit>
-			<trans-unit id="pagebrowser.description" resname="pagebrowser.description"  approved="yes">
-				<source>Set how many images should be displayed on each page.</source>
-				<target>Définit combien d&#039;images doivent être affichées par page.</target>
-			</trans-unit>
-			<trans-unit id="random.description" resname="random.description" xml:space="preserve" approved="yes">
+						 </target></trans-unit>
+      <trans-unit id="path.description" resname="path.description" approved="yes">
+        <source>The path to the directory with the images.</source>
+        <target state="final">Le chemin d'accès au répertoire contenant les images.</target>
+      </trans-unit>
+      <trans-unit id="path.details" resname="path.details" approved="yes">
+        <source> Define the path where the images/directories are saved. A valid path looks like &quot;&lt;i&gt;fileadmin/photos/xmas/&lt;/i&gt;&quot;. Install the extension &quot;&lt;strong&gt;rgfolderselector&lt;/strong&gt;&quot; to get a wizard for the path and avoid errors while adding the path. </source>
+        <target state="final"> Définit le répertoire où sont stockés les images/répertoires. Un chemin valide est de la forme "&lt;i&gt;fileadmin/photos/noel/&lt;/i&gt;". Installez l'extension "&lt;strong&gt;rgfolderselector&lt;/strong&gt;" pour utiliser un navigateur de répertoire et ainsi éviter les erreurs de saisie. </target>
+      </trans-unit>
+      <trans-unit id="description.description" resname="description.description" approved="yes">
+        <source>Add a description to every image by using the wizard. To open the wizard click on the icon.</source>
+        <target state="final">Ajoutez une description à chaque image en utilisant l'assistant. Pour ouvrir l'assistant, cliquez sur l'icône.</target>
+      </trans-unit>
+      <trans-unit id="description.details" resname="description.details" approved="yes">
+        <source>Each description is saved in a seperate text file with the same filename as the image in the same directory. </source>
+        <target state="final">Chaque description est enregistrée dans un fichier texte distinct portant le nom de l'image dans le même répertoire.</target>
+      </trans-unit>
+      <trans-unit id="title.description" resname="title.description" approved="yes">
+        <source>Add a title to each category by adding it to the textarea. Each line in the textarea represents one category. To add a description to the category please use the wizard.</source>
+        <target state="final">Ajoutez un titre à chaque catégorie en l'ajoutant à la zone de texte. Chaque ligne de la zone de texte représente une catégorie. Pour ajouter une description à la catégorie, veuillez utiliser l'assistant.</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder.description" resname="categoryOrder.description" approved="yes">
+        <source>Use the selection field to sort the categories either ascending or descending (by its name).</source>
+        <target state="final">Utilisez le champ de sélection pour trier les catégories de manière croissante ou décroissante (selon son nom).</target>
+      </trans-unit>
+      <trans-unit id="pagebrowser.description" resname="pagebrowser.description" approved="yes">
+        <source>Set how many images should be displayed on each page.</source>
+        <target state="final">Définit combien d'images doivent être affichées par page.</target>
+      </trans-unit>
+      <trans-unit id="random.description" resname="random.description" xml:space="preserve" approved="yes">
 				<source>Enable a random view. Important: 
 			&lt;ul&gt;&lt;li&gt;- Additionally must be set in TS: &lt;i&gt;plugin.tx_chgallery_pi1 = USER_INT&lt;/i&gt;&lt;/li&gt;
 																					&lt;li&gt;- The pagebrowser will get hidden&lt;/li&gt;&lt;/ul&gt; </source>
-				<target>Active une vue aléatoire. Important : 
+			<target state="final">Active une vue aléatoire. Important : 
 			&lt;ul&gt;&lt;li&gt;- La ligne suivante doit être ajoutée au TS: &lt;i&gt;plugin.tx_chgallery_pi1 = USER_INT&lt;/i&gt;&lt;/li&gt;
-																					&lt;li&gt;- La pagination sera masquée&lt;/li&gt;&lt;/ul&gt; </target>
-			</trans-unit>
-			<trans-unit id="link.description" resname="link.description"  approved="yes">
-				<source>Link every image to a specific page.</source>
-				<target>Lie chaque image à une page spécifique.</target>
-			</trans-unit>
-			<trans-unit id="single.description" resname="single.description"  approved="yes">
-				<source>Enable the single view in the plugin which is set to GALLERY or CATEGORY view. Insert then the plugin on the same page again and set the view to SINGLE.</source>
-				<target>Active la vue détail pour le plugin qui est paramétré en mode GALERIE ou CATEGORIE. Insérez ensuite le plugin sur la même page et paramétrez-le en vue DETAIL.</target>
-			</trans-unit>
-			<trans-unit id="renderAllLinks.description" resname="renderAllLinks.description"  approved="yes">
-				<source>Enable this checkbox to be able to show all images inside the lightbox even if there is more then one page in the pagebrowser. Without enabling it the lightbox will just show the images of the current page.</source>
-				<target>Cocher cette case à cocher pour afficher toutes les images dans lightbox même s&#039;il y a plus d&#039;une page de photos. Sans cette option, lightbox n&#039;affichera que les images de la page courante.</target>
-			</trans-unit>
-			<trans-unit id="excludeFirstImage.description" resname="excludeFirstImage.description"  approved="yes">
-				<source>If this checkbox is enabled and the category view is used, the first image will be used as preview image only and will not be visible inside the gallery.</source>
-				<target>Si cette option est activée et la vue catégorie est utilisée, la première image sera utilisé pour la prévisualisation uniquement et ne sera pas visible dans la galerie.</target>
-			</trans-unit>
-		</body>
-	</file>
+																					&lt;li&gt;- La pagination sera masquée&lt;/li&gt;&lt;/ul&gt; </target></trans-unit>
+      <trans-unit id="link.description" resname="link.description" approved="yes">
+        <source>Link every image to a specific page.</source>
+        <target state="final">Lie chaque image à une page spécifique.</target>
+      </trans-unit>
+      <trans-unit id="single.description" resname="single.description" approved="yes">
+        <source>Enable the single view in the plugin which is set to GALLERY or CATEGORY view. Insert then the plugin on the same page again and set the view to SINGLE.</source>
+        <target state="final">Active la vue détail pour le plugin qui est paramétré en mode GALERIE ou CATEGORIE. Insérez ensuite le plugin sur la même page et paramétrez-le en vue DETAIL.</target>
+      </trans-unit>
+      <trans-unit id="renderAllLinks.description" resname="renderAllLinks.description" approved="yes">
+        <source>Enable this checkbox to be able to show all images inside the lightbox even if there is more then one page in the pagebrowser. Without enabling it the lightbox will just show the images of the current page.</source>
+        <target state="final">Cocher cette case à cocher pour afficher toutes les images dans lightbox même s'il y a plus d'une page de photos. Sans cette option, lightbox n'affichera que les images de la page courante.</target>
+      </trans-unit>
+      <trans-unit id="excludeFirstImage.description" resname="excludeFirstImage.description" approved="yes">
+        <source>If this checkbox is enabled and the category view is used, the first image will be used as preview image only and will not be visible inside the gallery.</source>
+        <target state="final">Si cette option est activée et la vue catégorie est utilisée, la première image sera utilisé pour la prévisualisation uniquement et ne sera pas visible dans la galerie.</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
