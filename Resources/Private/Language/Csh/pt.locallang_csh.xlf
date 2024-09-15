@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Csh/locallang_csh.xlf" date="2024-01-10T16:29:42Z" product-name="chgallery" target-language="pt-BR">
+    <header/>
+    <body>
+      <trans-unit id="show.description" resname="show.description">
+        <source>Defines the mode of the gallery.</source>
+        <target state="needs-translation">Defines the mode of the gallery.</target>
+      </trans-unit>
+      <trans-unit id="show.details" resname="show.details" xml:space="preserve">
+				<source> Possible views are:
+						&lt;ul&gt;
+							&lt;li&gt;- &lt;strong&gt;Gallery view:&lt;/strong&gt; Show all images from the given path.&lt;/li&gt; 
+							&lt;li&gt;- &lt;strong&gt;Category view:&lt;/strong&gt; Show all subdirectories from the given path. Each directory represents a category.&lt;/li&gt;
+							&lt;li&gt;- &lt;strong&gt;Single view:&lt;/strong&gt; Show a single image, best use in combination with another view.&lt;/li&gt;
+						&lt;/ul&gt;
+						 </source>
+			<target state="needs-translation"> Possible views are:
+						&lt;ul&gt;
+							&lt;li&gt;- &lt;strong&gt;Gallery view:&lt;/strong&gt; Show all images from the given path.&lt;/li&gt; 
+							&lt;li&gt;- &lt;strong&gt;Category view:&lt;/strong&gt; Show all subdirectories from the given path. Each directory represents a category.&lt;/li&gt;
+							&lt;li&gt;- &lt;strong&gt;Single view:&lt;/strong&gt; Show a single image, best use in combination with another view.&lt;/li&gt;
+						&lt;/ul&gt;
+						 </target></trans-unit>
+      <trans-unit id="path.description" resname="path.description">
+        <source>The path to the directory with the images.</source>
+        <target state="needs-translation">The path to the directory with the images.</target>
+      </trans-unit>
+      <trans-unit id="path.details" resname="path.details">
+        <source> Define the path where the images/directories are saved. A valid path looks like &quot;&lt;i&gt;fileadmin/photos/xmas/&lt;/i&gt;&quot;. Install the extension &quot;&lt;strong&gt;rgfolderselector&lt;/strong&gt;&quot; to get a wizard for the path and avoid errors while adding the path. </source>
+        <target state="needs-translation"> Define the path where the images/directories are saved. A valid path looks like "&lt;i&gt;fileadmin/photos/xmas/&lt;/i&gt;". Install the extension "&lt;strong&gt;rgfolderselector&lt;/strong&gt;" to get a wizard for the path and avoid errors while adding the path. </target>
+      </trans-unit>
+      <trans-unit id="description.description" resname="description.description">
+        <source>Add a description to every image by using the wizard. To open the wizard click on the icon.</source>
+        <target state="needs-translation">Add a description to every image by using the wizard. To open the wizard click on the icon.</target>
+      </trans-unit>
+      <trans-unit id="description.details" resname="description.details">
+        <source>Each description is saved in a seperate text file with the same filename as the image in the same directory. </source>
+        <target state="needs-translation">Each description is saved in a seperate text file with the same filename as the image in the same directory. </target>
+      </trans-unit>
+      <trans-unit id="title.description" resname="title.description">
+        <source>Add a title to each category by adding it to the textarea. Each line in the textarea represents one category. To add a description to the category please use the wizard.</source>
+        <target state="needs-translation">Add a title to each category by adding it to the textarea. Each line in the textarea represents one category. To add a description to the category please use the wizard.</target>
+      </trans-unit>
+      <trans-unit id="categoryOrder.description" resname="categoryOrder.description">
+        <source>Use the selection field to sort the categories either ascending or descending (by its name).</source>
+        <target state="needs-translation">Use the selection field to sort the categories either ascending or descending (by its name).</target>
+      </trans-unit>
+      <trans-unit id="pagebrowser.description" resname="pagebrowser.description">
+        <source>Set how many images should be displayed on each page.</source>
+        <target state="needs-translation">Set how many images should be displayed on each page.</target>
+      </trans-unit>
+      <trans-unit id="random.description" resname="random.description" xml:space="preserve">
+				<source>Enable a random view. Important: 
+			&lt;ul&gt;&lt;li&gt;- Additionally must be set in TS: &lt;i&gt;plugin.tx_chgallery_pi1 = USER_INT&lt;/i&gt;&lt;/li&gt;
+																					&lt;li&gt;- The pagebrowser will get hidden&lt;/li&gt;&lt;/ul&gt; </source>
+			<target state="needs-translation">Enable a random view. Important: 
+			&lt;ul&gt;&lt;li&gt;- Additionally must be set in TS: &lt;i&gt;plugin.tx_chgallery_pi1 = USER_INT&lt;/i&gt;&lt;/li&gt;
+																					&lt;li&gt;- The pagebrowser will get hidden&lt;/li&gt;&lt;/ul&gt; </target></trans-unit>
+      <trans-unit id="link.description" resname="link.description">
+        <source>Link every image to a specific page.</source>
+        <target state="needs-translation">Link every image to a specific page.</target>
+      </trans-unit>
+      <trans-unit id="single.description" resname="single.description">
+        <source>Enable the single view in the plugin which is set to GALLERY or CATEGORY view. Insert then the plugin on the same page again and set the view to SINGLE.</source>
+        <target state="needs-translation">Enable the single view in the plugin which is set to GALLERY or CATEGORY view. Insert then the plugin on the same page again and set the view to SINGLE.</target>
+      </trans-unit>
+      <trans-unit id="renderAllLinks.description" resname="renderAllLinks.description">
+        <source>Enable this checkbox to be able to show all images inside the lightbox even if there is more then one page in the pagebrowser. Without enabling it the lightbox will just show the images of the current page.</source>
+        <target state="needs-translation">Enable this checkbox to be able to show all images inside the lightbox even if there is more then one page in the pagebrowser. Without enabling it the lightbox will just show the images of the current page.</target>
+      </trans-unit>
+      <trans-unit id="excludeFirstImage.description" resname="excludeFirstImage.description">
+        <source>If this checkbox is enabled and the category view is used, the first image will be used as preview image only and will not be visible inside the gallery.</source>
+        <target state="needs-translation">If this checkbox is enabled and the category view is used, the first image will be used as preview image only and will not be visible inside the gallery.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

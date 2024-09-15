@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Wizard/locallang.xlf" date="2024-01-10T16:30:30Z" product-name="chgallery">
-		<header/>
-		<body>
-			<trans-unit id="images" resname="images"  approved="yes">
-				<source>%s Images of the directory &quot;%s&quot;</source>
-				<target>%s Bilder aus dem Verzeichnis &quot;%s&quot;</target>
-			</trans-unit>
-			<trans-unit id="save" resname="save"  approved="yes">
-				<source>Save &amp; Close</source>
-				<target>Speichern &amp; Schließen</target>
-			</trans-unit>
-			<trans-unit id="save2" resname="save2"  approved="yes">
-				<source>Save</source>
-				<target>Speichern</target>
-			</trans-unit>
-			<trans-unit id="close" resname="close"  approved="yes">
-				<source>Close window</source>
-				<target>Fenster schließen</target>
-			</trans-unit>
-			<trans-unit id="error-header" resname="error-header"  approved="yes">
-				<source>An error occurred</source>
-				<target>Achtung!</target>
-			</trans-unit>
-			<trans-unit id="error-neversavesd" resname="error-neversavesd"  approved="yes">
-				<source>Please save the plugin once and also a path!</source>
-				<target>Bitte das Plugin zumindest 1x mit einem gültigen Pfad speichern</target>
-			</trans-unit>
-			<trans-unit id="error-path" resname="error-path"  approved="yes">
-				<source>No path is defined!</source>
-				<target>Kein Pfad angegeben!</target>
-			</trans-unit>
-			<trans-unit id="error-pathwrong" resname="error-pathwrong"  approved="yes">
-				<source>The path is not valid!</source>
-				<target>Kein gültiger Pfad angegeben!</target>
-			</trans-unit>
-			<trans-unit id="path" resname="path"  approved="yes">
-				<source>Wizard for %s galleries, subfolders of %s </source>
-				<target>Wizard für %s Galerien, Unterordner von %s</target>
-			</trans-unit>
-			<trans-unit id="title" resname="title"  approved="yes">
-				<source>Titel</source>
-				<target>Titel</target>
-			</trans-unit>
-			<trans-unit id="description" resname="description"  approved="yes">
-				<source>Click at the title of the subdirectory to open the images of this directory. Fill out the descriptions you need and press close!</source>
-				<target>Klicke auf den Namen des Unterverzeichnisses, um die zugehörigen Bilder zu öffnen. Gib eine Beschreibung ein und klicke am Ende auf &#039;Speichern&#039;.</target>
-			</trans-unit>
-		</body>
-	</file>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Wizard/locallang.xlf" date="2024-01-10T16:30:30Z" product-name="chgallery" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="images" resname="images" approved="yes">
+        <source>%s Images of the directory &quot;%s&quot;</source>
+        <target state="final">%s Bilder aus dem Verzeichnis "%s"</target>
+      </trans-unit>
+      <trans-unit id="save" resname="save" approved="yes">
+        <source>Save &amp; Close</source>
+        <target state="final">Speichern &amp; Schließen</target>
+      </trans-unit>
+      <trans-unit id="save2" resname="save2" approved="yes">
+        <source>Save</source>
+        <target state="final">Speichern</target>
+      </trans-unit>
+      <trans-unit id="close" resname="close" approved="yes">
+        <source>Close window</source>
+        <target state="final">Fenster schließen</target>
+      </trans-unit>
+      <trans-unit id="error-header" resname="error-header" approved="yes">
+        <source>An error occurred</source>
+        <target state="final">Achtung!</target>
+      </trans-unit>
+      <trans-unit id="error-neversavesd" resname="error-neversavesd" approved="yes">
+        <source>Please save the plugin once and also a path!</source>
+        <target state="final">Bitte das Plugin zumindest 1x mit einem gültigen Pfad speichern</target>
+      </trans-unit>
+      <trans-unit id="error-path" resname="error-path" approved="yes">
+        <source>No path is defined!</source>
+        <target state="final">Kein Pfad angegeben!</target>
+      </trans-unit>
+      <trans-unit id="error-pathwrong" resname="error-pathwrong" approved="yes">
+        <source>The path is not valid!</source>
+        <target state="final">Kein gültiger Pfad angegeben!</target>
+      </trans-unit>
+      <trans-unit id="path" resname="path" approved="yes">
+        <source>Wizard for %s galleries, subfolders of %s </source>
+        <target state="final">Wizard für %s Galerien, Unterordner von %s</target>
+      </trans-unit>
+      <trans-unit id="title" resname="title">
+        <source>Titel</source>
+        <target state="needs-translation">Titel</target>
+      </trans-unit>
+      <trans-unit id="description" resname="description" approved="yes">
+        <source>Click at the title of the subdirectory to open the images of this directory. Fill out the descriptions you need and press close!</source>
+        <target state="final">Klicke auf den Namen des Unterverzeichnisses, um die zugehörigen Bilder zu öffnen. Gib eine Beschreibung ein und klicke am Ende auf 'Speichern'.</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

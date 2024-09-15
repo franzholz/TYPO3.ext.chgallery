@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:chgallery/Resources/Private/Language/Wizard/locallang.xlf" date="2024-01-10T16:30:30Z" product-name="chgallery" target-language="sv-SE">
+    <header/>
+    <body>
+      <trans-unit id="images" resname="images">
+        <source>%s Images of the directory &quot;%s&quot;</source>
+        <target state="needs-translation">%s Images of the directory "%s"</target>
+      </trans-unit>
+      <trans-unit id="save" resname="save">
+        <source>Save &amp; Close</source>
+        <target state="needs-translation">Save &amp; Close</target>
+      </trans-unit>
+      <trans-unit id="save2" resname="save2">
+        <source>Save</source>
+        <target state="needs-translation">Save</target>
+      </trans-unit>
+      <trans-unit id="close" resname="close">
+        <source>Close window</source>
+        <target state="needs-translation">Close window</target>
+      </trans-unit>
+      <trans-unit id="error-header" resname="error-header">
+        <source>An error occurred</source>
+        <target state="needs-translation">An error occurred</target>
+      </trans-unit>
+      <trans-unit id="error-neversavesd" resname="error-neversavesd">
+        <source>Please save the plugin once and also a path!</source>
+        <target state="needs-translation">Please save the plugin once and also a path!</target>
+      </trans-unit>
+      <trans-unit id="error-path" resname="error-path">
+        <source>No path is defined!</source>
+        <target state="needs-translation">No path is defined!</target>
+      </trans-unit>
+      <trans-unit id="error-pathwrong" resname="error-pathwrong">
+        <source>The path is not valid!</source>
+        <target state="needs-translation">The path is not valid!</target>
+      </trans-unit>
+      <trans-unit id="path" resname="path">
+        <source>Wizard for %s galleries, subfolders of %s </source>
+        <target state="needs-translation">Wizard for %s galleries, subfolders of %s </target>
+      </trans-unit>
+      <trans-unit id="title" resname="title">
+        <source>Titel</source>
+        <target state="needs-translation">Titel</target>
+      </trans-unit>
+      <trans-unit id="description" resname="description">
+        <source>Click at the title of the subdirectory to open the images of this directory. Fill out the descriptions you need and press close!</source>
+        <target state="needs-translation">Click at the title of the subdirectory to open the images of this directory. Fill out the descriptions you need and press close!</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
