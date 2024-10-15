@@ -611,7 +611,7 @@ class Api implements SingletonInterface
         }
 
         // get all images of the dir
-        $imageList = GeneralUtility::getFilesInDir($path, $conf['fileTypes'], 1, 1);
+        $imageList = GeneralUtility::getFilesInDir($path, $conf['fileTypes'] ?? '', 1, 1);
 
         // exclude 1st image if set and if this is a detail view of LIST
         if ($config['exclude1stImg'] == 1 && $config['show'] == 'LIST' && $piVars['dir'] != 0) {

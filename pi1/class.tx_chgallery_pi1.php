@@ -248,8 +248,8 @@ class tx_chgallery_pi1 extends AbstractPlugin
         }
 
         // page browser
-        $begin 	= $pb * $config['pagebrowser'];
-        $end 	= $begin + $config['pagebrowser'];
+        $begin 	= $pb * (int) $config['pagebrowser'];
+        $end 	= $begin + (int) $config['pagebrowser'];
 
         $content = $api->getSingleGalleryPage($composite, $pb, $begin, $end);
         return $content;

@@ -81,7 +81,7 @@ class InitializationController implements SingletonInterface
         $languageObj = GeneralUtility::makeInstance(Localization::class);
         $languageObj->init(
             CHGALLERY_EXT,
-            $conf['_LOCAL_LANG.'],
+            $conf['_LOCAL_LANG.'] ?? [],
             'pi1'
         );
 
@@ -123,10 +123,13 @@ class InitializationController implements SingletonInterface
         $config['link'] 		  = $this->getFlexform($cObj, $conf, 'more', 'link', 'link');
 
         // create an array of subfolders
-        $config['subfolders'] = $this->getFullDir($conf['fileTypes'], $config['path'], $config);
+        if (isset($conf['fileTypes']) && isset($config['path'])) {
+            $config['subfolders'] =
+                $this->getFullDir($conf['fileTypes'], $config['path'], $config);
+        }
 
         // Template+  CSS file
-        $template = ($this->getFlexform($cObj, $conf, 'more', 'templateFile')) ? 'uploads/tx_chgallery/' . $this->getFlexform($cObj, $conf, 'more', 'templateFile') : $conf['templateFile'];
+        $template = ($this->getFlexform($cObj, $conf, 'more', 'templateFile')) ? 'uploads/tx_chgallery/' . $this->getFlexform($cObj, $conf, 'more', 'templateFile') : $conf['templateFile'] ?? '';
         try {
             $absoluteFileName = GeneralUtility::makeInstance(FilePathSanitizer::class)->sanitize((string) $template);
         } catch (InvalidFileNameException $e) {
@@ -137,7 +140,13 @@ class InitializationController implements SingletonInterface
                 GeneralUtility::makeInstance(TimeTracker::class)->setTSlogMessage($e->getMessage(), 3);
             }
         }
-        $templateCode = file_get_contents($absoluteFileName);
+        $templateCode = '';
+        if (
+            !empty($absoluteFileName) &&
+            file_exists($absoluteFileName)
+        ) {
+            $templateCode = file_get_contents($absoluteFileName);
+        }
         $composite->setTemplateCode($templateCode);
 
         if (isset($conf['pathToCSS']) && $conf['pathToCSS'] != '') {
@@ -157,11 +166,18 @@ class InitializationController implements SingletonInterface
         }
 
         // Ajax used? Embed js
-        if ($conf['ajax'] == 1) {
+        if (
+            isset($conf['ajax']) &&
+            $conf['ajax'] == 1
+        ) {
             $GLOBALS['TSFE']->additionalHeaderData['chgallery'] .= $this->getPath($conf['pathToMootools']) ? '<script src="' . $GLOBALS['TSFE']->tmpl->getFileName($conf['pathToMootools']) . '" type="text/javascript"></script>' : '';
         }
 
-        if ($conf['exif'] == 1 && !extension_loaded('exif')) {
+        if (
+            isset($conf['exif']) &&
+            $conf['exif'] == 1 &&
+            !extension_loaded('exif')
+        ) {
             $conf['exif'] = 0;
         }
 
@@ -198,11 +214,11 @@ class InitializationController implements SingletonInterface
             // hack to work with multiple TS arrays
             $tsparts = explode('.', $confOverride);
             if (count($tsparts) == 1) { // default with no .
-                $value = $flexform ?: $conf[$confOverride];
-                $value = $cObj->stdWrap($value, $conf[$confOverride . '.']);
+                $value = $flexform ?: $conf[$confOverride] ?? '';
+                $value = $cObj->stdWrap($value, $conf[$confOverride . '.'] ?? []);
             } elseif (count($tsparts) == 2) { // 1 sub array
-                $value = $flexform ?: $conf[$tsparts[0] . '.'][$tsparts[1]];
-                $value = $cObj->stdWrap($value, $conf[$tsparts[0] . '.'][$tsparts[1] . '.']);
+                $value = $flexform ?: $conf[$tsparts[0] . '.'][$tsparts[1]] ?? '';
+                $value = $cObj->stdWrap($value, $conf[$tsparts[0] . '.'][$tsparts[1] . '.'] ?? '');
             }
 
             return $value;
